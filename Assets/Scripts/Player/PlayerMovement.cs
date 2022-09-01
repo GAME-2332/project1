@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
         } else transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, .3f);
 
         // Jumping
-        if (Input.GetKey(gameOptions.jump.Value) && isOnGround) {
+        if (gameOptions.jump.GetKey() && isOnGround) {
             isOnGround = false;
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
@@ -119,20 +119,12 @@ public class PlayerMovement : MonoBehaviour {
     /// </summary>
     private Vector3 GetInputVector() {
         float forward, sideways;
-        if (GameManager.instance.usingJoystickControls) {
-            // TODO: If we end up using joystick controls, we need to use only
-            // a specific joystick's input axes based on the control menu
-            forward = Input.GetAxis("Vertical");
-            sideways = Input.GetAxis("Horizontal");
-        } else {
-            // Using mouse and keyboard
-            // Front/back movement
-            if (Input.GetKey(gameOptions.forward.Value)) forward = 1;
-            else forward = (Input.GetKey(gameOptions.back.Value) ? -1 : 0);
-            // Side-to-side movement
-            if (Input.GetKey(gameOptions.right.Value)) sideways = 1;
-            else sideways = (Input.GetKey(gameOptions.left.Value) ? -1 : 0);
-        }
+        // Front/back movement
+        if (gameOptions.forward.GetKey()) forward = 1;
+        else forward = gameOptions.back.GetKey() ? -1 : 0;
+        // Side-to-side movement
+        if (gameOptions.right.GetKey()) sideways = 1;
+        else sideways = gameOptions.left.GetKey() ? -1 : 0;
         return (transform.forward * forward + transform.right * sideways).normalized;
     }
 
