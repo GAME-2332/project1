@@ -26,9 +26,7 @@ public class PlayerMovement : MonoBehaviour {
     private Vector3 crouchingScale;
     private float xRot = 0;
     private float yRot = 0;
-    private bool canSprint = true;
-    private bool isSprinting = false;
-    private bool isCrouching = false;
+    private PlayerState playerState = PlayerState.Normal;
     private float groundDistance;
     private bool isOnGround = true;
 
@@ -49,24 +47,21 @@ public class PlayerMovement : MonoBehaviour {
 
         // Check if sprinting/crouching
         // TODO: Stamina
-        canSprint = isOnGround;
+        bool canSprint = isOnGround;
         if (Input.GetKey(gameOptions.crouch.Value)) {
-            isCrouching = true;
-            isSprinting = false;
+            playerState = PlayerState.Crouching;
         } else {
-            isCrouching = false;
-            if (canSprint && Input.GetKey(gameOptions.sprint.Value)) isSprinting = true;
-            else isSprinting = false;
+            if (canSprint && Input.GetKey(gameOptions.sprint.Value)) playerState = PlayerState.Sprinting;
+            else playerState = PlayerState.Normal;
         }
 
         // Apply player movement force
-        rigidbody.AddForce(GetInputVector() * moveSpeed *
-            (isCrouching ? crouchModifier: (isSprinting ? sprintModifier: 1)), ForceMode.Force);
+        rigidbody.AddForce(GetInputVector() * MoveSpeed(), ForceMode.Force);
         // Max speed to avoid crazy acceleration with AddForce weirdness
         rigidbody.velocity = Vector3.ClampMagnitude(rigidbody.velocity, 5f);
 
         // Crouching
-        if (isCrouching) {
+        if (playerState == PlayerState.Crouching) {
             if (!transform.localScale.Equals(crouchingScale)) {
                 transform.localScale = Vector3.Lerp(transform.localScale, crouchingScale, .7f);
                 rigidbody.AddForce(Vector3.down * moveSpeed, ForceMode.Force);
@@ -74,7 +69,7 @@ public class PlayerMovement : MonoBehaviour {
         } else transform.localScale = Vector3.Lerp(transform.localScale, Vector3.one, .3f);
 
         // Jumping
-        if (Input.GetKey(gameOptions.jump.Value) && isOnGround) {
+        if (gameOptions.jump.GetKey() && isOnGround) {
             isOnGround = false;
             rigidbody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
@@ -82,34 +77,14 @@ public class PlayerMovement : MonoBehaviour {
         // Apply view bobbing if the player is moving fast enough horizontally
         float groundSpeed = new Vector3(rigidbody.velocity.x, 0, rigidbody.velocity.z).magnitude;
         if (isOnGround && groundSpeed > .5f) {
-            Vector3 viewBobbing = ViewBobbing(
-                isCrouching ? bobbingSpeedCrouching: (isSprinting ? bobbingSpeedSprinting : bobbingSpeed),
-                isCrouching ? bobbingIntensityCrouching: (isSprinting ? bobbingIntensitySprinting : bobbingIntensity));
+            Vector3 viewBobbing = playerState switch {
+                PlayerState.Crouching => ViewBobbing(bobbingSpeedCrouching, bobbingIntensityCrouching),
+                PlayerState.Sprinting => ViewBobbing(bobbingSpeedSprinting, bobbingIntensitySprinting),
+                _ => ViewBobbing(bobbingSpeed, bobbingIntensity)
+            };
             // Add the actual vector to the Player Look object's position
             playerLook.localPosition += viewBobbing;
         }
-    }
-
-    /// <summary>
-    /// Returns a normalized vector of where the player is trying to move.
-    /// </summary>
-    Vector3 GetInputVector() {
-        float forward, sideways;
-        if (GameManager.instance.usingJoystickControls) {
-            // TODO: If we end up using joystick controls, we need to use only
-            // a specific joystick's input axes based on the control menu
-            forward = Input.GetAxis("Vertical");
-            sideways = Input.GetAxis("Horizontal");
-        } else {
-            // Using mouse and keyboard
-            // Front/back movement
-            if (Input.GetKey(gameOptions.forward.Value)) forward = 1;
-            else forward = (Input.GetKey(gameOptions.back.Value) ? -1 : 0);
-            // Side-to-side movement
-            if (Input.GetKey(gameOptions.right.Value)) sideways = 1;
-            else sideways = (Input.GetKey(gameOptions.left.Value) ? -1 : 0);
-        }
-        return (transform.forward * forward + transform.right * sideways).normalized;
     }
 
     void Update() {
@@ -137,6 +112,32 @@ public class PlayerMovement : MonoBehaviour {
         vec.x += (Mathf.Cos(Time.time * freq / 2f)) * amp * 1.3f;
         vec.y += (Mathf.Sin(Time.time * freq)) * amp;
         return vec;
+    }
+
+    /// <summary>
+    /// Returns a normalized vector of where the player is trying to move.
+    /// </summary>
+    private Vector3 GetInputVector() {
+        float forward, sideways;
+        // Front/back movement
+        if (gameOptions.forward.GetKey()) forward = 1;
+        else forward = gameOptions.back.GetKey() ? -1 : 0;
+        // Side-to-side movement
+        if (gameOptions.right.GetKey()) sideways = 1;
+        else sideways = gameOptions.left.GetKey() ? -1 : 0;
+        return (transform.forward * forward + transform.right * sideways).normalized;
+    }
+
+    private float MoveSpeed() {
+        return moveSpeed * playerState switch {
+            PlayerState.Crouching => crouchModifier,
+            PlayerState.Sprinting => sprintModifier,
+            _ => 1
+        };
+    }
+
+    public enum PlayerState {
+        Normal, Crouching, Sprinting
     }
 
 }
