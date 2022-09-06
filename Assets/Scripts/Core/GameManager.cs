@@ -9,5 +9,4 @@ public class GameManager {
 
     public GameEvents events = new GameEvents();
     public GameOptions gameOptions = new GameOptions();
-    public bool usingJoystickControls = false;
 }
