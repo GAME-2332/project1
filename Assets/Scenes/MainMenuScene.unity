@@ -507,8 +507,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Night At the Mall
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
+  m_sharedMaterial: {fileID: 2760602662307102332, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -764,8 +764,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Load Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
-  m_sharedMaterial: {fileID: -3565893221561250248, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
+  m_sharedMaterial: {fileID: 2760602662307102332, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -899,8 +899,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: New Game
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
-  m_sharedMaterial: {fileID: -3565893221561250248, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
+  m_sharedMaterial: {fileID: 2760602662307102332, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1699,8 +1699,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
-  m_sharedMaterial: {fileID: -3565893221561250248, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
+  m_sharedMaterial: {fileID: 2760602662307102332, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2222,8 +2222,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
-  m_sharedMaterial: {fileID: -3565893221561250248, guid: f0612e2f25f8b144ab82b1b318b13160, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
+  m_sharedMaterial: {fileID: 2760602662307102332, guid: 9ed745b1cf06d93458f014a221c1b64a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
