@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour {
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
         yRot += mouseX;
-        xRot = Mathf.Clamp(xRot - mouseY, -90, 90);
+        xRot = Mathf.Clamp(xRot - mouseY, -88, 88);
 
         // Rotate the player along only the horizontal axis
         transform.rotation = Quaternion.Euler(0, yRot, 0);
