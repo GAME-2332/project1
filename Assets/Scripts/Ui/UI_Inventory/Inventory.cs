@@ -14,10 +14,6 @@ public class Inventory : MonoBehaviour
     CanvasGroup _InventoryCanvasGroup;
 
     [SerializeField]
-    GameObject DevTestItem;
-    [SerializeField]
-    GameObject DevTestItem2;
-    [SerializeField]
     Button BackButton;
 
     static bool AlreadyExists;
