@@ -70,6 +70,7 @@ public class MainMenuUI : MonoBehaviour
     void OnClickOptions()
     {
         Debug.Log("Options.");
+       
     }
 
     void OnClickQuit()
