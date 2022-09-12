@@ -15,10 +15,14 @@ using UnityEditor.SceneManagement;
 [ExecuteAlways]
 [Serializable]
 public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
-    static Dictionary<string, SaveMe> uidMap = new Dictionary<string, SaveMe>();
+    public static Dictionary<string, SaveMe> uidMap = new Dictionary<string, SaveMe>();
 
     [ReadOnlyProperty]
     public string identifier;
+    [SerializeReference] [ReadOnlyProperty]
+    new private Transform transform;
+    [SerializeReference] [ReadOnlyProperty]
+    private Rigidbody rb;
 
     public bool savePosition = true;
     public bool saveRotation = true;
@@ -26,8 +30,6 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
     public bool saveRigidbodyForces = false;
     public MonoBehaviour[] saveComponents;
 
-    // Required to access from serialization callbacks
-    new private Transform transform;
     [SerializeField] [HideInInspector]
     private Vector3 _pos;
     [SerializeField] [HideInInspector]
@@ -39,17 +41,18 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
     [SerializeField] [HideInInspector]
     private string[] _componentData;
 
-    #if !UNITY_EDITOR
+    private bool needsRefresh = false;
+    private bool firstRefresh = false;
 
     public void OnBeforeSerialize() {
-        // Can't call this in Start or we lose the reference later
-        transform = GetComponent<Transform>();
+        // Do nothing in the editor
+        if (!Application.IsPlaying(gameObject)) return;
 
         // Serialize default fields
-        if (savePosition) _pos = transform.position;
+        if (savePosition) _pos = transform.localPosition;
         if (saveRotation) _rot = transform.localRotation.eulerAngles;
         if (saveScale) _scale = transform.localScale;
-        if (saveRigidbodyForces) _rbForce = GetComponent<Rigidbody>()?.velocity ?? Vector3.zero;
+        if (saveRigidbodyForces) _rbForce = rb.velocity;
 
         // Serialize extra component data
         _componentData = new string[saveComponents.Length];
@@ -60,25 +63,41 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
     }
 
     public void OnAfterDeserialize() {
-        // Can't call this in Start or we lose the reference later
-        transform = GetComponent<Transform>();
-
-        // Deserialize default fields
-        if (savePosition) transform.position = _pos;
-        if (saveRotation) transform.localRotation = Quaternion.Euler(_rot);
-        if (saveScale) transform.localScale = _scale;
-        if (saveRigidbodyForces) GetComponent<Rigidbody>().velocity = _rbForce;
-
-        // Deserialize extra component data
-        for (int i = 0; i < saveComponents.Length; i++) {
-            if (saveComponents[i] == null || _componentData[i] == null) continue;
-            JsonUtility.FromJsonOverwrite(_componentData[i], saveComponents[i]);
-        }
+        // Throw out the first deserialization, which only contains reference fields
+        needsRefresh = firstRefresh;
+        firstRefresh = true;
     }
-    #endif
+
+    void FixedUpdate() {
+        // If we're in the editor, ignore the refresh flag: we can't use this check during serialization
+        // so we have to do it here instead
+        if (Application.IsPlaying(gameObject) && needsRefresh)  {
+            transform = GetComponent<Transform>();
+            rb = GetComponent<Rigidbody>();
+
+            // Deserialize default fields
+            if (savePosition && _pos != null) transform.localPosition = _pos;
+            if (saveRotation && _rot != null) transform.localRotation = Quaternion.Euler(_rot);
+            if (saveScale && _scale != null) transform.localScale = _scale;
+            if (saveRigidbodyForces && _rbForce != null) rb.velocity = _rbForce;
+
+            // Deserialize extra component data
+            for (int i = 0; i < saveComponents.Length; i++) {
+                if (saveComponents[i] == null || _componentData[i] == null) continue;
+                JsonUtility.FromJsonOverwrite(_componentData[i], saveComponents[i]);
+            }
+        }
+        // Reset the refresh flag
+        needsRefresh = false;
+    }
 
     // Only assign a UID in the editor build
     #if UNITY_EDITOR
+    void Awake() {
+        if (transform == null) transform = GetComponent<Transform>();
+        if (rb == null) rb = GetComponent<Rigidbody>();
+    }
+
     void Update() {
         // If the object is a prefab (not in a scene), or the game is running, don't assign a UID
         if (Application.IsPlaying(gameObject) || gameObject.scene.name == null) return;
@@ -98,9 +117,5 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
         // Remove the UID from the map when the object is destroyed
         if (!Application.IsPlaying(gameObject) && identifier != null) uidMap.Remove(identifier, out _);
     }
-
-    // Need empty definitions for these in the editor to avoid errors
-    public void OnBeforeSerialize() {}
-    public void OnAfterDeserialize() {}
-#endif
+    #endif
 }
