@@ -9,8 +9,10 @@ using UnityEngine.SceneManagement;
 /// Handles serialization and deserialization within a loaded scene.
 /// </summary>
 public class SceneData : MonoBehaviour {
-    public string defaultSpawnPoint;
-    public Dictionary<string, GameObject> saveData;
+    public Transform defaultSpawnPoint;
+    public Dictionary<string, SaveMe> saveData;
+
+    private bool ready = false;
 
     /// <summary>
     /// Gets the SceneData instance from a given Scene. One is expected to exist in any loaded scene.
@@ -22,9 +24,9 @@ public class SceneData : MonoBehaviour {
     void Awake() {
         // In Awake, we define which objects we want to track in the scene; these objects
         // can be either defined manually in the inspector or dynamically if they have the SaveData tag
-        if (saveData == null) saveData = new Dictionary<string, GameObject>();
-        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("SaveData")) {
-            saveData.Add(Identifier(obj), obj);
+        if (saveData == null) saveData = new Dictionary<string, SaveMe>();
+        foreach (SaveMe obj in GameObject.FindObjectsOfType<SaveMe>()) {
+            saveData.Add(obj.identifier, obj);
         }
     }
 
@@ -32,11 +34,25 @@ public class SceneData : MonoBehaviour {
     /// Loads any saved player data and sets the player's position to the correct spawn point, if provided.
     /// </summary>
     public void SpawnPlayer(string playerData = null, string spawnPoint = null) {
-        if (spawnPoint == null) spawnPoint = defaultSpawnPoint;
+        Transform spawnTransform = spawnPoint != null ?
+            GameObject.FindGameObjectsWithTag("SpawnPoint").First(obj => obj.name == spawnPoint).transform : defaultSpawnPoint;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        GameObject spawnObj = GameObject.FindGameObjectsWithTag("SpawnPoint").First(obj => obj.name == spawnPoint);
-        if (playerData != null) JsonUtility.FromJsonOverwrite(playerData, player);
-        player.transform.position = spawnObj.transform.position;
+        if (playerData != null) JsonUtility.FromJsonOverwrite(playerData, player.GetComponent<PlayerMovement>().playerData);
+        player.transform.position = spawnTransform.position;
+        // Set ready shortly after adjusting the player collisions to avoid early collisions triggering unwanted behavior
+        Invoke("SetReady", 0.25f);
+    }
+
+    private void SetReady() {
+        this.ready = true;
+    }
+
+    /// <summary>
+    /// Returns true after the scene has been set up and the player moved to the correct position.
+    /// Used to avoid checking early collisions.
+    /// </summary>
+    public bool Ready() {
+        return ready;
     }
 
     /// <summary>
@@ -45,18 +61,18 @@ public class SceneData : MonoBehaviour {
     /// <param name="root">The save slot's root path, as returned by SaveState#Path</param>
     public void Write(string root) {
         List<string> removed = new List<string>();
+        Directory.CreateDirectory(root + "/" + Path());
         foreach (var (id, obj) in saveData) {
             // If the object has been destroyed, add it to the list of removed objects; otherwise serialize it
-            if (obj != null) {
+            if (obj.gameObject != null) {
                 string path = root + "/" + Path() + "/" + id + ".dat";
-                // TODO: More selective save data; possibly a SaveMe component?
                 File.WriteAllText(path, JsonUtility.ToJson(obj));
             } else {
                 removed.Add(id);
             }
         }
         // Write a list of removed objects to disk to avoid deserializing them
-        File.WriteAllLines(root + "/" + gameObject.scene.path + "/removed.dat", removed);
+        File.WriteAllLines(root + "/" + Path() + "/removed.dat", removed);
     }
 
     /// <summary>
@@ -64,19 +80,19 @@ public class SceneData : MonoBehaviour {
     /// </summary>
     /// <param name="root">The save slot's root path, as returned by SaveState#Path</param>
     public void Read(string root) {
-        // If the removed file doesn't exist, the scene hasn't been serialized yet - we can stick to defaults
-        if (!File.Exists(root + "/" + gameObject.scene.path + "/removed.dat")) return;
+        // If the removed.dat file doesn't exist, the scene hasn't been serialized yet - we can stick to defaults
+        if (!File.Exists(root + "/" + Path() + "/removed.dat")) return;
         // Read the list of removed objects from disk
-        string[] removed = File.ReadAllLines(root + "/" + gameObject.scene.path + "/removed.dat");
+        string[] removed = File.ReadAllLines(root + "/" + Path() + "/removed.dat");
         foreach (var (id, obj) in saveData) {
             // If the object was destroyed before serialization, destroy it again now
             if (!removed.Contains(id)) {
-                string path = root + "/" + gameObject.scene.path + "/" + id + ".dat";
+                string path = root + "/" + Path() + "/" + id + ".dat";
                 if (File.Exists(path)) {
                     JsonUtility.FromJsonOverwrite(File.ReadAllText(path), obj);
                 }
             } else {
-                Destroy(obj);
+                Destroy(obj.gameObject);
             }
         }
     }
@@ -85,14 +101,7 @@ public class SceneData : MonoBehaviour {
     /// Gets the path of the scene this SceneData is attached to.
     /// </summary>
     public string Path() {
-        return gameObject.scene.path;
+        // Strip "Assets/Unity/" and ".unity" from the scene path; replace any slashes with periods
+        return gameObject.scene.path.Substring(14, gameObject.scene.path.Length - 20).Replace('/', '.');
     }
-
-    /// <summary>
-    /// Determines an identifier for the given game object.
-    /// </summary>
-    string Identifier(GameObject gameObject) {
-        throw new System.NotImplementedException();
-    }
-
 }

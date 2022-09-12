@@ -6,9 +6,11 @@ using UnityEngine.SceneManagement;
 /// Handles serialization and deserialization of SceneData and other objects independent of a loaded scene.
 /// </summary>
 public class SaveState {
-    private const int startScene = 0;
-    private int slot;
+    private const int startScene = 1;
+    private readonly int slot;
     private SceneData currentScene;
+    private string playerData;
+    private string spawnPoint;
 
     /// <summary>
     /// Constructs a new SaveState instance for the given slot.
@@ -22,6 +24,8 @@ public class SaveState {
     /// Fetch the save state if it exists and load the last scene, otherwise start from scratch.
     /// </summary>
     public void Load() {
+        SceneManager.activeSceneChanged += OnSceneLoaded;
+        playerData = File.Exists(Path() + "/player.dat") ? File.ReadAllText(Path() + "/player.dat") : null;
         if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
         else LoadScene(sceneIndex: startScene);
     }
@@ -31,21 +35,39 @@ public class SaveState {
     /// </summary>
     public void LoadScene(string scenePath = null, int sceneIndex = -1, string spawnPoint = null) {
         // If another game scene is loaded (not the menu), write it to disk first
-        string playerData = null;
+        playerData = null;
+        this.spawnPoint = spawnPoint;
         if (currentScene != null) {
             currentScene.Write(Path());
-            // Idiotproof player data serialization
-            var player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null) playerData = JsonUtility.ToJson(player);
+            var player = GameObject.FindObjectOfType<PlayerMovement>();
+            if (player != null) {
+                Directory.CreateDirectory(Path());
+                playerData = JsonUtility.ToJson(player.playerData);
+                File.WriteAllText(Path() + "/player.dat", playerData);
+            }
         }
+
         // If a scene path is given, load it by path; otherwise load it by index
         if (scenePath != null) SceneManager.LoadScene(scenePath);
         else SceneManager.LoadScene(sceneIndex);
-        File.WriteAllText(Path() + "/scene.dat", SceneManager.GetActiveScene().buildIndex.ToString());
+    }
+
+    /// <summary>
+    /// We need to listen for the new scene being loaded separately because SceneManager#LoadScene queues the new scene to load in the following frame.
+    /// We can't just use Update because this class isn't a MonoBehaviour.
+    /// </summary>
+    public void OnSceneLoaded(Scene old, Scene current) {
         // Set up the newly loaded scene
         currentScene = SceneData.Get(SceneManager.GetActiveScene());
+        if (currentScene == null) return; // Edge case in case we caught a scene load before SaveState#Load was called
         currentScene.Read(Path());
         currentScene.SpawnPlayer(playerData, spawnPoint);
+
+        // Save the now-current scene index to disk
+        Directory.CreateDirectory(Path());
+        File.WriteAllText(Path() + "/scene.dat", SceneManager.GetActiveScene().buildIndex.ToString());
+
+        playerData = spawnPoint = null;
     }
 
     /// <summary>
@@ -53,8 +75,9 @@ public class SaveState {
     /// </summary>
     public void SaveCurrent() {
         if (currentScene != null) currentScene.Write(Path());
-        var player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null) File.WriteAllText(Path() + "/player.dat", JsonUtility.ToJson(player));
+        var player = GameObject.FindObjectOfType<PlayerMovement>();
+        Directory.CreateDirectory(Path());
+        if (player != null) File.WriteAllText(Path() + "/player.dat", JsonUtility.ToJson(player.playerData));
         File.WriteAllText(Path() + "/scene.dat", SceneManager.GetActiveScene().buildIndex.ToString());
     }
 
@@ -62,6 +85,6 @@ public class SaveState {
     /// Gets the path for this save.
     /// </summary>
     public string Path() {
-        return Application.persistentDataPath + "saves/" + slot;
+        return Application.persistentDataPath + "/saves/" + slot;
     }
 }
