@@ -51,17 +51,17 @@ public class PlayerMovement : MonoBehaviour {
     [Tooltip("View bobbing speed when crouching")]
     public float bobbingSpeedCrouching;
 
-    private GameOptions gameOptions;
-    private CharacterController controller;
-    private Vector3 cameraFocus;
-    private Vector3 initialScale;
-    private Vector3 initialPlayerLook;
-    private Vector3 velocity = Vector3.zero;
-    private float xRot = 0;
-    private float yRot = 0;
-    private PlayerState playerState = PlayerState.Normal;
-    private float groundDistance;
-    private bool isOnGround = true;
+    internal GameOptions gameOptions;
+    internal CharacterController controller;
+    internal Vector3 cameraFocus;
+    internal Vector3 initialScale;
+    internal Vector3 initialPlayerLook;
+    internal Vector3 velocity = Vector3.zero;
+    internal float xRot = 0;
+    internal float yRot = 0;
+    internal PlayerState playerState = PlayerState.Normal;
+    internal float groundDistance;
+    internal bool isOnGround = true;
 
     void Start() {
         gameOptions = GameManager.instance.gameOptions;
