@@ -4,7 +4,9 @@ This directory contains the game save/loading system. Tentative implementation p
 
 ## SaveMe
 - If you're a designer, this is the one you'll need to worry about
-- Add it to any object for that object to save and load any contained data
+- Add it to any object to save and load specific data
+- Can save transform values and rigidbody velocity by default
+- Other components attached to the same object will be saved if they have the `IRuntimeSerialized` marker interface
 - Takes care of assigning a persistent UID in the editor build, which is used at runtime
 ## SceneData
 - Component attached to one object in each scene
