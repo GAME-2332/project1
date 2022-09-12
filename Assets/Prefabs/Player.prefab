@@ -338,9 +338,10 @@ GameObject:
   - component: {fileID: 2545709257122875069}
   - component: {fileID: 2545709257122875040}
   - component: {fileID: 2545709257122875041}
+  - component: {fileID: 231650465261193435}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -453,7 +454,21 @@ MonoBehaviour:
   focalDistance: 8
   bobbingIntensity: 0.01
   bobbingSpeed: 12
-  bobbingIntensitySprinting: 0.0146
+  bobbingIntensitySprinting: 0.0158
   bobbingSpeedSprinting: 18
   bobbingIntensityCrouching: 0.0118
   bobbingSpeedCrouching: 8
+--- !u!114 &231650465261193435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2545709257122875071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edbf17894347cd2468d0e541ee8b91d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 2545709256136786215}
+  playerActivateDistance: 3.5

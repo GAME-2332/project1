@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -51,17 +52,16 @@ public class PlayerMovement : MonoBehaviour {
     [Tooltip("View bobbing speed when crouching")]
     public float bobbingSpeedCrouching;
 
+    // Serialized separately by SceneData to avoid overwriting inspector references at runtime
+    [NonSerialized]
+    public PlayerData playerData;
+
     private GameOptions gameOptions;
     private CharacterController controller;
     private Vector3 cameraFocus;
     private Vector3 initialScale;
     private Vector3 initialPlayerLook;
-    private Vector3 velocity = Vector3.zero;
-    private float xRot = 0;
-    private float yRot = 0;
-    private PlayerState playerState = PlayerState.Normal;
     private float groundDistance;
-    private bool isOnGround = true;
 
     void Start() {
         gameOptions = GameManager.instance.gameOptions;
@@ -76,24 +76,24 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate() {
         // Calculate movement in FixedUpdate, per physics tick
         // First, check if we're on the ground
-        isOnGround = Physics.Raycast(transform.position, Vector3.down, groundDistance * transform.localScale.y + .1f);
+        playerData.isOnGround = Physics.Raycast(transform.position, Vector3.down, groundDistance * transform.localScale.y + .1f);
 
         // Check if sprinting/crouching
         // TODO: Stamina
-        bool canSprint = isOnGround;
+        bool canSprint = playerData.isOnGround;
         if (Input.GetKey(gameOptions.crouch.Value)) {
-            playerState = PlayerState.Crouching;
+            playerData.playerState = PlayerState.Crouching;
         } else {
-            if (canSprint && Input.GetKey(gameOptions.sprint.Value)) playerState = PlayerState.Sprinting;
-            else playerState = PlayerState.Normal;
+            if (canSprint && Input.GetKey(gameOptions.sprint.Value)) playerData.playerState = PlayerState.Sprinting;
+            else playerData.playerState = PlayerState.Normal;
         }
 
         // Add player movement velocity
         Vector3 horizontalVelocity = (GetInputVector() * MoveSpeed() / 50);
-        velocity.Set(horizontalVelocity.x, velocity.y, horizontalVelocity.z);
+        playerData.velocity.Set(horizontalVelocity.x, playerData.velocity.y, horizontalVelocity.z);
 
         // Crouching
-        float targetHeight = playerState == PlayerState.Crouching ? crouchHeight : initialScale.y;
+        float targetHeight = playerData.playerState == PlayerState.Crouching ? crouchHeight : initialScale.y;
         if (transform.localScale.y != targetHeight) {
             float deltaHeight = (transform.localScale.y - targetHeight) * (crouchSmoothing - 1);
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y + deltaHeight, transform.localScale.z);
@@ -101,30 +101,30 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Jumping
-        if (gameOptions.jump.GetKey() && isOnGround) {
-            isOnGround = false;
-            velocity.y = jumpSpeed / 50;
+        if (gameOptions.jump.GetKey() && playerData.isOnGround) {
+            playerData.isOnGround = false;
+            playerData.velocity.y = jumpSpeed / 50;
         }
         
         // Gravity
-        velocity.y -= fallSpeed / 50;
-        controller.Move(velocity);
+        playerData.velocity.y -= fallSpeed / 50;
+        controller.Move(playerData.velocity);
 
         // Calculate rotation from mouse movement
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
-        yRot += mouseX;
-        xRot = Mathf.Clamp(xRot - mouseY, -88, 88);
+        playerData.yRot += mouseX;
+        playerData.xRot = Mathf.Clamp(playerData.xRot - mouseY, -88, 88);
 
         // Rotate the player along only the horizontal axis
-        transform.rotation = Quaternion.Euler(0, yRot, 0);
+        transform.rotation = Quaternion.Euler(0, playerData.yRot, 0);
 
         // Rotate the player's look vector along both axes (the camera inherits this transformation)
-        playerLook.rotation = Quaternion.Euler(xRot, yRot, 0);
+        playerLook.rotation = Quaternion.Euler(playerData.xRot, playerData.yRot, 0);
         
         // Apply view bobbing if the player is moving horizontally
-        if (isOnGround && horizontalVelocity.magnitude > 0) {
-            Vector3 viewBobbing = playerState switch {
+        if (playerData.isOnGround && horizontalVelocity.magnitude > 0) {
+            Vector3 viewBobbing = playerData.playerState switch {
                 PlayerState.Crouching => ViewBobbing(bobbingSpeedCrouching, bobbingIntensityCrouching),
                 PlayerState.Sprinting => ViewBobbing(bobbingSpeedSprinting, bobbingIntensitySprinting),
                 _ => ViewBobbing(bobbingSpeed, bobbingIntensity)
@@ -173,13 +173,14 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private float MoveSpeed() {
-        return moveSpeed * playerState switch {
+        return moveSpeed * playerData.playerState switch {
             PlayerState.Crouching => crouchModifier,
             PlayerState.Sprinting => sprintModifier,
             _ => 1
         };
     }
 
+    [Serializable]
     public enum PlayerState {
         Normal, Crouching, Sprinting
     }
