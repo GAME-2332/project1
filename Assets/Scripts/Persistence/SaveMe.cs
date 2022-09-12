@@ -28,7 +28,6 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
     public bool saveRotation = true;
     public bool saveScale = false;
     public bool saveRigidbodyForces = false;
-    public MonoBehaviour[] saveComponents;
 
     [SerializeField] [HideInInspector]
     private Vector3 _pos;
@@ -36,13 +35,13 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
     private Vector3 _rot;
     [SerializeField] [HideInInspector]
     private Vector3 _scale;
-    [SerializeField] [HideInInspector]
+    [SerializeField]
+    [HideInInspector]
     private Vector3 _rbForce;
-    [SerializeField] [HideInInspector]
-    private string[] _componentData;
 
+    [NonSerialized]
+    public bool deserializedBySceneData = false;
     private bool needsRefresh = false;
-    private bool firstRefresh = false;
 
     public void OnBeforeSerialize() {
         // Do nothing in the editor
@@ -53,19 +52,13 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
         if (saveRotation) _rot = transform.localRotation.eulerAngles;
         if (saveScale) _scale = transform.localScale;
         if (saveRigidbodyForces) _rbForce = rb.velocity;
-
-        // Serialize extra component data
-        _componentData = new string[saveComponents.Length];
-        for (int i = 0; i < saveComponents.Length; i++) {
-            if (saveComponents[i] == null) continue;
-            _componentData[i] = JsonUtility.ToJson(saveComponents[i]);
-        }
     }
 
     public void OnAfterDeserialize() {
-        // Throw out the first deserialization, which only contains reference fields
-        needsRefresh = firstRefresh;
-        firstRefresh = true;
+        // Throw out the first deserialization done by Unity, which only contains reference fields
+        // and not the data we want here
+        if (!deserializedBySceneData) return;
+        needsRefresh = true;
     }
 
     void FixedUpdate() {
@@ -80,15 +73,10 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
             if (saveRotation && _rot != null) transform.localRotation = Quaternion.Euler(_rot);
             if (saveScale && _scale != null) transform.localScale = _scale;
             if (saveRigidbodyForces && _rbForce != null) rb.velocity = _rbForce;
-
-            // Deserialize extra component data
-            for (int i = 0; i < saveComponents.Length; i++) {
-                if (saveComponents[i] == null || _componentData[i] == null) continue;
-                JsonUtility.FromJsonOverwrite(_componentData[i], saveComponents[i]);
-            }
         }
         // Reset the refresh flag
         needsRefresh = false;
+        deserializedBySceneData = false;
     }
 
     // Only assign a UID in the editor build

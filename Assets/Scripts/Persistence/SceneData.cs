@@ -64,9 +64,13 @@ public class SceneData : MonoBehaviour {
         Directory.CreateDirectory(root + "/" + Path());
         foreach (var (id, obj) in saveData) {
             // If the object has been destroyed, add it to the list of removed objects; otherwise serialize it
-            if (obj.gameObject != null) {
-                string path = root + "/" + Path() + "/" + id + ".dat";
-                File.WriteAllText(path, JsonUtility.ToJson(obj));
+            if (obj != null && obj.gameObject != null) {
+                string path = root + "/" + Path() + "/" + id;
+                File.WriteAllText(path + ".dat", JsonUtility.ToJson(obj));
+                // Save other serializable components
+                foreach (Component component in obj.GetComponents(typeof(Component)).Where(c => c is IRuntimeSerialized)) {
+                    File.WriteAllText(path + "." + component.GetType().Name + ".dat", JsonUtility.ToJson(component));
+                }
             } else {
                 removed.Add(id);
             }
@@ -87,9 +91,14 @@ public class SceneData : MonoBehaviour {
         foreach (var (id, obj) in saveData) {
             // If the object was destroyed before serialization, destroy it again now
             if (!removed.Contains(id)) {
-                string path = root + "/" + Path() + "/" + id + ".dat";
-                if (File.Exists(path)) {
-                    JsonUtility.FromJsonOverwrite(File.ReadAllText(path), obj);
+                string path = root + "/" + Path() + "/" + id;
+                if (File.Exists(path + ".dat")) {
+                    obj.deserializedBySceneData = true;
+                    JsonUtility.FromJsonOverwrite(File.ReadAllText(path + ".dat"), obj);
+                    foreach (Component component in obj.GetComponents(typeof(Component)).Where(c => c is IRuntimeSerialized)) {
+                        if (File.Exists(path + "." + component.GetType().Name + ".dat"))
+                            JsonUtility.FromJsonOverwrite(File.ReadAllText(path + "." + component.GetType().Name + ".dat"), component);
+                    }
                 }
             } else {
                 Destroy(obj.gameObject);
