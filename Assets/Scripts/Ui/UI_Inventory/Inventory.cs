@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Animations;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -9,23 +10,82 @@ public class Inventory : MonoBehaviour
     List<GameObject> _Inventory;
     List<GameObject> _Spaces;
 
+    Canvas _InventoryCanvas;
+    CanvasGroup _InventoryCanvasGroup;
+
     [SerializeField]
     GameObject DevTestItem;
     [SerializeField]
     GameObject DevTestItem2;
+    [SerializeField]
+    Button BackButton;
 
+    static bool AlreadyExists;
+
+    public static bool GetExists()
+    {
+        return AlreadyExists;
+    }
     // Start is called before the first frame update
     void Start()
     {
+        if(AlreadyExists == true)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            AlreadyExists = true;
+        }
+         _InventoryCanvas = GetComponent<Canvas>();
+        _InventoryCanvasGroup = GetComponent<CanvasGroup>();
+        _InventoryCanvasGroup.alpha = 0;
+        StartCoroutine("OpenCanvas");
+
         UnlockCursor();
         LoadInventory();
+        if (BackButton == null)
+        {
+            BackButton = GameObject.Find("Back Button").GetComponent<Button>();
+        }
+        BackButton.onClick.AddListener(OnClickExit);
+    }
+    float increment = 0.2f;
+    IEnumerator OpenCanvas()
+    {
+      
+        while (_InventoryCanvasGroup.alpha < 1)
+        {
+            _InventoryCanvasGroup.alpha += increment;
+            yield return new WaitForSeconds(0.1f);
+        }
+        yield return new WaitForEndOfFrame();
+    }
+
+    IEnumerator CloseCanvas()
+    {
+       
+        while (_InventoryCanvasGroup.alpha > 0)
+        {
+            _InventoryCanvasGroup.alpha -= increment;
+            yield return new WaitForSeconds(0.1f);
+        }
+        AlreadyExists = false;
+        Destroy(this.gameObject);
+        yield return new WaitForEndOfFrame();
+    }
+    public void  OnClickExit()
+    {
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        StartCoroutine("CloseCanvas");
     }
 
     public void LoadInventory()
     {
         _Inventory = new List<GameObject>();
-        _Inventory.Add(DevTestItem);
-        _Inventory.Add(DevTestItem2);
+        
 
         //Get the game manager, get the list of game objects. 
         //_Inventory = GameManager.instance.saveState.GetInventory()
@@ -48,7 +108,6 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < _inventorySpace.transform.childCount; i++)
         {
             _Spaces.Add(_inventorySpace.transform.GetChild(i).gameObject);
-            Debug.Log("A child was added #" + i);
         }
         return;
     }
@@ -56,17 +115,17 @@ public class Inventory : MonoBehaviour
 
     private void Update()
     {
-        if (Cursor.lockState == CursorLockMode.Locked){
+        UnlockCursor();
+    }
+    public void UnlockCursor()
+    {
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
             Cursor.lockState = CursorLockMode.None;
         }
         if (Cursor.visible == false)
         {
             Cursor.visible = true;
         }
-    }
-    public void UnlockCursor()
-    {
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
     }
 }

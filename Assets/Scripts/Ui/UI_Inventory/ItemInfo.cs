@@ -5,14 +5,28 @@ using UnityEngine;
 public class ItemInfo : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    string item_name;
+
+    [SerializeField]
+    string item_description;
+
+    InventoryDialogue _inventorydialogue;
+    private void Start()
     {
-        
+        //Find the item dialogue so that we may populate it later.
+        _inventorydialogue = GameObject.FindObjectOfType<InventoryDialogue>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnHover()
     {
-        
+        _inventorydialogue.SetTMPName(item_name);
+        _inventorydialogue.SetTMPDescription(item_description);
+    }
+
+    public void OnHoverOver()
+    {
+        _inventorydialogue.SetTMPName("");
+        _inventorydialogue.SetTMPDescription("");
     }
 }
