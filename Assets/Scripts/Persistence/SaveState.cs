@@ -29,10 +29,27 @@ public class SaveState {
     }
 
     /// <summary>
+        /// Clear all this save state's data and erases its directory.
+    /// </summary>
+    public void Clear() {
+        if (Directory.Exists(Path())) Directory.Delete(Path(), true);
+        currentScene = null;
+        playerData = null;
+        spawnPoint = null;
+    }
+
+    /// <summary>
     /// Fetch the save state if it exists and load the last scene, otherwise start from scratch.
     /// </summary>
     public void Load() {
+        // Add event listeners
         SceneManager.activeSceneChanged += OnSceneLoaded;
+        Application.wantsToQuit += () => {
+            SaveCurrent();
+            return true;
+        };
+
+        // Load basic info and player data
         playerData = File.Exists(Path() + "/player.dat") ? File.ReadAllText(Path() + "/player.dat") : null;
         if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
         else LoadScene(sceneIndex: startScene);
