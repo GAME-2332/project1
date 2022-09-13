@@ -1795,6 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BackButton: {fileID: 0}
+  DEV_TEST_ITEM: {fileID: 11400000, guid: 2cd87863e171a014daaaa627b91a64ca, type: 2}
 --- !u!225 &8151738646955213563
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -2797,6 +2798,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!1001 &1601891910424052403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2955,6 +2957,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!224 &6241856078703585847 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4658014202711550084, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3112,6 +3115,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!114 &6413258001283230535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3279,6 +3283,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!114 &8035010184018052219 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3453,6 +3458,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!1001 &3933423356854331534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3616,6 +3622,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!1001 &5944986162864082935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3774,6 +3781,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!224 &1307242729641142131 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4658014202711550084, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3937,6 +3945,7 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}
 --- !u!224 &3179024717972105659 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4658014202711550084, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -4105,3 +4114,4 @@ MonoBehaviour:
   item_name: 
   item_description: 
   item_so_info: {fileID: 0}
+  _et: {fileID: 0}

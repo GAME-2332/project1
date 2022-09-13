@@ -22,21 +22,22 @@ public class ItemInfo : MonoBehaviour
     EventTrigger _et;
 
     InventoryDialogue _inventorydialogue;
-
-    Image _sprite;
+    [SerializeField]
+    Image _sprite_space;
 
     public ItemInfo(SOItemInfo _so)
     {
-        item_so_info = _so;
-        item_name = _so.item_name;
-        item_description = _so.item_description;
-
+        SetSO(_so);
     }
     private void Start()
     {
         if(_et == null)
         {
             _et = GetComponent<EventTrigger>(); 
+        }
+        if (_sprite_space == null)
+        {
+            _sprite_space = GetComponent<Image>();
         }
         SetUpEvent();
         //Find the item dialogue so that we may populate it later.
@@ -65,12 +66,15 @@ public class ItemInfo : MonoBehaviour
     public void SetSO(SOItemInfo _so)
     {
         item_so_info = _so;
+        item_name = _so.item_name;
+        item_description = _so.item_description;
+        _sprite_space.sprite = _so.default_sprite;
+        
     }
 
 
     public void OnPointerEnterDelegate(PointerEventData data)
     {
-
         OnHover();
     }
 
@@ -82,11 +86,19 @@ public class ItemInfo : MonoBehaviour
     {
         _inventorydialogue.SetTMPName(item_name);
         _inventorydialogue.SetTMPDescription(item_description);
+        if (item_so_info != null && item_so_info.on_hover_sprite != null)
+        {
+            _sprite_space.sprite = item_so_info.on_hover_sprite;
+        }
     }
 
     public void OnHoverOver()
     {
         _inventorydialogue.SetTMPName("");
         _inventorydialogue.SetTMPDescription("");
+        if (item_so_info != null&&item_so_info.default_sprite != null)
+        {
+            _sprite_space.sprite = item_so_info.default_sprite;
+        }
     }
 }
