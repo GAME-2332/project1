@@ -84,12 +84,12 @@ public class Inventory : MonoBehaviour
 
         //Get the game manager, get the list of game objects. 
         //_Inventory = GameManager.instance.saveState.GetInventory()
-        LoadSpaces();
+        LoadSpaces();//this gets a reference to the spaces.
 
         int itemCount = 0;
         foreach (GameObject i in _Inventory)
         {
-           
+           //instead of instantiating, we will just populat the space by grabbing the sprite from the next itemSO.
             GameObject temp_go = Instantiate(i, _Spaces[itemCount].transform);
            // temp_go.transform.SetParent(_Spaces[itemCount].transform);
             itemCount++;
