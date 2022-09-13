@@ -26,7 +26,8 @@ namespace MainMenuUI_Components
         // Start is called before the first frame update
         void Start()
         {
-            if(_BackgroundButton == null)
+            OnClickCloseCanvas();
+            if (_BackgroundButton == null)
             {
                 _BackgroundButton = transform.GetChild(0).GetComponent<Button>(); 
             }

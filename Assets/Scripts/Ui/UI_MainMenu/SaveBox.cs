@@ -23,13 +23,31 @@ namespace MainMenuUI_Components
         [SerializeField]
         GameObject _deleteButton;
 
+
+       
         [SerializeField]
         GameObject _selectedImage;
         [SerializeField]
         public Texture2D cursorTextureClickable;
+
+
+        private SaveState saveState;
+
+
+
         // Start is called before the first frame update
         void Start()
         {
+            saveState = new SaveState(SLOT_ID);
+            if (saveState.Exists())
+            {
+
+            }
+            else
+            {
+                //load with "empty slot!"
+            }
+
             if (_mainButton == null)
             {
                 _mainButton = GetComponentInChildren<Button>();  
@@ -73,7 +91,10 @@ namespace MainMenuUI_Components
            
 
         }
-
+        /*
+        GameManager.instance.saveState = saveState;
+        saveState.Load();
+        */
         public void SetSlotID(int ID)
         {
             SLOT_ID = ID;
