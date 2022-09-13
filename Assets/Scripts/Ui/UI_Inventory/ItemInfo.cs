@@ -11,6 +11,9 @@ public class ItemInfo : MonoBehaviour
     [SerializeField]
     string item_description;
 
+    [SerializeField]
+    SOItemInfo item_so_info;
+
     InventoryDialogue _inventorydialogue;
     private void Start()
     {
