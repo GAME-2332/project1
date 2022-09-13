@@ -1638,7 +1638,7 @@ MonoBehaviour:
   m_fontSizeMax: 60
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1790,8 +1790,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21ae8930dc749aa45a58c0e4e08b3325, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DevTestItem: {fileID: 2566976145274786602, guid: 77c907695f1dd4747bc21d0fb359d5b9, type: 3}
-  DevTestItem2: {fileID: 4658014202711550085, guid: 96248329830ea8a478780b9e2d43ceb9, type: 3}
   BackButton: {fileID: 0}
 --- !u!225 &8151738646955213563
 CanvasGroup:

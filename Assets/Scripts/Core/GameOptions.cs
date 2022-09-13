@@ -5,8 +5,8 @@ using UnityEngine;
 /// </summary>
 public class GameOptions {
     // Misc options
-    public readonly IntField fieldOfView = new IntField("Options.ViewField", 60);
-    public readonly FloatField mouseSensitivity = new FloatField("Options.SensitivityX", .5f);
+    public readonly IntField fieldOfView = new IntField("Options.ViewField", 60); // 30 - 120
+    public readonly FloatField mouseSensitivity = new FloatField("Options.SensitivityX", .5f); // 0 - 1
     public readonly BooleanField viewBobbing = new BooleanField("Options.ViewBobbing", true);
     public readonly EnumField<ReticleStyle> reticleStyle = new EnumField<ReticleStyle>("Options.ReticleStyle", ReticleStyle.Dot);
     public readonly EnumField<WindowMode> windowMode = new EnumField<WindowMode>("Options.WindowMode", WindowMode.Windowed);
@@ -26,6 +26,7 @@ public class GameOptions {
     public void Save() {
         PlayerPrefs.Save();
         GameManager.instance.events.optionsReloadEvent.Invoke();
+        //crouch.Value = 
     }
 
     public enum ReticleStyle {
