@@ -16,7 +16,7 @@ public class InventorySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (GameManager.instance.gameOptions.inventory.GetKeyDown())
         {
             if(Inventory.GetExists() == true)
             {
@@ -25,7 +25,7 @@ public class InventorySpawner : MonoBehaviour
             }
             else
             {
-              
+                GameManager.instance.gameState = GameManager.GameState.Inventory;
                 GameObject go = Instantiate(InventoryPrefab, transform.parent);
                 go.transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);
             }

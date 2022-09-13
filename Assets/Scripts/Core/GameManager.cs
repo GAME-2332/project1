@@ -7,6 +7,7 @@ using UnityEngine;
 public class GameManager {
     public static readonly GameManager instance = new GameManager();
 
+    public GameState gameState = GameState.MainMenu;
     public SaveState saveState;
     public GameEvents events = new GameEvents();
     public GameOptions gameOptions = new GameOptions();
@@ -16,5 +17,13 @@ public class GameManager {
         if (saveState != null) saveState.SaveCurrent();
         saveState = new SaveState(slot);
         saveState.Load();
+    }
+
+    public enum GameState {
+        MainMenu,
+        Playing,
+        Paused,
+        Inventory,
+        Dialogue
     }
 }

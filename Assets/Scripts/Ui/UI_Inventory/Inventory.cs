@@ -48,7 +48,7 @@ public class Inventory : MonoBehaviour
     float increment = 0.2f;
     IEnumerator OpenCanvas()
     {
-      
+
         while (_InventoryCanvasGroup.alpha < 1)
         {
             _InventoryCanvasGroup.alpha += increment;
@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour
 
     IEnumerator CloseCanvas()
     {
-       
+
         while (_InventoryCanvasGroup.alpha > 0)
         {
             _InventoryCanvasGroup.alpha -= increment;
@@ -71,7 +71,7 @@ public class Inventory : MonoBehaviour
     }
     public void  OnClickExit()
     {
-        
+        GameManager.instance.gameState = GameManager.GameState.Playing;        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         StartCoroutine("CloseCanvas");
@@ -81,7 +81,7 @@ public class Inventory : MonoBehaviour
     {
         _Inventory = new List<GameObject>();
         
-
+        
         //Get the game manager, get the list of game objects. 
         //_Inventory = GameManager.instance.saveState.GetInventory()
         LoadSpaces();

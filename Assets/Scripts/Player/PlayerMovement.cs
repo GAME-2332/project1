@@ -74,6 +74,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        // Don't do anything if the game isn't playing
+        if (GameManager.instance.gameState != GameManager.GameState.Playing) return;
+
         // Calculate movement in FixedUpdate, per physics tick
         // First, check if we're on the ground
         playerData.isOnGround = Physics.Raycast(transform.position, Vector3.down, groundDistance * transform.localScale.y + .1f);
@@ -144,6 +147,9 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void Update() {
+        // Don't do anything if the game isn't playing
+        if (GameManager.instance.gameState != GameManager.GameState.Playing) return;
+
         // Slowly reset the camera's position after bobbing
         if (playerLook.localPosition != initialPlayerLook) {
             playerLook.localPosition = Vector3.Lerp(playerLook.localPosition, initialPlayerLook, Time.deltaTime * 3);
