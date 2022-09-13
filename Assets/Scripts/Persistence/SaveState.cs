@@ -1,5 +1,5 @@
-using Microsoft.VisualBasic;
 using System.IO;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,8 +14,10 @@ public class SaveState {
     public string lastSceneName;
     public string lastSaveDate;
     public string lastSaveTime;
-    // Populated after Load is called
+
+    // Globals and ItemInfo are populated after Load is called
     public Globals globals;
+    public List<ItemInfo> heldItems = new List<ItemInfo>();
 
     private SceneData currentScene;
     private string playerData;
@@ -58,6 +60,7 @@ public class SaveState {
 
         globals = new Globals();
         if (File.Exists(Path() + "/globals.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/globals.dat"), globals);
+        if (File.Exists(Path() + "/inventory.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/inventory.dat"), heldItems);
         GameManager.instance.gameState = GameManager.GameState.Playing;
     }
 
@@ -104,6 +107,7 @@ public class SaveState {
     internal void SaveCurrent() {
         Directory.CreateDirectory(Path());
         File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(globals));
+        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(heldItems));
         if (currentScene != null) currentScene.Write(Path());
         var player = GameObject.FindObjectOfType<PlayerMovement>();
         if (player != null) {
