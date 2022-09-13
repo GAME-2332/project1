@@ -6,9 +6,6 @@ using UnityEngine;
 /// </summary>
 [Serializable]
 public class Globals {
-    [NonSerialized]
-    public static Globals instance;
-
     [SerializeField]
     private SerializedMap<string, int> intMap = new SerializedMap<string, int>();
     [SerializeField]

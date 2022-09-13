@@ -8,9 +8,11 @@ public class GameManager {
     public static readonly GameManager instance = new GameManager();
 
     public GameState gameState = GameState.MainMenu;
-    public SaveState saveState;
     public GameEvents events = new GameEvents();
     public GameOptions gameOptions = new GameOptions();
+    // Both saveState and globals are assigned when a save is loaded
+    public SaveState saveState;
+    public Globals globals;
 
     public void LoadOrCreateSave(int slot) {
         // Failsafe in case we're loading a new save while already in a save.

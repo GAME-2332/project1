@@ -54,8 +54,8 @@ public class SaveState {
         if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
         else LoadScene(sceneIndex: startScene);
 
-        Globals.instance = new Globals();
-        if (File.Exists(Path() + "/globals.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/globals.dat"), Globals.instance);
+        GameManager.instance.globals = new Globals();
+        if (File.Exists(Path() + "/globals.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/globals.dat"), GameManager.instance.globals);
         GameManager.instance.gameState = GameManager.GameState.Playing;
     }
 
@@ -66,7 +66,7 @@ public class SaveState {
         // If another game scene is loaded (not the menu), write it to disk first
         playerData = null;
         Directory.CreateDirectory(Path());
-        File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(Globals.instance));
+        File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(GameManager.instance.globals));
         this.spawnPoint = spawnPoint;
         if (currentScene != null) {
             currentScene.Write(Path());
@@ -101,7 +101,7 @@ public class SaveState {
     /// </summary>
     internal void SaveCurrent() {
         Directory.CreateDirectory(Path());
-        File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(Globals.instance));
+        File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(GameManager.instance.globals));
         if (currentScene != null) currentScene.Write(Path());
         var player = GameObject.FindObjectOfType<PlayerMovement>();
         if (player != null) {
