@@ -92,20 +92,6 @@ public class Inventory : MonoBehaviour
         int itemCount = 0;
 
 
-        /*
-        foreach (ItemSO i in _Inventory)
-        {
-           //instead of instantiating, we will just populat the space by grabbing the sprite from the next itemSO.
-           //GameObject temp_go = Instantiate(i, _Spaces[itemCount].transform);
-
-
-        //_Spaces[i].GetComponentInChildren<ItemInfo>().SetSO(i);
-
-
-           // temp_go.transform.SetParent(_Spaces[itemCount].transform);
-            itemCount++;
-        }
-        */
 
         //New foreach loader 
         //Inventory is now a list of itemSO's.
