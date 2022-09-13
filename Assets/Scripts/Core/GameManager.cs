@@ -12,7 +12,6 @@ public class GameManager {
     public GameOptions gameOptions = new GameOptions();
     // Both saveState and globals are assigned when a save is loaded
     public SaveState saveState;
-    public Globals globals;
 
     public void LoadOrCreateSave(int slot) {
         // Failsafe in case we're loading a new save while already in a save.
