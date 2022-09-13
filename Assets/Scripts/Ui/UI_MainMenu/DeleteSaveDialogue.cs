@@ -29,13 +29,13 @@ namespace MainMenuUI_Components
         // Start is called before the first frame update
         void Start()
         {
-
-            if(_canvasgroup == null)
+           
+            if (_canvasgroup == null)
             {
+
                 _canvasgroup = GetComponent<CanvasGroup>();
             }
-
-            if(_canvasgroup.alpha != 0)
+            if (_canvasgroup.alpha != 0)
             {
                 CloseCanvas();
             }
@@ -71,11 +71,13 @@ namespace MainMenuUI_Components
         public void OpenCanvas()
         {
             _canvasgroup.blocksRaycasts = true;
+            _canvasgroup.interactable = true;
             _canvasgroup.alpha = 1;
         }
         public void CloseCanvas()
         {
-            _canvasgroup.alpha = 0;
+            _canvasgroup.alpha = 0; 
+            _canvasgroup.interactable = false;
             _canvasgroup.blocksRaycasts = false;
         }
     }
