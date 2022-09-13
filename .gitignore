@@ -71,6 +71,11 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 omnisharp.json
 
+<<<<<<< Updated upstream
 # Package extras
 /[Aa]ssets/TextMesh*Pro/Examples**
 /[Aa]ssets/TextMesh*Pro/Documentation**
+=======
+# OSX Bullshit
+**.DS_Store
+>>>>>>> Stashed changes
