@@ -42,10 +42,11 @@ namespace MainMenuUI_Components
 
             if(_background == null)
             {
-                _background = GetComponent<Button>();
+                _background = transform.GetChild(0).GetComponent<Button>();
             }
             _background.onClick.AddListener(CloseCanvas);
-            Transform buttons = transform.GetChild(1);
+
+            Transform buttons = transform.GetChild(0).GetChild(1);
             if(_delete == null)
             {
                 _delete= buttons.GetChild(0).GetComponent<Button>();
