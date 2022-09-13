@@ -109,6 +109,12 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
     "com.unity.render-pipelines.core": {
       "version": "12.1.7",
       "depth": 1,
@@ -135,8 +141,23 @@
       "depth": 1,
       "source": "registry",
       "dependencies": {},
+<<<<<<< Updated upstream
       "url": "https://packages.unity.com"
     },
+=======
+=======
+    "com.unity.progrids": {
+      "version": "3.0.3-preview.6",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.2"
+      },
+>>>>>>> Stashed changes
+      "url": "https://packages.unity.com"
+    },
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     "com.unity.services.core": {
       "version": "1.4.2",
       "depth": 1,
