@@ -53,6 +53,7 @@ public class SaveState {
         playerData = File.Exists(Path() + "/player.dat") ? File.ReadAllText(Path() + "/player.dat") : null;
         if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
         else LoadScene(sceneIndex: startScene);
+        GameManager.instance.gameState = GameManager.GameState.Playing;
     }
 
     /// <summary>
