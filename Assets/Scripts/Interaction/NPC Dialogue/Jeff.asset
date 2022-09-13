@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99389cb76fe852547a3c4f7049d8dfbe, type: 3}
   m_Name: Jeff
   m_EditorClassIdentifier: 
-  name: 
-  dialogue: []
-  playerDialogue: []
+  name: Jeff
+  dialogue:
+  - Is erick a good leader
+  - Did u know he is black?
+  - 'i eat ass
+
+'
+  playerDialogue:
+  - i was told he was the best
+  - dude i just sold my kidneys relax bro
