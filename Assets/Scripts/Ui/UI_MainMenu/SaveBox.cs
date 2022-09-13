@@ -11,6 +11,8 @@ namespace MainMenuUI_Components
 
     public class SaveBox : MonoBehaviour
     {
+        [SerializeField]
+        public int SLOT_ID;
         // Start is called before the first frame update
         [SerializeField]
         Image _background;
@@ -70,6 +72,11 @@ namespace MainMenuUI_Components
 
            
 
+        }
+
+        public void SetSlotID(int ID)
+        {
+            SLOT_ID = ID;
         }
 
         GameObject _selectedFrame;
