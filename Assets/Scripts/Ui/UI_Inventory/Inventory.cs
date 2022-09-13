@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
 
-    List<GameObject> _Inventory;
+    List<SOItemInfo> _Inventory;
     List<GameObject> _Spaces;
 
     Canvas _InventoryCanvas;
@@ -14,6 +14,9 @@ public class Inventory : MonoBehaviour
 
     [SerializeField]
     Button BackButton;
+
+    [SerializeField]
+    SOItemInfo DEV_TEST_ITEM;
 
     static bool AlreadyExists;
 
@@ -79,19 +82,22 @@ public class Inventory : MonoBehaviour
 
     public void LoadInventory()
     {
-        _Inventory = new List<GameObject>();
+        _Inventory = new List<SOItemInfo>();
         
         
         //Get the game manager, get the list of game objects. 
         //_Inventory = GameManager.instance.saveState.GetInventory()
-        LoadSpaces();
+        LoadSpaces();//this gets a reference to the spaces.
 
         int itemCount = 0;
-        foreach (GameObject i in _Inventory)
+
+
+
+        //New foreach loader 
+        //Inventory is now a list of itemSO's.
+        foreach (SOItemInfo i in _Inventory)
         {
-           
-            GameObject temp_go = Instantiate(i, _Spaces[itemCount].transform);
-           // temp_go.transform.SetParent(_Spaces[itemCount].transform);
+            _Spaces[itemCount].GetComponentInChildren<ItemInfo>().SetSO(i);
             itemCount++;
         }
     }
@@ -104,6 +110,14 @@ public class Inventory : MonoBehaviour
         {
             _Spaces.Add(_inventorySpace.transform.GetChild(i).gameObject);
         }
+        Debug.Log("Successfully found spaces.");
+
+
+
+        //_Spaces[0].GetComponentInChildren<ItemInfo>().SetSO(DEV_TEST_ITEM);
+
+
+
         return;
     }
 
