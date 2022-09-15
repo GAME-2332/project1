@@ -19,6 +19,7 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI npcName;
     public TextMeshProUGUI npcDialogueBox;
     public TextMeshProUGUI playerResponse;
+    
 
 
 
@@ -64,20 +65,20 @@ public class DialogueManager : MonoBehaviour
 
             if(currentResponseTracker == 0 && npc.playerDialogue.Length > 0){
                 playerResponse.text = npc.playerDialogue[0];
-                if(Input.GetKeyDown(KeyCode.Return)){
+                if(Input.GetKey(KeyCode.Mouse0)){
                     npcDialogueBox.text = npc.dialogue[1];
                 }
 
             }
             else if(currentResponseTracker == 1 && npc.playerDialogue.Length >= 1){
                 playerResponse.text = npc.playerDialogue[1];
-                if(Input.GetKeyDown(KeyCode.Space)){
+                if(Input.GetKey(KeyCode.Mouse0)){
                     npcDialogueBox.text = npc.dialogue[2];
                 }
             } //Have many responses as needed, but for each time you want to add, this else if block must be created
             else if(currentResponseTracker == 2 && npc.playerDialogue.Length >= 2){
                 playerResponse.text = npc.playerDialogue[2];
-                if(Input.GetKeyDown(KeyCode.Space)){
+                if(Input.GetKey(KeyCode.Mouse0)){
                     npcDialogueBox.text = npc.dialogue[3];
                 }
             }

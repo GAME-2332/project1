@@ -12,13 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99389cb76fe852547a3c4f7049d8dfbe, type: 3}
   m_Name: Gavin
   m_EditorClassIdentifier: 
-  name: Gavin
+  name: Mina
   dialogue:
-  - Hey, what's up
-  - I am doing alright
-  - I am from downtown
-  - See you later.
+  - "Gahhhh! Why are you knocking down that wall?! It keeps \nKayla out."
+  - 'ooh so youre trying to get out of the mall huh? I might know a guy who has the
+    information
+
+    you need. '
+  - 'You just need to do something for me. If you can get me a scary fairy shirt
+    from spicy
+
+    subject I can point you in the right direction'
+  - 'ight
+
+'
   playerDialogue:
-  - Not much, how about you?
-  - Where are you from?
-  - Goodbye..
+  - Sorry, I'm just trying to get out of this freaking mall
+  - ....
+  - not again... finnnne to spicy subject i go
