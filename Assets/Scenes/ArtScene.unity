@@ -322,6 +322,7 @@ MonoBehaviour:
   bobbingSpeedSprinting: 18
   bobbingIntensityCrouching: 0.006
   bobbingSpeedCrouching: 8
+  cameraFocus: {x: 0, y: 0, z: 0}
 --- !u!54 &661841342
 Rigidbody:
   m_ObjectHideFlags: 0
