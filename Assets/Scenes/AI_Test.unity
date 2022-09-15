@@ -581,18 +581,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLook: {fileID: 636508025}
+  moveSpeed: 5000
+  sprintModifier: 2.2
+  crouchModifier: 0.7
+  jumpSpeed: 0
+  fallSpeed: 0
+  mouseSensitivity: 400
+  crouchHeight: 0.5
+  crouchSmoothing: 0
+  focalDistance: 0
   bobbingIntensity: 0.01
   bobbingSpeed: 12
   bobbingIntensitySprinting: 0.01
   bobbingSpeedSprinting: 18
   bobbingIntensityCrouching: 0.006
   bobbingSpeedCrouching: 8
-  mouseSensitivity: 400
-  moveSpeed: 5000
-  sprintModifier: 2.2
-  crouchModifier: 0.7
-  crouchHeight: 0.5
-  jumpForce: 600
 --- !u!195 &294747827
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -1014,6 +1017,7 @@ GameObject:
   m_Component:
   - component: {fileID: 705507995}
   - component: {fileID: 705507994}
+  - component: {fileID: 705507996}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -1098,6 +1102,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &705507996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705507993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!1 &742469013
 GameObject:
   m_ObjectHideFlags: 0
@@ -2104,8 +2128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6cdf37e3243db6bb934e9229b6dc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLook: {fileID: 636508025}
-  camera: {fileID: 0}
 --- !u!1 &1742732235
 GameObject:
   m_ObjectHideFlags: 0
@@ -2158,7 +2180,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 8928641240808824998, guid: f41a34c260b8604459e6ebc768446e91, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2833,6 +2855,10 @@ PrefabInstance:
       propertyPath: PatrolTarget.Array.data[3]
       value: 
       objectReference: {fileID: 463692330}
+    - target: {fileID: 7287445452467579678, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -3033667219593020291, guid: 0ee743e61e051ab40a10c08078b2e64c, type: 3}
     - target: {fileID: 7287445452467579680, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -2899,7 +2925,7 @@ PrefabInstance:
       objectReference: {fileID: 593096563}
     - target: {fileID: 7287445452467579682, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_Speed
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7287445452467579682, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_Height
@@ -2915,7 +2941,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287445452467579682, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_AutoBraking
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7287445452467579682, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_Acceleration
@@ -2923,11 +2949,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7287445452467579682, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_AngularSpeed
-      value: 10
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7287445452467579682, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}
       propertyPath: m_StoppingDistance
-      value: 0.5
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ede984c0748e00042bc9f7ce910b0ebe, type: 3}

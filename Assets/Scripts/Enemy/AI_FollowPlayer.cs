@@ -18,10 +18,14 @@ public class AI_FollowPlayer : MonoBehaviour
 
     private float ViewAngle;
 
+    public float CheckViewAngle;
+
     // Start is called before the first frame update
     void Start()
     {
-        MallCop.autoBraking = false;
+        MallCop.autoBraking = true;
+
+        CheckViewAngle = 60.0f;
     }
 
     // Update is called once per frame
@@ -31,14 +35,14 @@ public class AI_FollowPlayer : MonoBehaviour
 
         Distance = Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position);
 
-        if (Distance < minDistance && ViewAngle < 45.0f)
+        if (Distance < minDistance && ViewAngle < CheckViewAngle)
         {
             MallCop.SetDestination(Player.position);
             var MallCop_Renderer = this.GetComponent<Renderer>();
 
             MallCop_Renderer.material.SetColor("_Color", Color.red);
 
-            print("Angle" + ViewAngle);
+            Debug.Log("Angle" + ViewAngle);
             Debug.Log("I SEE YOU");
         }
 
@@ -50,7 +54,7 @@ public class AI_FollowPlayer : MonoBehaviour
 
             //Patrol.Patrol();
 
-            print("Angle" + ViewAngle);
+            //Debug.Log("Angle" + ViewAngle);
             //Debug.Log("I DON'T");
         }
     }

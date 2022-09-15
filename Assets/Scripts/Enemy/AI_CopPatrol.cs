@@ -21,7 +21,7 @@ public class AI_CopPatrol : MonoBehaviour
 
         CurrentPosition = 0;
 
-        AIAgent.autoBraking = false;
+        AIAgent.autoBraking = true;
 
         GotToNextPoint();
     }
