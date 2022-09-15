@@ -8,6 +8,7 @@ namespace MainMenuUI_Components
 {
    public class SaveSelector : MonoBehaviour
     {
+        [SerializeField]
         List<SaveBox> saves;
         private void OnEnable()
         {
