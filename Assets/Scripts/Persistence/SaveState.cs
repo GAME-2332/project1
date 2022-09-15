@@ -107,7 +107,6 @@ public class SaveState {
     internal void SaveCurrent() {
         Directory.CreateDirectory(Path());
         File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(globals));
-        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(heldItems));
         if (currentScene != null) currentScene.Write(Path());
         var player = GameObject.FindObjectOfType<PlayerMovement>();
         if (player != null) {
@@ -119,6 +118,7 @@ public class SaveState {
     private void WriteSceneInfo() {
         Directory.CreateDirectory(Path());
         File.WriteAllText(Path() + "/scene.dat", SceneManager.GetActiveScene().buildIndex.ToString());
+        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(heldItems));
         lastSceneName = Regex.Replace(SceneManager.GetActiveScene().name, @"(\B[A-Z]+?(?=[A-Z][^A-Z])|\B[A-Z]+?(?=[^A-Z]))", " $1");
         lastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd");
         lastSaveTime = System.DateTime.Now.ToString("HH:mm:ss");

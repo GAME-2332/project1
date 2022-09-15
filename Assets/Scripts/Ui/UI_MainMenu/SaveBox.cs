@@ -116,7 +116,7 @@ namespace MainMenuUI_Components
 
             saveState.Load(); 
             Debug.Log("starting new game");
-            SceneManager.LoadScene("IntroScene");
+            // SceneManager.LoadScene("IntroScene");
         }
         public void OnClickLoadSavedGame()
         {
