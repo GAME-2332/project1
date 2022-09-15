@@ -172,8 +172,8 @@ public class PlayerMovement : MonoBehaviour {
         if (gameOptions.right.GetKey()) sideways = 1;
         else sideways = gameOptions.left.GetKey() ? -1 : 0;
         // Adjust for pitch
-        Vector3 forwardVec = new Vector3(playerLook.forward.x, playerLook.position.y, playerLook.forward.z);
-        Vector3 rightVec = new Vector3(playerLook.right.x, playerLook.position.y, playerLook.right.z);
+        Vector3 forwardVec = new Vector3(playerLook.forward.x, 0, playerLook.forward.z).normalized;
+        Vector3 rightVec = new Vector3(playerLook.right.x, 0, playerLook.right.z).normalized;
         return (forwardVec * forward + rightVec * sideways).normalized;
     }
 
