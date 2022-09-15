@@ -8,8 +8,6 @@ using UnityEngine;
 [Serializable]
 public struct PlayerData {
     public Vector3 velocity;
-    public float xRot;
-    public float yRot;
     public PlayerMovement.PlayerState playerState;
     public bool isOnGround;
 }

@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour {
 
     private GameOptions gameOptions;
     private CharacterController controller;
-    private Vector3 cameraFocus;
+    public Vector3 cameraFocus;
     private Vector3 initialScale;
     private Vector3 initialPlayerLook;
     private float groundDistance;
@@ -120,16 +120,13 @@ public class PlayerMovement : MonoBehaviour {
         // Calculate rotation from mouse movement
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
-        playerData.yRot += mouseX;
-        playerData.xRot = Mathf.Clamp(playerData.xRot - mouseY, -88, 88);
 
-        // Rotate the player along only the horizontal axis
-        transform.rotation = Quaternion.Euler(0, playerData.yRot, 0);
-
-        // Rotate the player's look vector along both axes (the camera inherits this transformation)
-        playerLook.rotation = Quaternion.Euler(playerData.xRot, playerData.yRot, 0);
+        // Rotate playerLook on both axes; the parent player object (this one) doesn't rotate
+        playerLook.rotation = Quaternion.Euler(playerLook.eulerAngles.x, playerLook.eulerAngles.y + mouseX, playerLook.eulerAngles.z);
+        playerLook.rotation *= Quaternion.AngleAxis(-mouseY, Vector3.right);
         
         // Apply view bobbing if the player is moving horizontally
+        Vector3 origin = playerLook.position;
         if (playerData.isOnGround && horizontalVelocity.magnitude > 0) {
             Vector3 viewBobbing = playerData.playerState switch {
                 PlayerState.Crouching => ViewBobbing(bobbingSpeedCrouching, bobbingIntensityCrouching),
@@ -140,13 +137,8 @@ public class PlayerMovement : MonoBehaviour {
             playerLook.localPosition += viewBobbing;
         }
 
-        // Calculate focal point
-        Vector3 origin = playerLook.position - playerLook.localPosition + initialPlayerLook;
-        // RaycastHit hit;
-        // if (Physics.Raycast(origin, playerLook.forward, out hit, focalDistance)) cameraFocus = hit.point;
-        /*else */cameraFocus = origin + playerLook.forward * focalDistance;
-
-        // Compensate for bobbing offset
+        // Calculate focal point and rotate to compensate for view bobbing
+        cameraFocus = origin + playerLook.forward * focalDistance;
         playerLook.LookAt(cameraFocus, Vector3.up);
     }
 
@@ -179,7 +171,10 @@ public class PlayerMovement : MonoBehaviour {
         // Side-to-side movement
         if (gameOptions.right.GetKey()) sideways = 1;
         else sideways = gameOptions.left.GetKey() ? -1 : 0;
-        return (transform.forward * forward + transform.right * sideways).normalized;
+        // Adjust for pitch
+        Vector3 forwardVec = new Vector3(playerLook.forward.x, playerLook.position.y, playerLook.forward.z);
+        Vector3 rightVec = new Vector3(playerLook.right.x, playerLook.position.y, playerLook.right.z);
+        return (forwardVec * forward + rightVec * sideways).normalized;
     }
 
     private float MoveSpeed() {
