@@ -47,29 +47,28 @@ public class Inventory : MonoBehaviour
         }
         BackButton.onClick.AddListener(OnClickExit);
     }
-    float increment = 0.2f;
+    float increment = 0.05f;
     IEnumerator OpenCanvas()
     {
-
         while (_InventoryCanvasGroup.alpha < 1)
         {
             _InventoryCanvasGroup.alpha += increment;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         }
         yield return new WaitForEndOfFrame();
     }
 
     IEnumerator CloseCanvas()
     {
+        AlreadyExists = false;
+        Destroy(this.gameObject);
+        yield return new WaitForEndOfFrame();
 
         while (_InventoryCanvasGroup.alpha > 0)
         {
             _InventoryCanvasGroup.alpha -= increment;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.01f);
         }
-        AlreadyExists = false;
-        Destroy(this.gameObject);
-        yield return new WaitForEndOfFrame();
     }
     public void  OnClickExit()
     {
