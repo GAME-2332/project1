@@ -177,7 +177,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 38da6ae754adc8f42bb9df36a2d348e5, type: 2}
+  - {fileID: 2100000, guid: 48f378972d340db4ea5d8afda51d25d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -307,18 +307,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerLook: {fileID: 377100123}
+  moveSpeed: 1500
+  sprintModifier: 2.2
+  crouchModifier: 0.7
+  jumpSpeed: 0
+  fallSpeed: 0
+  mouseSensitivity: 400
+  crouchHeight: 0.5
+  crouchSmoothing: 0
+  focalDistance: 0
   bobbingIntensity: 0.01
   bobbingSpeed: 12
   bobbingIntensitySprinting: 0.01
   bobbingSpeedSprinting: 18
   bobbingIntensityCrouching: 0.006
   bobbingSpeedCrouching: 8
-  mouseSensitivity: 400
-  moveSpeed: 1500
-  sprintModifier: 2.2
-  crouchModifier: 0.7
-  crouchHeight: 0.5
-  jumpForce: 600
 --- !u!54 &661841342
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -446,8 +449,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd6cdf37e3243db6bb934e9229b6dc7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLook: {fileID: 0}
-  camera: {fileID: 0}
 --- !u!81 &839909031
 AudioListener:
   m_ObjectHideFlags: 0
@@ -608,6 +609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2059284227}
   - component: {fileID: 2059284226}
+  - component: {fileID: 2059284228}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -692,3 +694,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &2059284228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059284225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
