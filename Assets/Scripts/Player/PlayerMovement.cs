@@ -120,10 +120,13 @@ public class PlayerMovement : MonoBehaviour {
         // Calculate rotation from mouse movement
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
-
+        // Clamp rotation delta to prevent weirdness
+        float newRot = playerLook.localEulerAngles.x;
+        newRot = (newRot > 180) ? newRot - 360 : newRot;
+        newRot = Mathf.Clamp(newRot - mouseY, -88f, 88f) % 360;
         // Rotate playerLook on both axes; the parent player object (this one) doesn't rotate
         playerLook.rotation = Quaternion.Euler(playerLook.eulerAngles.x, playerLook.eulerAngles.y + mouseX, playerLook.eulerAngles.z);
-        playerLook.rotation *= Quaternion.AngleAxis(-mouseY, Vector3.right);
+        playerLook.localEulerAngles = new Vector3(newRot, playerLook.localEulerAngles.y, 0);
         
         // Apply view bobbing if the player is moving horizontally
         Vector3 origin = playerLook.position;
