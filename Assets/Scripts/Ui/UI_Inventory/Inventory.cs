@@ -40,7 +40,6 @@ public class Inventory : MonoBehaviour
         _InventoryCanvasGroup.alpha = 0;
         StartCoroutine("OpenCanvas");
 
-        UnlockCursor();
         LoadInventory();
         if (BackButton == null)
         {
@@ -74,9 +73,7 @@ public class Inventory : MonoBehaviour
     }
     public void  OnClickExit()
     {
-        GameManager.instance.gameState = GameManager.GameState.Playing;        
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        GameManager.instance.gameState = GameManager.GameState.Playing;
         StartCoroutine("CloseCanvas");
     }
 
@@ -119,22 +116,5 @@ public class Inventory : MonoBehaviour
 
 
         return;
-    }
-
-
-    private void Update()
-    {
-        UnlockCursor();
-    }
-    public void UnlockCursor()
-    {
-        if (Cursor.lockState == CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.None;
-        }
-        if (Cursor.visible == false)
-        {
-            Cursor.visible = true;
-        }
     }
 }
