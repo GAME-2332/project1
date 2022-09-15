@@ -57,10 +57,11 @@ public class AI_CopPatrol : MonoBehaviour
     public void Patrol()
     {
         if (!AIAgent.pathPending && AIAgent.remainingDistance < 1.0f)
-        { 
+        {
             GotToNextPoint();
+            return;
         }
 
-        Debug.Log("Patrol works");
+        //Debug.Log("Patrol works");
     }
 }
