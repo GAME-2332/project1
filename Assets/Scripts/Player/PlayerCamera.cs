@@ -7,18 +7,11 @@ using UnityEngine;
 // in LateUpdate, after mouse movement is computed.
 public class PlayerCamera : MonoBehaviour
 {
-    public Transform playerLook;
-    new public Camera camera;
+    private Camera camera;
 
     void Start() {
         camera = GetComponent<Camera>();
         GameManager.instance.events.optionsReloadEvent.AddListener(UpdateFov);
-    }
-
-    void LateUpdate() {
-        // Move to the Player Look object's position and rotation
-        transform.position = playerLook.position;
-        transform.rotation = playerLook.rotation;
     }
 
     private void UpdateFov() {
