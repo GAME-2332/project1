@@ -17,7 +17,7 @@ public class SaveState {
 
     // Globals and ItemInfo are populated after Load is called
     public Globals globals;
-    public List<ItemInfo> heldItems = new List<ItemInfo>();
+    public List<SOItemInfo> heldItems = new List<SOItemInfo>();
 
     private SceneData currentScene;
     private string playerData;
