@@ -7,10 +7,17 @@ using UnityEngine;
 public class GameManager {
     public static readonly GameManager instance = new GameManager();
 
-    public GameState gameState = GameState.MainMenu;
-    public SaveState saveState;
+    // TODO: Once we load scenes from the main menu, initialize with the MaiNMenu state
+    private GameState _gameState = GameState.Playing;
+    public GameState gameState { get => _gameState; set {
+        _gameState = value;
+        Cursor.lockState = _gameState == GameState.Playing ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = _gameState != GameState.Playing;
+    }}
     public GameEvents events = new GameEvents();
     public GameOptions gameOptions = new GameOptions();
+    // Both saveState and globals are assigned when a save is loaded
+    public SaveState saveState;
 
     public void LoadOrCreateSave(int slot) {
         // Failsafe in case we're loading a new save while already in a save.

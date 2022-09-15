@@ -69,8 +69,12 @@ public class PlayerMovement : MonoBehaviour {
         initialScale = transform.localScale;
         initialPlayerLook = playerLook.localPosition;
         groundDistance = GetComponent<Collider>().bounds.extents.y;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        // In case the scene wasn't loaded properly through SaveState, lock the cursor here
+        // (temporary until we have a main menu hooked up)
+        if (GameManager.instance.gameState == GameManager.GameState.Playing) {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     void FixedUpdate() {
