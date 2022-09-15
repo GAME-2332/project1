@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
 using UnityEngine.EventSystems;
 using System.Data;
+using UnityEngine.SceneManagement;
 
 namespace MainMenuUI_Components
 {
@@ -40,6 +41,7 @@ namespace MainMenuUI_Components
         // Start is called before the first frame update
         void Start()
         {
+
             saveState = new SaveState(SLOT_ID);
             
             if (_locationText == null)
@@ -107,12 +109,14 @@ namespace MainMenuUI_Components
 
 
         }
-
+        
         public void OnClickLoadNewGame()
         {
             GameManager.instance.saveState = saveState;
+
             saveState.Load(); 
             Debug.Log("starting new game");
+            SceneManager.LoadScene("IntroScene");
         }
         public void OnClickLoadSavedGame()
         {
