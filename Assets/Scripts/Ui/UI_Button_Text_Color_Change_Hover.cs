@@ -14,7 +14,8 @@ public class UI_Button_Text_Color_Change_Hover : MonoBehaviour
     [SerializeField]
     TMPro.TMP_Text _text;
 
-    static Color hoverColor = new Color(207f / 256f,206f / 256f, 94f / 256f);
+    //static Color hoverColor = new Color(207f / 256f,206f / 256f, 94f / 256f);
+    static Color hoverColor = Color.red;
     static Color normalColor = new Color(25f / 256f, 131f / 256f, 28f / 256f);
 
     [SerializeField]

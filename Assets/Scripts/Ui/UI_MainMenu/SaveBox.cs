@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using static UnityEngine.EventSystems.EventTrigger;
 using UnityEngine.EventSystems;
 using System.Data;
+using UnityEngine.SceneManagement;
 
 namespace MainMenuUI_Components
 {
@@ -23,7 +24,8 @@ namespace MainMenuUI_Components
         [SerializeField]
         GameObject _deleteButton;
 
-
+        LocationText _locationText;
+        TimeText _timeText;
        
         [SerializeField]
         GameObject _selectedImage;
@@ -33,21 +35,23 @@ namespace MainMenuUI_Components
 
         private SaveState saveState;
 
+        [SerializeField]
 
 
         // Start is called before the first frame update
         void Start()
         {
+
             saveState = new SaveState(SLOT_ID);
-            if (saveState.Exists())
+            
+            if (_locationText == null)
             {
-
+                _locationText = GetComponentInChildren<LocationText>();
             }
-            else
+            if(_timeText == null)
             {
-                //load with "empty slot!"
+                _timeText = GetComponentInChildren<TimeText>();
             }
-
             if (_mainButton == null)
             {
                 _mainButton = GetComponentInChildren<Button>();  
@@ -88,8 +92,37 @@ namespace MainMenuUI_Components
 
             entry2.callback.AddListener((data) => { OnPointerExitDelegate((PointerEventData)data); });
 
-           
+            if (saveState.Exists())
+            {
+                _mainButton.onClick.AddListener(OnClickLoadSavedGame);
+                _locationText.SetText(saveState.lastSceneName);
+                _timeText.SetText(saveState.lastSaveDate + " " + saveState.lastSaveTime);
+                //saveState.Load();
+            }
+            else
+            {
+                _mainButton.onClick.AddListener(OnClickLoadNewGame);
+                _locationText.SetText("EMPTY SLOT");
+                _timeText.SetText("----");
+                //load with "empty slot!"
+            }
 
+
+        }
+        
+        public void OnClickLoadNewGame()
+        {
+            GameManager.instance.saveState = saveState;
+
+            saveState.Load(); 
+            Debug.Log("starting new game");
+            SceneManager.LoadScene("IntroScene");
+        }
+        public void OnClickLoadSavedGame()
+        {
+            GameManager.instance.saveState = saveState;
+            saveState.Load();
+            Debug.Log("loading game");
         }
         /*
         GameManager.instance.saveState = saveState;
@@ -98,6 +131,7 @@ namespace MainMenuUI_Components
         public void SetSlotID(int ID)
         {
             SLOT_ID = ID;
+
         }
 
         GameObject _selectedFrame;
