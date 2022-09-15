@@ -1,5 +1,5 @@
-using Microsoft.VisualBasic;
 using System.IO;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,6 +15,10 @@ public class SaveState {
     public string lastSaveDate;
     public string lastSaveTime;
 
+    // Globals and ItemInfo are populated after Load is called
+    public Globals globals;
+    public List<ItemInfo> heldItems = new List<ItemInfo>();
+
     private SceneData currentScene;
     private string playerData;
     private string spawnPoint;
@@ -29,7 +33,7 @@ public class SaveState {
     }
 
     /// <summary>
-        /// Clear all this save state's data and erases its directory.
+    /// Clear all this save state's data and erases its directory.
     /// </summary>
     public void Clear() {
         if (Directory.Exists(Path())) Directory.Delete(Path(), true);
@@ -49,10 +53,14 @@ public class SaveState {
             return true;
         };
 
-        // Load basic info and player data
+        // Load basic info, globals and player data
         playerData = File.Exists(Path() + "/player.dat") ? File.ReadAllText(Path() + "/player.dat") : null;
         if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
         else LoadScene(sceneIndex: startScene);
+
+        globals = new Globals();
+        if (File.Exists(Path() + "/globals.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/globals.dat"), globals);
+        if (File.Exists(Path() + "/inventory.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/inventory.dat"), heldItems);
         GameManager.instance.gameState = GameManager.GameState.Playing;
     }
 
@@ -62,12 +70,13 @@ public class SaveState {
     internal void LoadScene(string scenePath = null, int sceneIndex = -1, string spawnPoint = null) {
         // If another game scene is loaded (not the menu), write it to disk first
         playerData = null;
+        Directory.CreateDirectory(Path());
+        File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(globals));
         this.spawnPoint = spawnPoint;
         if (currentScene != null) {
             currentScene.Write(Path());
             var player = GameObject.FindObjectOfType<PlayerMovement>();
             if (player != null) {
-                Directory.CreateDirectory(Path());
                 playerData = JsonUtility.ToJson(player.playerData);
                 File.WriteAllText(Path() + "/player.dat", playerData);
                 WriteSceneInfo();
@@ -97,6 +106,8 @@ public class SaveState {
     /// </summary>
     internal void SaveCurrent() {
         Directory.CreateDirectory(Path());
+        File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(globals));
+        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(heldItems));
         if (currentScene != null) currentScene.Write(Path());
         var player = GameObject.FindObjectOfType<PlayerMovement>();
         if (player != null) {
