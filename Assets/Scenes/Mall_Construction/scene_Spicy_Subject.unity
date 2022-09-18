@@ -196,6 +196,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level_Spicy_Subject
       objectReference: {fileID: 0}
+    - target: {fileID: 6799114105949489295, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -8.07
+      objectReference: {fileID: 0}
     - target: {fileID: 8211285657910189417, guid: d4a534f5974523640a9031b183f68fec, type: 3}
       propertyPath: m_RootOrder
       value: 2
