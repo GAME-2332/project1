@@ -8,7 +8,7 @@ public class AI_FollowPlayer : MonoBehaviour
     public AI_CopPatrol Patrol;
 
     public UnityEngine.AI.NavMeshAgent MallCop;
-    public Transform Player;
+    public Transform TargetPlayer;
 
     public Transform ClosestPatrolPoint;
 
@@ -20,12 +20,25 @@ public class AI_FollowPlayer : MonoBehaviour
 
     public float CheckViewAngle;
 
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(transform.position, minDistance);
+
+        Gizmos.color = Color.blue;
+        Vector3 FOV1 = Quaternion.AngleAxis(CheckViewAngle, transform.up) * transform.forward * minDistance;
+        Vector3 FOV2 = Quaternion.AngleAxis(-CheckViewAngle, transform.up) * transform.forward * minDistance;
+
+        Gizmos.DrawRay(transform.position, FOV1);
+        Gizmos.DrawRay(transform.position, FOV2);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         MallCop.autoBraking = true;
 
-        CheckViewAngle = 60.0f;
+        CheckViewAngle = 75.0f;
     }
 
     // Update is called once per frame
@@ -33,14 +46,21 @@ public class AI_FollowPlayer : MonoBehaviour
     {
         FieldOfView();
 
-        Distance = Vector3.Distance(GameObject.FindWithTag("Player").transform.position, transform.position);
+        Distance = Vector3.Distance(TargetPlayer.transform.position, transform.position); //GameObject.FindWithTag("Player")
 
         if (Distance < minDistance && ViewAngle < CheckViewAngle)
         {
-            MallCop.SetDestination(Player.position);
-            var MallCop_Renderer = this.GetComponent<Renderer>();
+            MallCop.SetDestination(TargetPlayer.position);
 
-            MallCop_Renderer.material.SetColor("_Color", Color.red);
+
+            if (Distance <= 1.5f)
+            { 
+                MallCop.velocity = Vector3.zero;
+            }
+            //yield WaitForSeconds(5);
+
+            /*var MallCop_Renderer = this.GetComponent<Renderer>();
+            MallCop_Renderer.material.SetColor("_Color", Color.red);*/
 
             Debug.Log("Angle" + ViewAngle);
             Debug.Log("I SEE YOU");
@@ -52,7 +72,7 @@ public class AI_FollowPlayer : MonoBehaviour
 
             MallCop_Renderer.material.SetColor("_Color", Color.green);
 
-            //Patrol.Patrol();
+            Patrol.Patrol();
 
             //Debug.Log("Angle" + ViewAngle);
             //Debug.Log("I DON'T");
@@ -61,12 +81,15 @@ public class AI_FollowPlayer : MonoBehaviour
 
     void FieldOfView()
     {
-        Vector3 PlayerDir = Player.position - transform.position;
+        Vector3 PlayerDir = TargetPlayer.position - transform.position;
 
         ViewAngle = Vector3.Angle(transform.forward, PlayerDir); // 0-180 degree
 
-        Debug.DrawRay(transform.position, transform.forward * 25, Color.red);
-        Debug.DrawLine(transform.position, Player.position, Color.red);
+        Debug.DrawRay(transform.position, transform.forward * minDistance, Color.red);
+        Debug.DrawLine(transform.position, TargetPlayer.position, Color.red);
+
+
+        
 
         /*if (ViewAngle < 90.0f)
         {
