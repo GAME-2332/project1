@@ -1,6 +1,6 @@
 ﻿using System;
 
 [Serializable]
-public class StringPredicate : GlobalsPredicate<string> {
+public class CheckStringPredicate : CheckGlobalsPredicate<string> {
     public override string GetValue(string name) => GameManager.instance.saveState.globals.GetString(name);
 }
