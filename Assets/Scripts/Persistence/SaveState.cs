@@ -119,7 +119,7 @@ public class SaveState {
     private void WriteSceneInfo() {
         Directory.CreateDirectory(Path());
         File.WriteAllText(Path() + "/scene.dat", SceneManager.GetActiveScene().buildIndex.ToString());
-        lastSceneName = Regex.Replace(SceneManager.GetActiveScene().name, @"(\B[A-Z]+?(?=[A-Z][^A-Z])|\B[A-Z]+?(?=[^A-Z]))", " $1");
+        lastSceneName = Util.Prettify(SceneManager.GetActiveScene().name);
         lastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd");
         lastSaveTime = System.DateTime.Now.ToString("HH:mm:ss");
         File.WriteAllLines(Path() + "/info.dat", new string[] { lastSceneName, lastSaveDate, lastSaveTime });

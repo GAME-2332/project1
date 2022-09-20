@@ -26,6 +26,13 @@ public class SerializedMap<K, V> : ISerializationCallbackReceiver {
         return valueMap.ContainsKey(key) ? valueMap[key] : fallback;
     }
 
+    public V GetOrCreate(K key, Func<V> create) {
+        if (!valueMap.ContainsKey(key)) {
+            valueMap[key] = create();
+        }
+        return valueMap[key];
+    }
+
     public void OnBeforeSerialize() {
         keys = new K[valueMap.Keys.Count];
         values = new V[valueMap.Values.Count];
