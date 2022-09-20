@@ -17,7 +17,7 @@ public class SaveState {
 
     // Globals and ItemInfo are populated after Load is called
     public Globals globals;
-    public List<SOItemInfo> heldItems = new List<SOItemInfo>();
+    public PlayerInventory inventory;
 
     private SceneData currentScene;
     private string playerData;
@@ -60,7 +60,7 @@ public class SaveState {
 
         globals = new Globals();
         if (File.Exists(Path() + "/globals.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/globals.dat"), globals);
-        if (File.Exists(Path() + "/inventory.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/inventory.dat"), heldItems);
+        if (File.Exists(Path() + "/inventory.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/inventory.dat"), inventory);
         GameManager.instance.gameState = GameManager.GameState.Playing;
     }
 
@@ -107,7 +107,7 @@ public class SaveState {
     internal void SaveCurrent() {
         Directory.CreateDirectory(Path());
         File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(globals));
-        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(heldItems));
+        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(inventory));
         if (currentScene != null) currentScene.Write(Path());
         var player = GameObject.FindObjectOfType<PlayerMovement>();
         if (player != null) {
