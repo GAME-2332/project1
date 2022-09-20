@@ -120,10 +120,13 @@ public class PlayerMovement : MonoBehaviour {
         // Calculate rotation from mouse movement
         float mouseX = Input.GetAxis("Mouse X") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
         float mouseY = Input.GetAxis("Mouse Y") * Time.deltaTime * mouseSensitivity * gameOptions.mouseSensitivity.Value;
-
+        // Clamp rotation delta to prevent weirdness
+        float newRot = playerLook.localEulerAngles.x;
+        newRot = (newRot > 180) ? newRot - 360 : newRot;
+        newRot = Mathf.Clamp(newRot - mouseY, -88f, 88f) % 360;
         // Rotate playerLook on both axes; the parent player object (this one) doesn't rotate
         playerLook.rotation = Quaternion.Euler(playerLook.eulerAngles.x, playerLook.eulerAngles.y + mouseX, playerLook.eulerAngles.z);
-        playerLook.rotation *= Quaternion.AngleAxis(-mouseY, Vector3.right);
+        playerLook.localEulerAngles = new Vector3(newRot, playerLook.localEulerAngles.y, 0);
         
         // Apply view bobbing if the player is moving horizontally
         Vector3 origin = playerLook.position;
@@ -172,8 +175,8 @@ public class PlayerMovement : MonoBehaviour {
         if (gameOptions.right.GetKey()) sideways = 1;
         else sideways = gameOptions.left.GetKey() ? -1 : 0;
         // Adjust for pitch
-        Vector3 forwardVec = new Vector3(playerLook.forward.x, 0, playerLook.forward.z);
-        Vector3 rightVec = new Vector3(playerLook.right.x, 0, playerLook.right.z);
+        Vector3 forwardVec = new Vector3(playerLook.forward.x, 0, playerLook.forward.z).normalized;
+        Vector3 rightVec = new Vector3(playerLook.right.x, 0, playerLook.right.z).normalized;
         return (forwardVec * forward + rightVec * sideways).normalized;
     }
 
