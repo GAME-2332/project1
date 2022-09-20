@@ -1,7 +1,7 @@
 ﻿using System;
 
 [Serializable]
-public abstract class GlobalsPredicate<T> : IStatePredicate {
+public abstract class CheckGlobalsPredicate<T> : IStatePredicate {
     public string variableName;
     public T checkValue;
 
