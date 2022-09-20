@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1.3251183, y: 1.3251183, z: 1.5546871}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6576737363636174021}
   m_RootOrder: 0
@@ -51,6 +52,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -93,7 +95,7 @@ GameObject:
   m_Layer: 0
   m_Name: AsserGhost
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -107,6 +109,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0.89209974, z: -0, w: 0.45183852}
   m_LocalPosition: {x: -10.594425, y: 5.8406925, z: -11.524374}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3099817518585368008}
   - {fileID: 2010959969721716409}
@@ -141,6 +144,7 @@ Transform:
   m_LocalRotation: {x: -0.6270505, y: -0.089493856, z: -0.15145159, w: 0.758855}
   m_LocalPosition: {x: -0.9618868, y: 0.7902731, z: -0.49329433}
   m_LocalScale: {x: 0.2918006, y: 0.27977207, z: 0.46963453}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6576737363636174021}
   m_RootOrder: 1
@@ -164,6 +168,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
