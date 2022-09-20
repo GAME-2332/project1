@@ -25,6 +25,9 @@
 .vs/
 .vscode/
 
+# JetBrains Rider directory
+.idea/
+
 # Gradle cache directory
 .gradle/
 
@@ -70,3 +73,7 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 omnisharp.json
+
+# Package extras
+/[Aa]ssets/TextMesh*Pro/Examples**
+/[Aa]ssets/TextMesh*Pro/Documentation**
