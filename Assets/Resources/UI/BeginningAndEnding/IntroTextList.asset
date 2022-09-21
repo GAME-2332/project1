@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ced0e10d5f3317743957b83bec979abe, type: 3}
+  m_Name: IntroTextList
+  m_EditorClassIdentifier: 
+  lines:
+  - One day, you decided to scope out an abandoned mall for your Me-Tube page.
+  - 'As an urban explorer, it is in your job description to explore the places that
+    was once touched by society and are now left to rot. '
+  - 'With a very hardy push... you manage to make your way through the old mall entrance. '
+  - 'But in the same effort, you also failed to see the visible hole in the floor... '
+  - ... plunging you down below.
