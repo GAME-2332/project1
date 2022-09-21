@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
+[Serializable]
 [CreateAssetMenu(fileName = "SOItemInfo", menuName = "Inventory/New Item SO")]
 public class SOItemInfo : ScriptableObject
 {
