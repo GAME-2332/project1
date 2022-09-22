@@ -20,6 +20,10 @@ public class AI_FollowPlayer : MonoBehaviour
 
     public float CheckViewAngle;
 
+    public LayerMask ObstacleMask;
+
+    public bool isHit;
+
     void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -39,25 +43,46 @@ public class AI_FollowPlayer : MonoBehaviour
         MallCop.autoBraking = true;
 
         CheckViewAngle = 75.0f;
+
+        isHit = false;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         FieldOfView();
 
         Distance = Vector3.Distance(TargetPlayer.transform.position, transform.position); //GameObject.FindWithTag("Player")
 
-        if (Distance < minDistance && ViewAngle < CheckViewAngle)
+        Vector3 PlayerDirection = TargetPlayer.position - transform.position;
+
+        RaycastHit hit;
+
+        if (!Physics.Raycast(transform.position, PlayerDirection, Distance, ObstacleMask))
+        {
+            Debug.DrawRay(transform.position, TargetPlayer.position, Color.green);
+            //Debug.Log("Hit it");
+            isHit = true;
+        }
+
+        else
+        {
+            isHit = false;
+            Debug.DrawRay(transform.position, TargetPlayer.position, Color.white);
+            //Debug.Log("No  Hit");
+        }
+
+        if (Distance < minDistance && ViewAngle < CheckViewAngle && isHit == true)
         {
             MallCop.SetDestination(TargetPlayer.position);
 
+            transform.LookAt(TargetPlayer);
+            transform.LookAt(TargetPlayer, Vector3.left);
 
             if (Distance <= 1.5f)
             { 
                 MallCop.velocity = Vector3.zero;
             }
-            //yield WaitForSeconds(5);
 
             /*var MallCop_Renderer = this.GetComponent<Renderer>();
             MallCop_Renderer.material.SetColor("_Color", Color.red);*/
@@ -68,10 +93,6 @@ public class AI_FollowPlayer : MonoBehaviour
 
         else if (Distance > minDistance)
         {
-            var MallCop_Renderer = this.GetComponent<Renderer>();
-
-            MallCop_Renderer.material.SetColor("_Color", Color.green);
-
             Patrol.Patrol();
 
             //Debug.Log("Angle" + ViewAngle);
@@ -88,9 +109,6 @@ public class AI_FollowPlayer : MonoBehaviour
         Debug.DrawRay(transform.position, transform.forward * minDistance, Color.red);
         Debug.DrawLine(transform.position, TargetPlayer.position, Color.red);
 
-
-        
-
         /*if (ViewAngle < 90.0f)
         {
             Debug.Log("I SEE YOU");
@@ -100,4 +118,6 @@ public class AI_FollowPlayer : MonoBehaviour
             Debug.Log("I Dont");
         }*/
     }
+
+     
 }

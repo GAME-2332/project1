@@ -47,10 +47,14 @@ public class AI_CopPatrol : MonoBehaviour
         {*/
             //AIAgent.destination = PatrolTarget[CurrentPosition].position;
             AIAgent.destination = PatrolTarget[CurrentPosition].position;
+
+        transform.LookAt(PatrolTarget[CurrentPosition]);
+        transform.LookAt(PatrolTarget[CurrentPosition], Vector3.left);
+
         //}
         //else 
         //{
-            CurrentPosition = (CurrentPosition + 1) % PatrolTarget.Length;
+        CurrentPosition = (CurrentPosition + 1) % PatrolTarget.Length;
         //}
     }
 
