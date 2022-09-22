@@ -65,11 +65,15 @@ public class ItemInfo : MonoBehaviour
 
     public void SetSO(SOItemInfo _so)
     {
+        if (_so == null) return;
         item_so_info = _so;
         item_name = _so.item_name;
         item_description = _so.item_description;
+        if (_sprite_space == null)
+        {
+            _sprite_space = GetComponent<Image>();
+        }
         _sprite_space.sprite = _so.default_sprite;
-        
     }
 
 
