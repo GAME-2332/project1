@@ -82,8 +82,8 @@ public class Inventory : MonoBehaviour
         LoadSpaces();//this gets a reference to the spaces.
 
         //Inventory is now a list of itemSO's.
-        for (int i = 0; i < GameManager.instance.saveState.heldItems.Count; i++) {
-            _Spaces[i].GetComponentInChildren<ItemInfo>().SetSO(GameManager.instance.saveState.heldItems[i]);
+        for (int i = 0; i < GameManager.instance.saveState.inventory.Count; i++) {
+            _Spaces[i].GetComponentInChildren<ItemInfo>().SetSO(GameManager.instance.saveState.inventory.GetItem(i));
         }
     }
 
