@@ -21,7 +21,7 @@ public class AI_CopPatrol : MonoBehaviour
 
         CurrentPosition = 0;
 
-        AIAgent.autoBraking = false;
+        AIAgent.autoBraking = true;
 
         GotToNextPoint();
     }
@@ -30,6 +30,8 @@ public class AI_CopPatrol : MonoBehaviour
     void Update()
     {
         Patrol();
+
+        //FollowPlayer.facedirection();
     }
 
     public void GotToNextPoint()
@@ -39,28 +41,20 @@ public class AI_CopPatrol : MonoBehaviour
             return;
         }
 
-        //if(transform.position != PatrolTarget[CurrentPosition].position)
-        /*if (
-               transform.position != PatrolTarget[CurrentPosition].position 
-               //&& Vector3.Distance(transform.position, (PatrolTarget[CurrentPosition].position)) < .5
-           )
-        {*/
-            //AIAgent.destination = PatrolTarget[CurrentPosition].position;
-            AIAgent.destination = PatrolTarget[CurrentPosition].position;
-        //}
-        //else 
-        //{
-            CurrentPosition = (CurrentPosition + 1) % PatrolTarget.Length;
-        //}
+        AIAgent.destination = PatrolTarget[CurrentPosition].position;
+
+        CurrentPosition = (CurrentPosition + 1) % PatrolTarget.Length;
+
     }
 
     public void Patrol()
     {
         if (!AIAgent.pathPending && AIAgent.remainingDistance < 1.0f)
-        { 
+        {
             GotToNextPoint();
+            return;
         }
 
-        Debug.Log("Patrol works");
+        //Debug.Log("Patrol works");
     }
 }
