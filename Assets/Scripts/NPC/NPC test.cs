@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine TMPro;
+using TMPro;
 
 public class NPCTest : Interactible {
     public GameObject spritePrefab;
