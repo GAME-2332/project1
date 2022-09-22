@@ -5,13 +5,13 @@ using UnityEngine;
 
 [Serializable]
 public class PlayerInventory : ISerializationCallbackReceiver {
-    private List<SOItemInfo> items = default;
+    private List<SOItemInfo> items = new List<SOItemInfo>();
     [SerializeField] private string[] itemNames;
     
     public int Count => items.Count;
 
     public void OnBeforeSerialize() {
-        itemNames = items.Select(i => i.name).ToArray();
+        itemNames = items.Select(s => s.name).ToArray();
     }
 
     public void OnAfterDeserialize() {

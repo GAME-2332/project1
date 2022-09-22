@@ -10,7 +10,7 @@ public class Util {
 
     public static Dictionary<string, T> LoadResources<T>(string path) where T : ScriptableObject {
         Dictionary<string, T> ret = new Dictionary<string, T>();
-        T[] objs = Resources.LoadAll(path, typeof(T)) as T[];
+        var objs = Resources.LoadAll(path, typeof(T));
         foreach (T obj in objs) {
             ret[obj.name] = obj;
         }
