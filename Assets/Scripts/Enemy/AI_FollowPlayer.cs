@@ -10,8 +10,6 @@ public class AI_FollowPlayer : MonoBehaviour
     public UnityEngine.AI.NavMeshAgent MallCop;
     public Transform TargetPlayer;
 
-    public Transform ClosestPatrolPoint;
-
     public float minDistance = 5;
 
     public float Distance;
@@ -50,34 +48,18 @@ public class AI_FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
         FieldOfView();
 
         Distance = Vector3.Distance(TargetPlayer.transform.position, transform.position); //GameObject.FindWithTag("Player")
 
         Vector3 PlayerDirection = TargetPlayer.position - transform.position;
 
-        RaycastHit hit;
-
-        if (!Physics.Raycast(transform.position, PlayerDirection, Distance, ObstacleMask))
-        {
-            Debug.DrawRay(transform.position, TargetPlayer.position, Color.green);
-            //Debug.Log("Hit it");
-            isHit = true;
-        }
-
-        else
-        {
-            isHit = false;
-            Debug.DrawRay(transform.position, TargetPlayer.position, Color.white);
-            //Debug.Log("No  Hit");
-        }
+        RayCastPlayerDetection();
 
         if (Distance < minDistance && ViewAngle < CheckViewAngle && isHit == true)
         {
             MallCop.SetDestination(TargetPlayer.position);
-
-            transform.LookAt(TargetPlayer);
-            transform.LookAt(TargetPlayer, Vector3.left);
 
             if (Distance <= 1.5f)
             { 
@@ -95,7 +77,6 @@ public class AI_FollowPlayer : MonoBehaviour
         {
             Patrol.Patrol();
 
-            //Debug.Log("Angle" + ViewAngle);
             //Debug.Log("I DON'T");
         }
     }
@@ -104,20 +85,32 @@ public class AI_FollowPlayer : MonoBehaviour
     {
         Vector3 PlayerDir = TargetPlayer.position - transform.position;
 
-        ViewAngle = Vector3.Angle(transform.forward, PlayerDir); // 0-180 degree
+        ViewAngle = Vector3.Angle(transform.forward, PlayerDir);
 
         Debug.DrawRay(transform.position, transform.forward * minDistance, Color.red);
         Debug.DrawLine(transform.position, TargetPlayer.position, Color.red);
 
-        /*if (ViewAngle < 90.0f)
-        {
-            Debug.Log("I SEE YOU");
-        }
-        else
-        {
-            Debug.Log("I Dont");
-        }*/
     }
 
-     
+    void RayCastPlayerDetection()
+    {
+        Vector3 PlayerDirection = TargetPlayer.position - transform.position;
+
+        RaycastHit hit;
+
+        if (!Physics.Raycast(transform.position, PlayerDirection, Distance, ObstacleMask))
+        {
+            Debug.DrawRay(transform.position, TargetPlayer.position, Color.green);
+            //Debug.Log("Hit it");
+            isHit = true;
+        }
+
+        else
+        {
+            isHit = false;
+            Debug.DrawRay(transform.position, TargetPlayer.position, Color.white);
+            //Debug.Log("No  Hit");
+        }
+    }
+
 }

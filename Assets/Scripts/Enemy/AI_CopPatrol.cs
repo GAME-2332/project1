@@ -30,6 +30,8 @@ public class AI_CopPatrol : MonoBehaviour
     void Update()
     {
         Patrol();
+
+        //FollowPlayer.facedirection();
     }
 
     public void GotToNextPoint()
@@ -39,23 +41,10 @@ public class AI_CopPatrol : MonoBehaviour
             return;
         }
 
-        //if(transform.position != PatrolTarget[CurrentPosition].position)
-        /*if (
-               transform.position != PatrolTarget[CurrentPosition].position 
-               //&& Vector3.Distance(transform.position, (PatrolTarget[CurrentPosition].position)) < .5
-           )
-        {*/
-            //AIAgent.destination = PatrolTarget[CurrentPosition].position;
-            AIAgent.destination = PatrolTarget[CurrentPosition].position;
+        AIAgent.destination = PatrolTarget[CurrentPosition].position;
 
-        transform.LookAt(PatrolTarget[CurrentPosition]);
-        transform.LookAt(PatrolTarget[CurrentPosition], Vector3.left);
-
-        //}
-        //else 
-        //{
         CurrentPosition = (CurrentPosition + 1) % PatrolTarget.Length;
-        //}
+
     }
 
     public void Patrol()
