@@ -24,6 +24,8 @@ public class GameManager {
         if (saveState != null) saveState.SaveCurrent();
         saveState = new SaveState(slot);
         saveState.Load();
+        
+        ItemRegistry.Wake();
     }
 
     public enum GameState {
