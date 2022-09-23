@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1392323962077211124
+--- !u!1 &1769808757234328065
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3935943503909810732}
-  - component: {fileID: 5075787431227238401}
-  - component: {fileID: 4889438439055043915}
+  - component: {fileID: 2648774045756222475}
+  - component: {fileID: 3905689809350021723}
+  - component: {fileID: 2127275672471691623}
   m_Layer: 0
-  m_Name: polySurface1
+  m_Name: pCylinder1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3935943503909810732
+--- !u!4 &2648774045756222475
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392323962077211124}
+  m_GameObject: {fileID: 1769808757234328065}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 9175748905064503339}
+  m_Father: {fileID: 3130419967049066889}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5075787431227238401
+--- !u!33 &3905689809350021723
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392323962077211124}
-  m_Mesh: {fileID: 6329158148709259305, guid: 738d4fa5f2f291543971b044a1586ca1, type: 3}
---- !u!23 &4889438439055043915
+  m_GameObject: {fileID: 1769808757234328065}
+  m_Mesh: {fileID: -5076798556035486163, guid: a53387a550855b546a776e9468338f96, type: 3}
+--- !u!23 &2127275672471691623
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1392323962077211124}
+  m_GameObject: {fileID: 1769808757234328065}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 80567ea2b8e3894459e273be14d963cb, type: 2}
+  - {fileID: 2100000, guid: fc47e74b39ab84e49b41edbfaf09a3d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &8366878519342187153
+--- !u!1 &2322358718866371379
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,27 +91,27 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 9175748905064503339}
+  - component: {fileID: 3130419967049066889}
   m_Layer: 0
-  m_Name: Prop_AcessoriesAndMakeup_LipStick_01
+  m_Name: BS_Prop_AcessoriesAndMakeup_MakeupBoxClam_Purple_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &9175748905064503339
+--- !u!4 &3130419967049066889
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8366878519342187153}
+  m_GameObject: {fileID: 2322358718866371379}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 15.460552, y: -9.5, z: -0.55327606}
+  m_LocalPosition: {x: 20.730816, y: -9.5, z: -2.6447372}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3935943503909810732}
+  - {fileID: 2648774045756222475}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
