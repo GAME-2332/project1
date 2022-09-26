@@ -3,6 +3,7 @@ using UnityEngine;
  
  public class MenuToggle : MonoBehaviour {
      private Canvas CanvasObject; // Assign in inspector
+     
       
      void Start(){
          CanvasObject = GetComponent<Canvas> ();
