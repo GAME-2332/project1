@@ -17,7 +17,7 @@ public class SaveState {
 
     // Globals and ItemInfo are populated after Load is called
     public Globals globals;
-    public PlayerInventory inventory;
+    public PlayerInventory inventory = new PlayerInventory();
 
     private SceneData currentScene;
     private string playerData;
@@ -107,7 +107,6 @@ public class SaveState {
     internal void SaveCurrent() {
         Directory.CreateDirectory(Path());
         File.WriteAllText(Path() + "/globals.dat", JsonUtility.ToJson(globals));
-        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(inventory));
         if (currentScene != null) currentScene.Write(Path());
         var player = GameObject.FindObjectOfType<PlayerMovement>();
         if (player != null) {
@@ -118,6 +117,7 @@ public class SaveState {
 
     private void WriteSceneInfo() {
         Directory.CreateDirectory(Path());
+        File.WriteAllText(Path() + "/inventory.dat", JsonUtility.ToJson(inventory));
         File.WriteAllText(Path() + "/scene.dat", SceneManager.GetActiveScene().buildIndex.ToString());
         lastSceneName = Util.Prettify(SceneManager.GetActiveScene().name);
         lastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd");
