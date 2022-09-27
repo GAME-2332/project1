@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: M_windows 1
+  m_Name: M_rotatingdisplay 1
   m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -131,8 +131,8 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.57913846, g: 0.8391967, b: 0.9245283, a: 1}
-    - _Color: {r: 0.57913846, g: 0.8391967, b: 0.9245283, a: 1}
+    - _BaseColor: {r: 0.58274555, g: 0, b: 1, a: 1}
+    - _Color: {r: 0.58274555, g: 0, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
