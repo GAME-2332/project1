@@ -14,6 +14,8 @@ public class AI_CopPatrol : MonoBehaviour
 
     private NavMeshAgent AIAgent;
 
+    public bool shouldPatrol = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,9 +29,9 @@ public class AI_CopPatrol : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Patrol();
+        if (shouldPatrol) Patrol();
 
         //FollowPlayer.facedirection();
     }
