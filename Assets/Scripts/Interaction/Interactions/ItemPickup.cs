@@ -5,7 +5,7 @@ public class ItemPickup : Interactible {
     public SOItemInfo item;
 
     public override void Interact() {
-        GameManager.instance.saveState.heldItems.Add(item);
+        GameManager.instance.saveState.inventory.AddItem(item);
         Destroy(gameObject);
     }
 }
