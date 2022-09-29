@@ -18,7 +18,7 @@ public abstract class Interactible : MonoBehaviour {
         outlineComponent.OutlineWidth = outlineWidth;
     }
 
-    public void SetOutline(bool enabled) {
+    public virtual void SetOutline(bool enabled) {
         outlineComponent.enabled = enabled;
     }
     
