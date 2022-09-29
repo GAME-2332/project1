@@ -8,9 +8,10 @@ using UnityEngine;
 [Serializable]
 [CreateAssetMenu(fileName = "New Dialogue Tree", menuName = "Dialogue Tree", order = 0)]
 public class DialogueTree : ScriptableObject {
+    public Sprite portrait;
     public DialogueNode entryPoint;
 
-    public DialogueContext Traverse(Action<string[]> refreshOptions, Action onDialogueEnd) {
-        return new DialogueContext(entryPoint, refreshOptions, onDialogueEnd);
+    public DialogueContext Traverse(Action<string[]> refreshOptions, Action<Sprite> changePortrait, Action onDialogueEnd) {
+        return new DialogueContext(entryPoint, refreshOptions, changePortrait, onDialogueEnd);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using UnityEngine;
 
 /// <summary>
 /// Used for dialogue tree traversal.
@@ -10,6 +11,7 @@ public class DialogueContext {
     private DialogueNode currentNode;
     
     private Action<string[]> refreshOptions;
+    private Action<Sprite> changePortrait;
     private Action onDialogueEnd;
     
     public string NpcText {
@@ -23,9 +25,10 @@ public class DialogueContext {
     /// <param name="refreshOptions">A function to run when dialogue options have changed - note the passed array may be null or empty</param>
     /// <param name="onDialogueEnd">A function to run when dialogue has ended; used to close the UI</param>
     /// 
-    internal DialogueContext(DialogueNode startNode, Action<string[]> refreshOptions, Action onDialogueEnd) {
+    internal DialogueContext(DialogueNode startNode, Action<string[]> refreshOptions, Action<Sprite> changePortrait, Action onDialogueEnd) {
         NextNode(startNode);
         this.refreshOptions = refreshOptions;
+        this.changePortrait = changePortrait;
         this.onDialogueEnd = onDialogueEnd;
     }
 
@@ -58,6 +61,7 @@ public class DialogueContext {
     private void NextNode(DialogueNode nextNode) {
         currentNode = nextNode;
         npcTextIndex = 0;
+        if (currentNode.portrait != null) changePortrait(currentNode.portrait);
         if (currentNode.npcText.Length <= 1) LastLine();
         else refreshOptions(null);
     }
