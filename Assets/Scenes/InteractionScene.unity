@@ -889,8 +889,20 @@ PrefabInstance:
       value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2685564177942165381, guid: 208b43d5bc1f2984c9c1a5e744c2f0b2, type: 3}
+      propertyPath: portraitScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685564177942165381, guid: 208b43d5bc1f2984c9c1a5e744c2f0b2, type: 3}
+      propertyPath: portraitScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685564177942165381, guid: 208b43d5bc1f2984c9c1a5e744c2f0b2, type: 3}
       propertyPath: verticalPadding
-      value: 8
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2685564177942165381, guid: 208b43d5bc1f2984c9c1a5e744c2f0b2, type: 3}
+      propertyPath: portraitOffset.y
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 2685564177942165381, guid: 208b43d5bc1f2984c9c1a5e744c2f0b2, type: 3}
       propertyPath: horizontalPadding
