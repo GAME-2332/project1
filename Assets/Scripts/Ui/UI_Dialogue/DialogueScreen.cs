@@ -17,8 +17,14 @@ public class DialogueScreen: MonoBehaviour {
         return _instance;
     }
 
-    public int horizontalPadding;
-    public int verticalPadding;
+    public float bottomOffset;
+    public float horizontalPadding;
+    public float verticalPadding;
+    public float horizontalTextPadding;
+    public float verticalTextPadding;
+    public float horizontalOptionTextPadding;
+    public float verticalOptionTextPadding;
+    public Vector2 portraitScale;
 
     private Canvas canvas;
     private Image portrait;
@@ -26,6 +32,8 @@ public class DialogueScreen: MonoBehaviour {
     // private Panel
     private string npcName;
     private DialogueContext ctx;
+    private DialogueText npcText;
+    private DialogueOption[] instances;
 
     void Awake() {
         // We can't call Load in a static initializer, so we do it here instead.
@@ -42,28 +50,82 @@ public class DialogueScreen: MonoBehaviour {
         canvas.enabled = false;
         
         portrait = transform.Find("Portrait").GetComponent<Image>();
+        npcText = transform.Find("NPC Text").GetComponent<DialogueText>();
     }
 
     public void Open(string npcName, DialogueTree tree) {
+        GameManager.instance.gameState = GameManager.GameState.Dialogue;
+        
         this.npcName = npcName;
+        ctx = tree.Traverse(RefreshNPCText, RefreshOptions, SetPortrait, Close);
         canvas.enabled = true;
-        ctx = tree.Traverse(RefreshOptions, SetPortrait, Close);
+        
+        npcText.SetContext(ctx);
+        npcText.SetTextPadding(horizontalTextPadding, verticalTextPadding);
+        npcText.SetPosition(0, bottomOffset + verticalPadding);
+
+        ctx.Ready();
+    }
+
+    void RefreshNPCText(string text) {
+        npcText.SetText(text);
     }
 
     void RefreshOptions(string[] options) {
-        // TODO: Method stub
+        // Some of this is probably redundant, but I don't have the time to clean it up.
+        // Should be harmless...
+        DestroyOptions();
+        if (options == null || options.Length == 0) {
+            instances = null;
+            npcText.SetPosition(0, bottomOffset);
+            return;
+        }
+
+        float height = optionPrefab.GetComponent<DialogueOption>().Height;
+        float offset = bottomOffset;
+        instances = new DialogueOption[options.Length];
+        for (int i = 0; i < options.Length; i++) {
+            Debug.Log(offset);
+            Debug.Log("height " + height);
+            CreateOption(i, options[i], offset);
+            offset += verticalPadding + height;
+        }
+        
+        npcText.SetPosition(0, offset);
+    }
+
+    void CreateOption(int index, string text, float offset) {
+        DialogueOption opt = instances[index] = Instantiate(optionPrefab, transform).GetComponent<DialogueOption>();
+
+        opt.Index = index;
+        opt.SetContext(ctx);
+        opt.SetText(text);
+        opt.SetTextPadding(horizontalOptionTextPadding, verticalOptionTextPadding);
+        opt.SetPosition(-npcText.Width / 2, offset);
     }
 
     void SetPortrait(Sprite sprite) {
         portrait.sprite = sprite;
         
         int width = sprite.texture.width, height = sprite.texture.height;
-        portrait.rectTransform.sizeDelta = new Vector2(width, height);
-        portrait.rectTransform.anchoredPosition = new Vector2(-width / 2 - horizontalPadding, height / 2 + verticalPadding);
+        portrait.rectTransform.anchoredPosition = new Vector2(-npcText.Width / 2 - horizontalPadding, bottomOffset);
+        portrait.rectTransform.sizeDelta = new Vector2(width, height) * portraitScale;
     }
 
     void Close() {
+        npcText.SetPosition(0, bottomOffset);
+        DestroyOptions();
+        
+        GameManager.instance.gameState = GameManager.GameState.Playing;
         canvas.enabled = false;
+    }
+
+    void DestroyOptions() {
+        if (instances == null) return;
+        foreach (DialogueOption option in instances) {
+            Destroy(option.gameObject);
+        }
+        instances = null;
     }
 
     private void OnDestroy() {
