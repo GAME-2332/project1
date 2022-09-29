@@ -53,6 +53,10 @@ public class DialogueScreen: MonoBehaviour {
         npcText = transform.Find("NPC Text").GetComponent<DialogueText>();
     }
 
+    private void Update() {
+        if (ctx != null && GameManager.instance.gameOptions.interact.GetKeyDown()) ctx.Continue();
+    }
+
     public void Open(string npcName, DialogueTree tree) {
         GameManager.instance.gameState = GameManager.GameState.Dialogue;
         
@@ -114,6 +118,7 @@ public class DialogueScreen: MonoBehaviour {
     void Close() {
         npcText.SetPosition(0, bottomOffset);
         DestroyOptions();
+        ctx = null;
         
         GameManager.instance.gameState = GameManager.GameState.Playing;
         canvas.enabled = false;
