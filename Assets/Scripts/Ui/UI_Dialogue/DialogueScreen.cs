@@ -24,6 +24,7 @@ public class DialogueScreen: MonoBehaviour {
     public float verticalTextPadding;
     public float horizontalOptionTextPadding;
     public float verticalOptionTextPadding;
+    public Vector2 portraitOffset;
     public Vector2 portraitScale;
 
     private Canvas canvas;
@@ -106,9 +107,10 @@ public class DialogueScreen: MonoBehaviour {
 
     void SetPortrait(Sprite sprite) {
         portrait.sprite = sprite;
+        float width = sprite.rect.width;
+        float height = sprite.rect.height;
         
-        int width = sprite.texture.width, height = sprite.texture.height;
-        portrait.rectTransform.anchoredPosition = new Vector2(-npcText.Width / 2 - horizontalPadding, bottomOffset);
+        portrait.rectTransform.anchoredPosition = new Vector2(-npcText.Width / 2 - horizontalPadding, bottomOffset) + portraitOffset;
         portrait.rectTransform.sizeDelta = new Vector2(width, height) * portraitScale;
     }
 
