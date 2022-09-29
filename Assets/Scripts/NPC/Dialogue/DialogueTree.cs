@@ -11,7 +11,7 @@ public class DialogueTree : ScriptableObject {
     public Sprite portrait;
     public DialogueNode entryPoint;
 
-    public DialogueContext Traverse(Action<string[]> refreshOptions, Action<Sprite> changePortrait, Action onDialogueEnd) {
-        return new DialogueContext(entryPoint, refreshOptions, changePortrait, onDialogueEnd);
+    public DialogueContext Traverse(Action<string> refreshNpcText, Action<string[]> refreshOptions, Action<Sprite> changePortrait, Action onDialogueEnd) {
+        return new DialogueContext(this, refreshNpcText, refreshOptions, changePortrait, onDialogueEnd);
     }
 }
