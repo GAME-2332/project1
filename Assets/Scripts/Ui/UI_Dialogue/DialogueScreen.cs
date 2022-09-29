@@ -12,6 +12,7 @@ public class DialogueScreen: MonoBehaviour {
 
     public static DialogueScreen GetOrCreate() {
         if (!Exists()) {
+            if (screenPrefab == null) screenPrefab = Resources.Load("UI/Dialogue/DialogueScreen") as GameObject;
             _instance = Instantiate(screenPrefab, Vector3.zero, Quaternion.identity).GetComponent<DialogueScreen>();
         }
         return _instance;
@@ -38,7 +39,6 @@ public class DialogueScreen: MonoBehaviour {
 
     void Awake() {
         // We can't call Load in a static initializer, so we do it here instead.
-        if (screenPrefab == null) screenPrefab = Resources.Load("UI/Dialogue/DialogueScreen") as GameObject;
         if (optionPrefab == null) optionPrefab = Resources.Load("UI/Dialogue/DialogueOption") as GameObject;
         
         if (Exists() && _instance != this) Destroy(gameObject);
@@ -48,7 +48,6 @@ public class DialogueScreen: MonoBehaviour {
     void Start() {
         canvas = GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
-        canvas.enabled = false;
         
         portrait = transform.Find("Portrait").GetComponent<Image>();
         npcText = transform.Find("NPC Text").GetComponent<DialogueText>();
@@ -86,8 +85,6 @@ public class DialogueScreen: MonoBehaviour {
         float offset = bottomOffset;
         instances = new DialogueOption[options.Length];
         for (int i = 0; i < options.Length; i++) {
-            Debug.Log(offset);
-            Debug.Log("height " + height);
             CreateOption(i, options[i], offset);
             offset += verticalPadding + height;
         }
