@@ -93,7 +93,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
-    - _Blur_Intensity: 0
+    - _Blur_Intensity: 0.0095
     - _Brightness: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
