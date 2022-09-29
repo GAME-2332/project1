@@ -59,11 +59,12 @@ public class AI_FollowPlayer : MonoBehaviour
 
         if (Distance < minDistance && ViewAngle < CheckViewAngle && isHit == true)
         {
+            Patrol.shouldPatrol = false;
             MallCop.SetDestination(TargetPlayer.position);
 
             if (Distance <= 1.5f)
             { 
-                MallCop.velocity = Vector3.zero;
+                // TODO: Player death
             }
 
             /*var MallCop_Renderer = this.GetComponent<Renderer>();
@@ -73,9 +74,13 @@ public class AI_FollowPlayer : MonoBehaviour
             Debug.Log("I SEE YOU");
         }
 
-        else if (Distance > minDistance)
+        else
         {
-            Patrol.Patrol();
+            if (!Patrol.shouldPatrol)
+            {
+                Patrol.GotToNextPoint();
+                Patrol.shouldPatrol = true;
+            }
 
             //Debug.Log("I DON'T");
         }
@@ -95,8 +100,6 @@ public class AI_FollowPlayer : MonoBehaviour
     void RayCastPlayerDetection()
     {
         Vector3 PlayerDirection = TargetPlayer.position - transform.position;
-
-        RaycastHit hit;
 
         if (!Physics.Raycast(transform.position, PlayerDirection, Distance, ObstacleMask))
         {
