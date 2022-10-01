@@ -2091,6 +2091,40 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &1948338832975635814
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7764852697424329661}
+  m_Layer: 0
+  m_Name: Scene_Setup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7764852697424329661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948338832975635814}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 15.330635, y: -11.6998825, z: -57.487473}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4551682496467089972}
+  - {fileID: 6872274506972704598}
+  - {fileID: 2242361336228126057}
+  m_Father: {fileID: 2276314159119264150}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1965125814142416926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2695,7 +2729,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7160409711606288779}
-  - {fileID: 4551682496467089972}
   - {fileID: 691985753149931322}
   - {fileID: 4946270046460769098}
   - {fileID: 4069829685578568187}
@@ -55889,6 +55922,7 @@ Transform:
   - {fileID: 8369081802641137393}
   - {fileID: 1142149256336845807}
   - {fileID: 2790346544712334182}
+  - {fileID: 7764852697424329661}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -56392,6 +56426,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &5534838904188519755
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6872274506972704598}
+  m_Layer: 0
+  m_Name: BeautyShop_SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6872274506972704598
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5534838904188519755}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7764852697424329661}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5545475006715639369
 GameObject:
   m_ObjectHideFlags: 0
@@ -58490,6 +58555,37 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!1 &7557140554580660707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2242361336228126057}
+  m_Layer: 0
+  m_Name: BeautyShop_Entrance_To_FoodCourt
+  m_TagString: SpawnPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2242361336228126057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7557140554580660707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.02, z: 7.27}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7764852697424329661}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7788614891602511769
 GameObject:
   m_ObjectHideFlags: 0
@@ -67904,7 +68000,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7212270770940635644, guid: 3bff8f845912a584695543228c303474, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7212270770940635644, guid: 3bff8f845912a584695543228c303474, type: 3}
       propertyPath: m_LocalScale.x
@@ -78718,7 +78814,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalScale.x
@@ -81016,7 +81112,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2790346544712334182}
+    m_TransformParent: {fileID: 7764852697424329661}
     m_Modifications:
     - target: {fileID: 8285406875565334571, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_Name
@@ -81024,7 +81120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalScale.x
@@ -81040,15 +81136,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.510048
+      value: -0.32063293
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.0996485
+      value: -2.4001179
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -20.561073
+      value: 14.394615
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -81080,6 +81176,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
+--- !u!1 &3774302024795480206 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8285406875565334571, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
+  m_PrefabInstance: {fileID: 5087570138637418661}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4671967983632092740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774302024795480206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e0c1a0316ee3146bf5e69048f7f874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: d71f46154e4a4164b9b3b74b68768f6c, type: 3}
+    scenePath: Assets/Scenes/Mall_Construction/scene_FoodCourt.unity
+  spawnPoint: BeautyShop_Entrance_To_FoodCourt
 --- !u!4 &4551682496467089972 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
@@ -91394,7 +91511,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8768645962283809425, guid: 728f9bf4f574a614bb4d873b463ad89d, type: 3}
       propertyPath: m_LocalScale.x
