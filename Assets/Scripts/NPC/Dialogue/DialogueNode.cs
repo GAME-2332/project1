@@ -17,8 +17,7 @@ public class DialogueNode {
     [Tooltip("If true, dialogue will terminate when this node's NPC text is completed.")]
     public bool isTerminator;
     [Tooltip("The text the NPC will say when this node is selected. Each element requires the continue key to display after the previous one.")]
-    [TextArea(1, 10)]
-    public string[] npcText;
+    public DialogueLine[] npcText;
     
     [Tooltip("Conditions for this node to appear as an option in dialogue.")]
     [SerializeReference] [PickImpl(typeof(IStatePredicate))]
@@ -53,5 +52,13 @@ public class DialogueNode {
             if (!condition.Check()) return false;
         }
         return true;
+    }
+
+    [Serializable]
+    public struct DialogueLine {
+        [TextArea(1, 10)]
+        public string text;
+        [Tooltip("If nonnull, the portrait will be replaced with this sprite when this line is spoken.")]
+        [SerializeReference] public Sprite portrait;
     }
 }

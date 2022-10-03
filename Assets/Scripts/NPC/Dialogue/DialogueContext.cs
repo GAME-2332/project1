@@ -7,6 +7,8 @@ using UnityEngine;
 /// Has methods to conveniently fetch which text should be displayed and which options are available.
 /// </summary>
 public class DialogueContext {
+    private static DialogueNode.DialogueLine emptyLine = new() { text = "", portrait = null };
+    
     private int npcTextIndex;
     private DialogueNode currentNode;
     private DialogueNode[] validChildren;
@@ -16,8 +18,8 @@ public class DialogueContext {
     private Action<Sprite> changePortrait;
     private Action onDialogueEnd;
     
-    public string NpcText {
-        get => currentNode.npcText.Length < 1 ? "..." : currentNode.npcText[npcTextIndex];
+    public DialogueNode.DialogueLine NpcText {
+        get => currentNode.npcText.Length < 1 ? emptyLine : currentNode.npcText[npcTextIndex];
     }
     
     /// <summary>
@@ -49,7 +51,8 @@ public class DialogueContext {
         // Increment the NPC's line index; if there are no more lines, set the dialogue options
         if (NpcSpeaking()) {
             npcTextIndex++;
-            refreshNpcText.Invoke(NpcText);
+            refreshNpcText.Invoke(NpcText.text);
+            if (NpcText.portrait != null) changePortrait.Invoke(NpcText.portrait);
             if (npcTextIndex == currentNode.npcText.Length - 1) LastLine();
         }
         else if (currentNode.isTerminator) {
@@ -74,7 +77,7 @@ public class DialogueContext {
         currentNode = nextNode;
         validChildren = currentNode.GetValidChildren().ToArray();
         npcTextIndex = 0;
-        refreshNpcText.Invoke(NpcText);
+        refreshNpcText.Invoke(NpcText.text);
         refreshOptions(null);
         if (currentNode.portrait != null) changePortrait(currentNode.portrait);
         if (currentNode.npcText.Length <= 1) LastLine();
