@@ -18,7 +18,6 @@ public class DialogueOption: DialogueText {
     }
 
     public new void OnClick() {
-        Debug.Log(ctx);
         ctx.Choose(Index);
     }
 }

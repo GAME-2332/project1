@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 namespace MainMenuUI_Components {
@@ -30,6 +31,11 @@ namespace MainMenuUI_Components {
 
         [SerializeField]
         Button _quit;
+
+        void Awake() {
+            // Fixes Unity's URP debug bullshit crashes
+            DebugManager.instance.enableRuntimeUI = false;
+        }
 
 
         // Start is called before the first frame update
