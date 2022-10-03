@@ -60,7 +60,7 @@ namespace MainMenuUI_Components
                 cursorTextureClickable = Resources.Load("UI/cursor_clickable") as Texture2D;
             }
             my_key_id = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>().text;
-            Debug.Log("Added reference to" + my_key_id);
+            
         }
 
         void SetUpEventTrigger()
@@ -113,13 +113,13 @@ namespace MainMenuUI_Components
         }
         void OnClickButton()
         {
-            Debug.Log("Now listening for input.");
+            
             STARTACTIVATELISTEN(my_key_id);
         }
 
         IEnumerator StartInteractionsAgain()
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.3f);
             listening_for_input = false;
         }
         public string GetMyKeyID()

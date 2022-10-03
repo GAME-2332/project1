@@ -19,6 +19,10 @@ namespace MainMenuUI_Components {
         public delegate void SetListening(string s);
         public static event SetListening OnSetListeningState;
 
+        //raise this event for the keybind manager to check if that key already exists! 
+        public delegate void AttemptSetKey(string _newKeybind, string _mykeyID, KeyCode _newkeycode);
+        public static event AttemptSetKey OnAttemptSetKey;
+
         /*Thre is only one keybinder that is active / I_AM_ACTIVE == true at all times. 
          * Or none. 
          * But never more than 1. 
@@ -40,14 +44,19 @@ namespace MainMenuUI_Components {
 
         [SerializeField]
         string _currentText;
+
         private void OnEnable()
         {
             KeyBinder_Graphics.STARTACTIVATELISTEN += ActivateListening;
+            Key_Bind_Manager.OnKeyCheckFinished += FinalSetKey;
         }
         private void OnDisable()
         {
-            KeyBinder_Graphics.STARTACTIVATELISTEN -= ActivateListening;
+            KeyBinder_Graphics.STARTACTIVATELISTEN -= ActivateListening; 
+            Key_Bind_Manager.OnKeyCheckFinished -= FinalSetKey;
         }
+
+
         [SerializeField]
         string main_key_id; //it should be same as the keybinder_graphic it is bound to.
 
@@ -57,17 +66,31 @@ namespace MainMenuUI_Components {
         void Start()
         {
             _mygraphics = GetComponent<KeyBinder_Graphics>();
-            main_key_id = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>().text;
+            
             GetReferences();
             SELECTEDINPUT_COLOR = new Color(100f / 256f, 106f / 256f, 255f / 256f, 1f);
         }
 
+        public string GetKeyBind()
+        {
+            if(_currentText == "")
+            {
+                _currentText = transform.GetChild(1).GetComponentInChildren<TMPro.TMP_Text>().text;
+            }
+            return _currentText; 
+        }
         void GetReferences()
         {
             if (_inputRegion == null)
             {
                 _inputRegion = transform.GetChild(1);
             }
+            main_key_id = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>().text;
+    
+
+            _text = _inputRegion.GetComponentInChildren<TMPro.TMP_Text>();
+
+            _currentText = _text.text;
             DEFAULT_COLOR = _inputRegion.GetComponentInChildren<Image>().color;
         }
         // Update is called once per frame
@@ -84,23 +107,24 @@ namespace MainMenuUI_Components {
                     {
                        
                         _text.text = _currentText;
+                        I_AM_ACTIVE = false;
                     }
 
                     else if (Input.GetKey(KeyCode.Escape)) //if you escape, you deselect
                     {
                         
                         _text.text = _currentText;
+                        I_AM_ACTIVE = false;
                     }
                     else //on pressing any other key.
                     {
-                        
-                            Debug.Log("You have set the key to...");
+                           
                             SetKey();
-                      
+                        //remain I_AM_ACTIVE until checks are finished
                     }
 
                     OnSetListeningState("start graphics interactions");
-                    I_AM_ACTIVE = false;
+                    
                     _inputRegion.GetComponentInChildren<Image>().color = DEFAULT_COLOR;
                     
                 }
@@ -112,7 +136,7 @@ namespace MainMenuUI_Components {
         {
             if(key_id == main_key_id)
             {
-                Debug.Log("I am active!");
+               
                 SetAsSelected();
             }
 
@@ -124,32 +148,31 @@ namespace MainMenuUI_Components {
         void SetAsSelected()
         {
             I_AM_ACTIVE = true;
-            Debug.Log("Selected!" + main_key_id);
            
-
             _inputRegion.GetComponentInChildren<Image>().color = SELECTEDINPUT_COLOR;
-            _text = _inputRegion.GetComponentInChildren<TMPro.TMP_Text>();
-            _currentText = _text.text;
+           
             _text.text = "";
         }
 
-
+        //this is the new keycode you are attempting to set.
+        string s;
         void SetKey()
         {
-
-
+            s = "";
+            KeyCode newKeyCode = KeyCode.None; //this will always have something because this function is only called when input is heard
             foreach (KeyCode kcode in Enum.GetValues(typeof(KeyCode)))
             {
                 if (Input.GetKey(kcode))
                 {
-
-                    Debug.Log("KeyCode down: " + kcode);
-                    _text.text = kcode.ToString();
+                    newKeyCode = kcode;
+                    s = kcode.ToString();
 
                     break;
                 }
             }
-            string s = _text.text;
+
+
+
             if (s.Contains("Alpha"))
             {
                 s = s.Substring(5);
@@ -160,7 +183,28 @@ namespace MainMenuUI_Components {
                 int arrow_name_length = s.Length - s.IndexOf("Arrow");
                 s = s.Substring(0, s.Length - arrow_name_length);
             }
-            _text.text = s;
+
+
+            OnAttemptSetKey(s, main_key_id, newKeyCode);
+
+
+        }
+
+        public void FinalSetKey(bool status)
+        {
+            if(I_AM_ACTIVE == true)
+            {
+                I_AM_ACTIVE = false;
+                if(status == true) //this is a valid new key
+                {
+                    _text.text = s;
+                }
+                else
+                {
+                    _text.text = _currentText;
+                }
+                _currentText = _text.text; //update current text
+            }
         }
     }
 
