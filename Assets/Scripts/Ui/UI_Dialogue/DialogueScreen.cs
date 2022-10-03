@@ -1,6 +1,5 @@
-using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DialogueScreen: MonoBehaviour {
@@ -30,9 +29,9 @@ public class DialogueScreen: MonoBehaviour {
 
     private Canvas canvas;
     private Image portrait;
+    private TextMeshProUGUI npcName;
 
     // private Panel
-    private string npcName;
     private DialogueContext ctx;
     private DialogueText npcText;
     private DialogueOption[] instances;
@@ -51,6 +50,7 @@ public class DialogueScreen: MonoBehaviour {
         
         portrait = transform.Find("Portrait").GetComponent<Image>();
         npcText = transform.Find("NPC Text").GetComponent<DialogueText>();
+        npcName = transform.Find("NPC Name").GetComponent<TextMeshProUGUI>();
     }
 
     private void Update() {
@@ -60,14 +60,15 @@ public class DialogueScreen: MonoBehaviour {
     public void Open(string npcName, DialogueTree tree) {
         GameManager.instance.gameState = GameManager.GameState.Dialogue;
         
-        this.npcName = npcName;
         ctx = tree.Traverse(RefreshNPCText, RefreshOptions, SetPortrait, Close);
         canvas.enabled = true;
-        
+
         npcText.SetContext(ctx);
         npcText.SetTextPadding(horizontalTextPadding, verticalTextPadding);
         npcText.SetPosition(0, bottomOffset + verticalPadding);
 
+        this.npcName.SetText(npcName);
+        
         ctx.Ready();
     }
 
@@ -113,6 +114,10 @@ public class DialogueScreen: MonoBehaviour {
         
         portrait.rectTransform.anchoredPosition = new Vector2(-npcText.Width / 2 - horizontalPadding, bottomOffset) + portraitOffset;
         portrait.rectTransform.sizeDelta = new Vector2(width, height) * portraitScale;
+
+        npcName.rectTransform.anchoredPosition = new Vector2(
+            -npcText.Width / 2 - horizontalPadding - portrait.rectTransform.sizeDelta.x,
+            bottomOffset - verticalPadding - verticalTextPadding);
     }
 
     void Close() {
