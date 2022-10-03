@@ -14,6 +14,7 @@ public class Reticle : MonoBehaviour
     {
         image = GetComponent<Image>();
         GameManager.instance.events.optionsReloadEvent.AddListener(UpdateSprite);
+        GameManager.instance.events.gameStateChangeEvent.AddListener(OnGameStateChanged);
     }
 
     private void UpdateSprite() {
@@ -22,5 +23,9 @@ public class Reticle : MonoBehaviour
             GameOptions.ReticleStyle.Circle => circleReticle,
             _ => empty
         };
+    }
+
+    private void OnGameStateChanged(GameManager.GameState state) {
+        image.enabled = state == GameManager.GameState.Playing;
     }
 }

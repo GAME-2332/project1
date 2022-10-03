@@ -1,32 +1,46 @@
 ﻿using System;
 using System.Linq;
+using UnityEngine;
 
 /// <summary>
 /// Used for dialogue tree traversal.
 /// Has methods to conveniently fetch which text should be displayed and which options are available.
 /// </summary>
 public class DialogueContext {
+    private static DialogueNode.DialogueLine emptyLine = new() { text = "", portrait = null };
+    
     private int npcTextIndex;
     private DialogueNode currentNode;
+    private DialogueNode[] validChildren;
     
+    private Action<string> refreshNpcText;
     private Action<string[]> refreshOptions;
+    private Action<Sprite> changePortrait;
     private Action onDialogueEnd;
     
-    public string NpcText {
-        get => currentNode.npcText.Length < 1 ? "..." : currentNode.npcText[npcTextIndex];
+    public DialogueNode.DialogueLine NpcText {
+        get => currentNode.npcText.Length < 1 ? emptyLine : currentNode.npcText[npcTextIndex];
     }
     
     /// <summary>
     /// Creates a new DialogueContext with a given entry point, ignoring its conditions.
     /// </summary>
-    /// <param name="startNode">The entry point of the dialogue tree</param>
+    /// <param name="tree">The dialogue tree</param>
     /// <param name="refreshOptions">A function to run when dialogue options have changed - note the passed array may be null or empty</param>
     /// <param name="onDialogueEnd">A function to run when dialogue has ended; used to close the UI</param>
     /// 
-    internal DialogueContext(DialogueNode startNode, Action<string[]> refreshOptions, Action onDialogueEnd) {
-        NextNode(startNode);
+    internal DialogueContext(DialogueTree tree, Action<string> refreshNpcText, Action<string[]> refreshOptions, Action<Sprite> changePortrait, Action onDialogueEnd) {
+        this.refreshNpcText = refreshNpcText;
         this.refreshOptions = refreshOptions;
+        this.changePortrait = changePortrait;
         this.onDialogueEnd = onDialogueEnd;
+        
+        currentNode = tree.entryPoint;
+        changePortrait.Invoke(tree.portrait);
+    }
+
+    public void Ready() {
+        NextNode(currentNode);
     }
 
     /// <summary>
@@ -35,10 +49,14 @@ public class DialogueContext {
     /// </summary>
     public void Continue() {
         // Increment the NPC's line index; if there are no more lines, set the dialogue options
-        if (NpcSpeaking())
-            if (++npcTextIndex == currentNode.npcText.Length - 1) LastLine();
+        if (NpcSpeaking()) {
+            npcTextIndex++;
+            refreshNpcText.Invoke(NpcText.text);
+            if (NpcText.portrait != null) changePortrait.Invoke(NpcText.portrait);
+            if (npcTextIndex == currentNode.npcText.Length - 1) LastLine();
+        }
         else if (currentNode.isTerminator) {
-            if (onDialogueEnd != null) onDialogueEnd();
+            onDialogueEnd();
         }
     }
 
@@ -47,8 +65,8 @@ public class DialogueContext {
     /// Otherwise, chooses the given dialogue option, sets all text fields to represent the new node, and runs the new nodes actions.
     /// </summary>
     public void Choose(int index) {
-        if (NpcSpeaking() || index < 0 || index >= currentNode.children.Count) return;
-        NextNode(currentNode.children[index]);
+        if (NpcSpeaking() || index < 0 || index >= validChildren.Length) return;
+        NextNode(validChildren[index]);
     }
     
     /// <summary>
@@ -57,9 +75,12 @@ public class DialogueContext {
     /// <param name="nextNode"></param>
     private void NextNode(DialogueNode nextNode) {
         currentNode = nextNode;
+        validChildren = currentNode.GetValidChildren().ToArray();
         npcTextIndex = 0;
+        refreshNpcText.Invoke(NpcText.text);
+        refreshOptions(null);
+        if (currentNode.portrait != null) changePortrait(currentNode.portrait);
         if (currentNode.npcText.Length <= 1) LastLine();
-        else refreshOptions(null);
     }
     
     /// <summary>

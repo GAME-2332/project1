@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57d508e557842c8804a556a111046de, type: 3}
+  m_Name: Cryptid Cans
+  m_EditorClassIdentifier: 
+  name: Collect 3 Cryptid Cans
+  criteria:
+  - rid: 2889273139674480641
+  references:
+    version: 2
+    RefIds:
+    - rid: 2889273139674480641
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: b8d4e6d8b2503d14582f5fef14dc4218, type: 2}
+        count: 3
