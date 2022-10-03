@@ -9,6 +9,7 @@ using UnityEngine;
 public class DialogueContext {
     private int npcTextIndex;
     private DialogueNode currentNode;
+    private DialogueNode[] validChildren;
     
     private Action<string> refreshNpcText;
     private Action<string[]> refreshOptions;
@@ -61,8 +62,8 @@ public class DialogueContext {
     /// Otherwise, chooses the given dialogue option, sets all text fields to represent the new node, and runs the new nodes actions.
     /// </summary>
     public void Choose(int index) {
-        if (NpcSpeaking() || index < 0 || index >= currentNode.children.Count) return;
-        NextNode(currentNode.children[index]);
+        if (NpcSpeaking() || index < 0 || index >= validChildren.Length) return;
+        NextNode(validChildren[index]);
     }
     
     /// <summary>
@@ -71,6 +72,7 @@ public class DialogueContext {
     /// <param name="nextNode"></param>
     private void NextNode(DialogueNode nextNode) {
         currentNode = nextNode;
+        validChildren = currentNode.GetValidChildren().ToArray();
         npcTextIndex = 0;
         refreshNpcText.Invoke(NpcText);
         refreshOptions(null);

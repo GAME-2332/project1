@@ -12,11 +12,13 @@ using UnityEngine;
 public class DialogueNode {
     [Tooltip("The text to show in an option box for this node, if it's a child of another.")]
     public string optionText;
+    [Tooltip("If present, the portrait to switch to when this dialogue node is selected.")]
+    public Sprite portrait;
+    [Tooltip("If true, dialogue will terminate when this node's NPC text is completed.")]
+    public bool isTerminator;
     [Tooltip("The text the NPC will say when this node is selected. Each element requires the continue key to display after the previous one.")]
     [TextArea(1, 10)]
     public string[] npcText;
-    [Tooltip("If present, the portrait to switch to when this dialogue node is selected.")]
-    public Sprite portrait;
     
     [Tooltip("Conditions for this node to appear as an option in dialogue.")]
     [SerializeReference] [PickImpl(typeof(IStatePredicate))]
@@ -24,8 +26,6 @@ public class DialogueNode {
     [Tooltip("Actions to run after this node's NPC text is completed.")]
     [SerializeReference] [PickImpl(typeof(IStateAction))]
     public List<IStateAction> actions;
-    [Tooltip("If true, dialogue will terminate when this node's NPC text is completed.")]
-    public bool isTerminator;
     
     [Tooltip("Child nodes to display as options after the NPC is done speaking.")]
     public List<DialogueNode> children;
