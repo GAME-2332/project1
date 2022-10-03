@@ -28,11 +28,16 @@ public class PlayerInventory : ISerializationCallbackReceiver {
         items.Add(item);
     }
     
-    public void RemoveItem(SOItemInfo item) {
-        items.Remove(item);
+    public void RemoveItem(SOItemInfo item, int count = 1) {
+        if (count <= 0) items.RemoveAll(i => i == item);
+        else {
+            for (int i = 0; i < count; i++) {
+                items.Remove(item);
+            }
+        }
     }
     
-    public bool HasItem(SOItemInfo item) {
-        return items.Contains(item);
+    public bool HasItem(SOItemInfo item, int count = 1) {
+        return items.Where(it => it == item).Count() >= count;
     }
 }
