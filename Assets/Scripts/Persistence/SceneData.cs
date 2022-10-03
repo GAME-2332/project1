@@ -25,6 +25,7 @@ public class SceneData : MonoBehaviour {
         #if UNITY_EDITOR
             if (GameManager.instance.saveState == null) {
                 GameManager.instance.saveState = new SaveState(-1);
+                GameManager.instance.saveState.Load();
             }
         #endif
         // In Awake, we define which objects we want to track in the scene; these objects
