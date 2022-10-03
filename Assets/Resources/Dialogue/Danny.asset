@@ -1,0 +1,167 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92c7c635ff94391ad8a6d8d7efa44d8, type: 3}
+  m_Name: Danny
+  m_EditorClassIdentifier: 
+  portrait: {fileID: -347010150186051546, guid: e40af1ec34ffb8a40a0ddd8aca07f824, type: 3}
+  entryPoint:
+    optionText: 
+    portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+    isTerminator: 0
+    npcText:
+    - Welcome to the Spicy Subjec--oh! yo!
+    - What are you doing in my store? I haven't seen people here in forever!
+    conditions: []
+    actions: []
+    children:
+    - optionText: Trying to leave the mall
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 0
+      npcText:
+      - Oh. Well, the mall's kinda broken down so it can be hard to make your way
+        around.
+      - As for leaving the storel... the door's locked.
+      conditions:
+      - rid: 2889273139674480643
+      actions: []
+      children:
+      - optionText: Can you unlock the door?
+        portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+        isTerminator: 1
+        npcText:
+        - 'Well, I could unlock it for you, but I''m feeling....
+
+          absolutely
+          dead...'
+        - 'You know what always wakes me up?
+
+          A cryptid can!'
+        - I stash them around the store. If you bring me 3, I'll unlock the door
+          for you.
+        conditions: []
+        actions: []
+        children: []
+      - optionText: Well, I give up.
+        portrait: {fileID: -2029099054924352060, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+        isTerminator: 1
+        npcText:
+        - See ya!
+        conditions: []
+        actions: []
+        children: []
+    - optionText: I've got your cans.
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 1
+      npcText:
+      - '*shlurps all three cans*
+
+        Aww yeah man that hits the spot.'
+      - 'Alright, I''ll unlock the door.
+
+        Now scram!'
+      conditions:
+      - rid: 2889273139674480646
+      actions:
+      - rid: 2889273139674480654
+      children:
+      - optionText: Can you unlock the door?
+        portrait: {fileID: 0}
+        isTerminator: 0
+        npcText:
+        - 'Well, I could unlock it for you, but I''m feeling....
+
+          absolutely
+          dead...'
+        - 'You know what always wakes me up? A cryptid can!
+
+          I stash them
+          around the store. If you bring me 3, I''ll unlock the door for you!'
+        conditions: []
+        actions: []
+        children: []
+      - optionText: Well, I give up.
+        portrait: {fileID: 0}
+        isTerminator: 1
+        npcText:
+        - See ya!
+        conditions: []
+        actions: []
+        children: []
+    - optionText: Why do you haunt the store?
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 1
+      npcText:
+      - 'Oh, well. I tragically died here. Yeah...
+
+        Stress and malnutrition
+        catch up with you eventually.'
+      - 'At least I died drinking the best drink known to man!
+
+        Cryptid cans!'
+      - 'I had 6 the day it happened...
+
+        #worthit'
+      conditions: []
+      actions: []
+      children: []
+    - optionText: Never mind
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 1
+      npcText:
+      - Oh. Okay...
+      conditions: []
+      actions: []
+      children:
+      - optionText: Can you unlock the door?
+        portrait: {fileID: 0}
+        isTerminator: 0
+        npcText:
+        - 'Well, I could unlock it for you, but I''m feeling....
+
+          absolutely
+          dead...'
+        - 'You know what always wakes me up? A cryptid can!
+
+          I stash them
+          around the store. If you bring me 3, I''ll unlock the door for you!'
+        conditions: []
+        actions: []
+        children: []
+      - optionText: Well, I give up.
+        portrait: {fileID: 0}
+        isTerminator: 1
+        npcText:
+        - See ya!
+        conditions: []
+        actions: []
+        children: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2889273139674480643
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2889273139674480645
+    - rid: 2889273139674480645
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: dd4093f7e4fd3524eae127ffcbc789ac, type: 2}
+    - rid: 2889273139674480646
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: dd4093f7e4fd3524eae127ffcbc789ac, type: 2}
+    - rid: 2889273139674480654
+      type: {class: TakeItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: b8d4e6d8b2503d14582f5fef14dc4218, type: 2}
+        count: 3
