@@ -38,6 +38,8 @@ public class AI_FollowPlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        MallCop = GetComponent<NavMeshAgent>();
+
         MallCop.autoBraking = true;
 
         CheckViewAngle = 75.0f;
