@@ -15,10 +15,9 @@ public class SaveState {
     public string lastSaveDate;
     public string lastSaveTime;
 
-    // Globals and ItemInfo are populated after Load is called
-    public Globals globals;
-    public PlayerInventory inventory = new PlayerInventory();
-    public Quests quests = new Quests();
+    public Globals globals = new();
+    public PlayerInventory inventory = new();
+    public Quests quests = new();
 
     private SceneData currentScene;
     private string playerData;
