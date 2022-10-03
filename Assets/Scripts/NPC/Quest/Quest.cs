@@ -17,6 +17,10 @@ public class Quest : ScriptableObject {
     /// Checks if the quest is completed.
     /// </summary>
     public bool IsCompleted() {
+        return GameManager.instance.saveState.quests.IsCompleted(this);
+    }
+
+    public bool IsSatisfied() {
         foreach (var criterion in criteria) {
             if (!criterion.Check()) return false;
         }
