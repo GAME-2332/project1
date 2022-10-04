@@ -16,24 +16,52 @@ MonoBehaviour:
   entryPoint:
     optionText: 
     portrait: {fileID: 0}
-    isTerminator: 1
+    isTerminator: 0
     npcText:
     - text: 'Oh, hey.
 
         That mall cop is pretty crazy.'
       portrait: {fileID: 0}
-    - text: 'Anyway here''s a key to the cell.
-
-        Later!'
-      portrait: {fileID: 21300000, guid: 0f737af1202913d4795813234afcebd7, type: 3}
     conditions: []
-    actions:
-    - rid: 2759954591047745537
-    children: []
+    actions: []
+    children:
+    - optionText: Key to the cell?
+      portrait: {fileID: 21300000, guid: 0f737af1202913d4795813234afcebd7, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'Oh yeah! Here''s the key to the cell.
+
+          Later!'
+        portrait: {fileID: 0}
+      conditions:
+      - rid: 2759954597239586818
+      actions:
+      - rid: 2759954597239586817
+      - rid: 2759954597239586820
+      children: []
+    - optionText: Bye
+      portrait: {fileID: 0}
+      isTerminator: 1
+      npcText:
+      - text: Damn ok see ya
+        portrait: {fileID: 0}
+      conditions: []
+      actions: []
+      children: []
   references:
     version: 2
     RefIds:
-    - rid: 2759954591047745537
+    - rid: 2759954597239586817
       type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
       data:
         item: {fileID: 11400000, guid: 83e19ad53e3f9214d96f20b2255e39f0, type: 2}
+    - rid: 2759954597239586818
+      type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: got_jail_cell_key
+        checkValue: 0
+    - rid: 2759954597239586820
+      type: {class: SetBoolAction, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: got_jail_cell_key
+        value: 1
