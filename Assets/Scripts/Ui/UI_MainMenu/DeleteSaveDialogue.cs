@@ -32,7 +32,6 @@ namespace MainMenuUI_Components
            
             if (_canvasgroup == null)
             {
-
                 _canvasgroup = GetComponent<CanvasGroup>();
             }
             if (_canvasgroup.alpha != 0)
@@ -62,14 +61,18 @@ namespace MainMenuUI_Components
 
         public void OnDelete()
         {
+            Debug.Log("Deleting Slot" + CurrentSlotToDelete);
             CloseCanvas();
         }
         public void OnCancel()
         {
             CloseCanvas();
         }
-        public void OpenCanvas()
+
+        int CurrentSlotToDelete;
+        public void OpenCanvas(int SlotToDelete)
         {
+            CurrentSlotToDelete = SlotToDelete;
             _canvasgroup.blocksRaycasts = true;
             _canvasgroup.interactable = true;
             _canvasgroup.alpha = 1;

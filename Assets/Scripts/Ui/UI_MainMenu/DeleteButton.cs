@@ -14,7 +14,7 @@ namespace MainMenuUI_Components
 
     public class DeleteButton : MonoBehaviour
     {
-        public delegate void OpenDeleteDialogue();
+        public delegate void OpenDeleteDialogue(int SlotToDelete);
         public static event OpenDeleteDialogue OnDeleteClickedEvent;
 
         Image _icon;
@@ -68,11 +68,14 @@ namespace MainMenuUI_Components
 
             entry2.callback.AddListener((data) => { OnPointerExitDelegate((PointerEventData)data); });
 
+           
         }
-
+        int ToDeleteID;
         public void OnDeleteWasClicked()
         {
-            OnDeleteClickedEvent();
+            
+            ToDeleteID = GetComponentInParent<SaveBox>().SLOT_ID;
+            OnDeleteClickedEvent(ToDeleteID);
         }
         public void OnPointerEnterDelegate(PointerEventData data)
         {
