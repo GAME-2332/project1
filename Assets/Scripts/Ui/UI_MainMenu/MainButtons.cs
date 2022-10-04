@@ -74,6 +74,8 @@ namespace MainMenuUI_Components {
         }
         void OnClickOptions()
         {
+            GameObject OptionsDialogue = Resources.Load("UI/OptionsMenuPrefab") as GameObject;
+            Instantiate(OptionsDialogue);
             Debug.Log("options");
         }
         void OnClickQuit()
