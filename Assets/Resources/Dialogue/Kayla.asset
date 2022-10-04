@@ -50,18 +50,17 @@ MonoBehaviour:
       children: []
     - optionText: Raccoon game cartridge?
       portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
-      isTerminator: 0
+      isTerminator: 1
       npcText:
       - text: 'oh my god, you mean, like, raccoon city?
 
           i totally have
           that cartridge haha. '
         portrait: {fileID: 0}
-      - text: 'i may have borrowed gavin''s little game, but i''m not giving it back!!
-
-          not
-          until he gives me back my tiara. i think i left it in the arcade...'
+      - text: i may have borrowed gavin's little game, but i'm not giving it back!!
         portrait: {fileID: -646297485791356349, guid: 70d0d0aabf4610248a0c4453d0634821, type: 3}
+      - text: not until he gives me back my tiara. i think i left it in the arcade...
+        portrait: {fileID: -5620225235847268522, guid: 70d0d0aabf4610248a0c4453d0634821, type: 3}
       conditions:
       - rid: 2759954597239586860
       actions:
