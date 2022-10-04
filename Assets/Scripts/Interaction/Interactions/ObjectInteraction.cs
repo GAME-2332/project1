@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ObjectInteraction : Interactible{
     [Tooltip("Conditions for this interaction.")]
@@ -13,12 +14,12 @@ public class ObjectInteraction : Interactible{
     [SerializeReference] [PickImpl(typeof(IStateAction))]
     public List<IStateAction> elseActions;
 
-    public bool disableIfSuccesful;
+    [FormerlySerializedAs("disableIfSuccesful")] public bool disableIfSuccessful;
     
     public override void Interact() {
         if (conditions.Count(predicate => predicate.Check()) == conditions.Count) {
             actions.ForEach(action => action.Execute());
-            if (disableIfSuccesful) {
+            if (disableIfSuccessful) {
                 gameObject.SetActive(false);
             }
         } else {
