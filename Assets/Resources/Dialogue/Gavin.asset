@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e92c7c635ff94391ad8a6d8d7efa44d8, type: 3}
   m_Name: Gavin
   m_EditorClassIdentifier: 
-  portrait: {fileID: 2862249583361921764, guid: 53b9f0ddf181f7943bebaf27186b95c9, type: 3}
+  portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
   entryPoint:
     optionText: 
     portrait: {fileID: 0}
@@ -23,7 +23,7 @@ MonoBehaviour:
     conditions: []
     actions: []
     children:
-    - optionText: Hello? ...Hello? Hello!
+    - optionText: ...hello?
       portrait: {fileID: 0}
       isTerminator: 0
       npcText:
