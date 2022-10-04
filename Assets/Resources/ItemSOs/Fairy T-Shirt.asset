@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62c69c261a5dc9f4b95c7e405eb20789, type: 3}
+  m_Name: Fairy T-Shirt
+  m_EditorClassIdentifier: 
+  item_name: Scary Fairy T-shirt
+  item_description: The fae are watching...
+  default_sprite: {fileID: 21300000, guid: d906933914672324da8e1d3e5ef9b5e7, type: 3}
+  on_hover_sprite: {fileID: 21300000, guid: c11310629a9eb0641a1ecb9e0e2eb2fb, type: 3}
+  path_to_3d_version_prefab: {fileID: 0}

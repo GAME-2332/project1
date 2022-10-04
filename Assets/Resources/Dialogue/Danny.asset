@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92c7c635ff94391ad8a6d8d7efa44d8, type: 3}
+  m_Name: Danny
+  m_EditorClassIdentifier: 
+  portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+  entryPoint:
+    optionText: 
+    portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+    isTerminator: 0
+    npcText:
+    - text: Welcome to the Spicy Subjec--oh! Yo!
+      portrait: {fileID: 0}
+    - text: What are you doing in my store? I haven't seen people here in forever!
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+    conditions: []
+    actions: []
+    children:
+    - optionText: Trying to leave the mall
+      portrait: {fileID: -6260883254567780136, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      isTerminator: 0
+      npcText:
+      - text: Well, the mall's kinda broken down, so it can be hard to make your
+          way around.
+        portrait: {fileID: -6260883254567780136, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      - text: As for leaving the store... the door's locked.
+        portrait: {fileID: 3946734255418007342, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      conditions:
+      - rid: 2889273139674480643
+      actions: []
+      children:
+      - optionText: Can you unlock the door?
+        portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+        isTerminator: 1
+        npcText:
+        - text: 'I could unlock the door for you but I''m feeling...
+
+            absolutely
+            dead...'
+          portrait: {fileID: -2029099054924352060, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+        - text: 'Ya know what always wakes me up?
+
+            A cryptid can!'
+          portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+        - text: I stash some around the store. If ya bring me 3 cryptid cans, I'll
+            unlock the door for you.
+          portrait: {fileID: -2029099054924352060, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+        conditions: []
+        actions: []
+        children: []
+      - optionText: Well, I give up.
+        portrait: {fileID: -1633775181068912515, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+        isTerminator: 1
+        npcText:
+        - text: You're a quitter, eh?
+          portrait: {fileID: 0}
+        conditions: []
+        actions: []
+        children: []
+    - optionText: I've got your cans.
+      portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: '*Schlurps all three cans*
+
+          Aww yeah man that hits the spot.'
+        portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      - text: 'Alright, I''ll unlock the door for ya.
+
+          Now scram!'
+        portrait: {fileID: -1633775181068912515, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      conditions:
+      - rid: 2759954589781852165
+      - rid: 2759954589781852170
+      actions:
+      - rid: 2889273139674480654
+      - rid: 2759954589781852171
+      children: []
+    - optionText: Why do you haunt the store?
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'Oh. Well, I tragically died here...
+
+          Yeah, the stress catches
+          up with you eventually.'
+        portrait: {fileID: 3946734255418007342, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      - text: 'At least I died drinking the best drink known to man!
+
+          Cryptid
+          cans!'
+        portrait: {fileID: -1099277228685199971, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      - text: 'I had 6 the day it happened...
+
+          #worthit'
+        portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      conditions: []
+      actions: []
+      children: []
+    - optionText: Never mind
+      portrait: {fileID: -1633775181068912515, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: Okay...
+        portrait: {fileID: 0}
+      conditions: []
+      actions: []
+      children: []
+    - optionText: Scary fairy t-shirt
+      portrait: {fileID: -1374165439509322011, guid: 42e0bed94c11bb34ea1ffdbfd910aefd, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'You need a scary fairy t-shirt?
+
+          ...hmm, I think we have
+          one back here somewhere...'
+        portrait: {fileID: 0}
+      - text: 'Aha, here you go.
+
+          Now leave me alone, I''m trying to jam!'
+        portrait: {fileID: -1633775181068912515, guid: d70bfe9f2c6939f4dbf2af19a3b85bcc, type: 3}
+      conditions:
+      - rid: 2759954589781852160
+      - rid: 2759954589781852173
+      actions:
+      - rid: 2759954589781852162
+      children: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2759954589781852160
+      type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: tshirt_quest
+        checkValue: 1
+    - rid: 2759954589781852162
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: a3a7e3dceb76a5448b7c3ab81cac7053, type: 2}
+    - rid: 2759954589781852165
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954589781852167
+    - rid: 2759954589781852167
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: dd4093f7e4fd3524eae127ffcbc789ac, type: 2}
+    - rid: 2759954589781852170
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: b8d4e6d8b2503d14582f5fef14dc4218, type: 2}
+        count: 3
+    - rid: 2759954589781852171
+      type: {class: CompleteQuestAction, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: dd4093f7e4fd3524eae127ffcbc789ac, type: 2}
+    - rid: 2759954589781852173
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954589781852176
+    - rid: 2759954589781852176
+      type: {class: LogicalOrPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicates:
+        - rid: 2759954589781852178
+        - rid: 2759954589781852180
+    - rid: 2759954589781852178
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: aeff3644b1546c74aa04b0bc2a132356, type: 2}
+    - rid: 2759954589781852180
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: a3a7e3dceb76a5448b7c3ab81cac7053, type: 2}
+        count: 1
+    - rid: 2889273139674480643
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2889273139674480645
+    - rid: 2889273139674480645
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: dd4093f7e4fd3524eae127ffcbc789ac, type: 2}
+    - rid: 2889273139674480654
+      type: {class: TakeItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: b8d4e6d8b2503d14582f5fef14dc4218, type: 2}
+        count: 3

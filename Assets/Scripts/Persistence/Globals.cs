@@ -19,31 +19,31 @@ public class Globals {
         intMap.Set(key, value);
     }
 
-    public int GetInt(string key, int fallback = 0) {
-        return intMap.GetOrDefault(key, fallback);
+    public int GetInt(string key, int? fallback = null) {
+        return intMap.GetOrDefault(key, fallback ?? 0);
     }
 
     public void SetFloat(string key, float value) {
         floatMap.Set(key, value);
     }
 
-    public float GetFloat(string key, float fallback = 0) {
-        return floatMap.GetOrDefault(key, fallback);
+    public float GetFloat(string key, float? fallback = null) {
+        return floatMap.GetOrDefault(key, fallback ?? 0f);
     }
 
     public void SetBool(string key, bool value) {
         boolMap.Set(key, value);
     }
 
-    public bool GetBool(string key, bool fallback = false) {
-        return boolMap.GetOrDefault(key, fallback);
+    public bool GetBool(string key, bool? fallback = null) {
+        return boolMap.GetOrDefault(key, fallback ?? false);
     }
 
     public void SetString(string key, string value) {
         stringMap.Set(key, value);
     }
 
-    public string GetString(string key, string fallback = "") {
-        return stringMap.GetOrDefault(key, fallback);
+    public string GetString(string key, string fallback = null) {
+        return stringMap.GetOrDefault(key, fallback ?? "");
     }
 }

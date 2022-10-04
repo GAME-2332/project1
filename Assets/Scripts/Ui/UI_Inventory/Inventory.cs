@@ -78,23 +78,12 @@ public class Inventory : MonoBehaviour
 
     public void LoadInventory()
     {
-        _Inventory = new List<SOItemInfo>();
-        
-        
-        //Get the game manager, get the list of game objects. 
         //_Inventory = GameManager.instance.saveState.GetInventory()
         LoadSpaces();//this gets a reference to the spaces.
 
-        int itemCount = 0;
-
-
-
-        //New foreach loader 
         //Inventory is now a list of itemSO's.
-        foreach (SOItemInfo i in _Inventory)
-        {
-            _Spaces[itemCount].GetComponentInChildren<ItemInfo>().SetSO(i);
-            itemCount++;
+        for (int i = 0; i < GameManager.instance.saveState.inventory.Count; i++) {
+            _Spaces[i].GetComponentInChildren<ItemInfo>().SetSO(GameManager.instance.saveState.inventory.GetItem(i));
         }
     }
 
