@@ -73,7 +73,8 @@ public class EscapeMenu : MonoBehaviour
 
     void OnSave()
     {
-        Debug.Log("Save game and return to title screen");
+        GameManager.instance.saveState.SaveCurrent);
+        //"Save game and return to title screen"
         
     }
 
@@ -89,7 +90,9 @@ public class EscapeMenu : MonoBehaviour
 
     void OnQuit()
     {
-        Debug.Log("Quit game");
+        GameManager.instance.saveState.SaveCurrent);
+        Application.Quit();
+        
         //save
         //quit.
     }

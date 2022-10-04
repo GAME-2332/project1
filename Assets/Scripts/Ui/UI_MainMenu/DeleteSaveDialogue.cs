@@ -1,3 +1,4 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,10 @@ namespace MainMenuUI_Components
 {
     public class DeleteSaveDialogue : MonoBehaviour
     {
+
+        public delegate void DeleteSlot(int ID);
+        public static event DeleteSlot OnDeleteSlot;
+
         [SerializeField]
         CanvasGroup _canvasgroup;
 
@@ -62,7 +67,8 @@ namespace MainMenuUI_Components
 
         public void OnDelete()
         {
-            Debug.Log("Deleting Slot" + CurrentSlotToDelete);
+           
+            OnDeleteSlot(CurrentSlotToDelete);
             CloseCanvas();
         }
         public void OnCancel()
