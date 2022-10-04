@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62c69c261a5dc9f4b95c7e405eb20789, type: 3}
-  m_Name: Gold Key
+  m_Name: Power Box Key
   m_EditorClassIdentifier: 
-  item_name: Gold Key
+  item_name: Power Box Key
   item_description: Also not the key to my heart.
   default_sprite: {fileID: 21300000, guid: f7d4952493cadb24a91855115d67f4b6, type: 3}
   on_hover_sprite: {fileID: 21300000, guid: a517730600bda9e428dd879b247af030, type: 3}
