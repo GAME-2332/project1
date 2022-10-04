@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1196747718795080620}
-  - component: {fileID: -1115197787894410865}
   m_Layer: 0
   m_Name: Prop_GenericProp_Door03_Black
   m_TagString: Untagged
@@ -30,22 +29,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1947774518706352853}
+  - {fileID: 8352627283245370155}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-1115197787894410865
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2004210794047891734}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6002570490471831304
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +44,7 @@ GameObject:
   - component: {fileID: 1947774518706352853}
   - component: {fileID: 5833246068141954849}
   - component: {fileID: 8777882550234922817}
+  - component: {fileID: 6205074595504458577}
   m_Layer: 0
   m_Name: SM_GenericProp_Door03:Mesh
   m_TagString: Untagged
@@ -129,3 +117,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6205074595504458577
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002570490471831304}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.661766, y: 28.86545, z: 13.964096}
+  m_Center: {x: 13.912098, y: 14.500257, z: -5.3815928}

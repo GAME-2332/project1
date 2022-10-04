@@ -1,12 +1,18 @@
+using Mono.Cecil;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static GameManager;
 
 namespace MainMenuUI_Components
 {
     public class DeleteSaveDialogue : MonoBehaviour
     {
+
+        public delegate void DeleteSlot(int ID);
+        public static event DeleteSlot OnDeleteSlot;
+
         [SerializeField]
         CanvasGroup _canvasgroup;
 
@@ -32,7 +38,6 @@ namespace MainMenuUI_Components
            
             if (_canvasgroup == null)
             {
-
                 _canvasgroup = GetComponent<CanvasGroup>();
             }
             if (_canvasgroup.alpha != 0)
@@ -62,14 +67,19 @@ namespace MainMenuUI_Components
 
         public void OnDelete()
         {
+           
+            OnDeleteSlot(CurrentSlotToDelete);
             CloseCanvas();
         }
         public void OnCancel()
         {
             CloseCanvas();
         }
-        public void OpenCanvas()
+
+        int CurrentSlotToDelete;
+        public void OpenCanvas(int SlotToDelete)
         {
+            CurrentSlotToDelete = SlotToDelete;
             _canvasgroup.blocksRaycasts = true;
             _canvasgroup.interactable = true;
             _canvasgroup.alpha = 1;

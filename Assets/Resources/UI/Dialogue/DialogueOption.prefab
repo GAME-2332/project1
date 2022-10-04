@@ -39,7 +39,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: -315.08, y: 85.5}
-  m_SizeDelta: {x: 385.9, y: 52.950012}
+  m_SizeDelta: {x: 450, y: 52.950012}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &3404042190011728834
 CanvasRenderer:
@@ -155,8 +155,8 @@ MonoBehaviour:
   rect: {fileID: 3404042190011728836}
   text: {fileID: 3404042190627250791}
   image: {fileID: 3404042190011728837}
-  normalColor: {r: 0.7372549, g: 0.7372549, b: 0.7372549, a: 1}
-  hoverColor: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
+  normalColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+  hoverColor: {r: 0.36078432, g: 0.36078432, b: 0.36078432, a: 1}
 --- !u!1 &3404042190627250809
 GameObject:
   m_ObjectHideFlags: 0

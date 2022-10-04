@@ -1,0 +1,227 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92c7c635ff94391ad8a6d8d7efa44d8, type: 3}
+  m_Name: Gavin
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+  entryPoint:
+    optionText: 
+    portrait: {fileID: 0}
+    isTerminator: 0
+    npcText:
+    - text: '*intense gaming*'
+      portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+    conditions: []
+    actions: []
+    children:
+    - optionText: ...hello?
+      portrait: {fileID: 0}
+      isTerminator: 0
+      npcText:
+      - text: 'Aye. Aye! Go away!
+
+          I''m on the last level of Tanuki Fighter.'
+        portrait: {fileID: 7980100362035916127, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+      - text: 'Aww dude! You made me lose...
+
+          What do you want man?'
+        portrait: {fileID: 8149968071842092595, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+      conditions: []
+      actions: []
+      children:
+      - optionText: Where can I find the exit?
+        portrait: {fileID: 5272738050271708369, guid: c60d8443fca37db4cb30f15676aff67a, type: 3}
+        isTerminator: 0
+        npcText:
+        - text: Oh, you need help getting out of the mall?
+          portrait: {fileID: 0}
+        - text: 'I guess I could help you, but I''m kinda busy.
+
+            I''m
+            looking for my special edition of Raccoon City!'
+          portrait: {fileID: 7980100362035916127, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+        conditions: []
+        actions: []
+        children:
+        - optionText: I can find it for you
+          portrait: {fileID: 5943661040955333889, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+          isTerminator: 1
+          npcText:
+          - text: 'You''d really look for it for me!? Awesome!
+
+              Now
+              I can boot up another round of Tanuki Fighter!'
+            portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          - text: I think I lent it to someone a bit ago, you could try talking to
+              some other ghosts.
+            portrait: {fileID: -1028158893254653632, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          conditions:
+          - rid: 2759954591047745540
+          - rid: 2759954591047745545
+          actions: []
+          children: []
+        - optionText: I'll leave you to it.
+          portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          isTerminator: 1
+          npcText:
+          - text: '*gaming continues*'
+            portrait: {fileID: 0}
+          conditions: []
+          actions: []
+          children: []
+        - optionText: Found it!
+          portrait: {fileID: -6465084810989493322, guid: 53b9f0ddf181f7943bebaf27186b95c9, type: 3}
+          isTerminator: 1
+          npcText:
+          - text: 'Yo! Finally!
+
+              Man, I can''t wait to play this with
+              Danny!'
+            portrait: {fileID: 0}
+          - text: Kayla's tiara is in the back office on a safe. If you need that
+              for some reason I dunno.
+            portrait: {fileID: 5943661040955333889, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+          - text: 'Oh, and take this key I found lying around...
+
+              Might
+              be useful, right?'
+            portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          conditions:
+          - rid: 2759954591047745550
+          actions:
+          - rid: 2759954591047745551
+          - rid: 2759954597239586827
+          - rid: 2759954597239586846
+          children: []
+      - optionText: Tiara?
+        portrait: {fileID: -9161735517062624718, guid: c60d8443fca37db4cb30f15676aff67a, type: 3}
+        isTerminator: 1
+        npcText:
+        - text: Kayla's tiara? Hah!
+          portrait: {fileID: 0}
+        - text: Tell if she wants that thing back she'll need to return my copy of
+            Raccoon City.
+          portrait: {fileID: 7980100362035916127, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+        - text: 'Oh and it''s definitely not sitting on top of that safe in the office.
+
+            So
+            don''t, uh, just take it. That''d be uncool, man.'
+          portrait: {fileID: -1028158893254653632, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+        conditions:
+        - rid: 2759954591047745548
+        - rid: 2759954597239586822
+        actions: []
+        children:
+        - optionText: I can find it for you
+          portrait: {fileID: 5943661040955333889, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+          isTerminator: 1
+          npcText:
+          - text: 'You''d really look for it for me!? Awesome!
+
+              Now
+              I can boot up another round of Tanuki Fighter!'
+            portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          - text: I think I lent it to someone a bit ago, you could try talking to
+              some other ghosts.
+            portrait: {fileID: -1028158893254653632, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          conditions:
+          - rid: 2759954591047745540
+          - rid: 2759954591047745545
+          actions: []
+          children: []
+        - optionText: I'll leave you to it.
+          portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+          isTerminator: 1
+          npcText:
+          - text: '*gaming continues*'
+            portrait: {fileID: 0}
+          conditions: []
+          actions: []
+          children: []
+      - optionText: What happened to your face?
+        portrait: {fileID: 5272738050271708369, guid: c60d8443fca37db4cb30f15676aff67a, type: 3}
+        isTerminator: 1
+        npcText:
+        - text: 'What the heck man you can''t just say that to people
+
+            haha
+            just kidding it''s fine I don''t care lol'
+          portrait: {fileID: 0}
+        - text: 'The glass on my face?
+
+            Well, some dillweed accused me
+            of cheating at Tanuki Fighter.'
+          portrait: {fileID: 7980100362035916127, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+        - text: 'Of course, I had to defend my honor, so a fight broke out...
+
+            He
+            miiight have slammed my head against an arcade cabinet.'
+          portrait: {fileID: 5943661040955333889, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+        conditions:
+        - rid: 2759954591047745548
+        actions: []
+        children: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2759954591047745540
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954591047745542
+    - rid: 2759954591047745542
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: fd2a0aed094489047bd50ca66d52300f, type: 2}
+    - rid: 2759954591047745545
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954591047745547
+    - rid: 2759954591047745547
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 3c4553077ab89124d8acd4c2e0711221, type: 2}
+        count: 1
+    - rid: 2759954591047745548
+      type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: need_tiara
+        checkValue: 1
+    - rid: 2759954591047745550
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 3c4553077ab89124d8acd4c2e0711221, type: 2}
+        count: 1
+    - rid: 2759954591047745551
+      type: {class: CompleteQuestAction, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: fd2a0aed094489047bd50ca66d52300f, type: 2}
+    - rid: 2759954597239586822
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954597239586824
+    - rid: 2759954597239586824
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: fd2a0aed094489047bd50ca66d52300f, type: 2}
+    - rid: 2759954597239586827
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}
+    - rid: 2759954597239586846
+      type: {class: PlaySoundAction, ns: , asm: Assembly-CSharp}
+      data:
+        playAtPlayer: 1
+        position: {fileID: 0}
+        clip: {fileID: 8300000, guid: 611e5f7a1a8757049a9a5965552fab78, type: 3}

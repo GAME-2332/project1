@@ -1,6 +1,5 @@
-using System;
+using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class DialogueScreen: MonoBehaviour {
@@ -12,6 +11,7 @@ public class DialogueScreen: MonoBehaviour {
 
     public static DialogueScreen GetOrCreate() {
         if (!Exists()) {
+            if (screenPrefab == null) screenPrefab = Resources.Load("UI/Dialogue/DialogueScreen") as GameObject;
             _instance = Instantiate(screenPrefab, Vector3.zero, Quaternion.identity).GetComponent<DialogueScreen>();
         }
         return _instance;
@@ -29,16 +29,15 @@ public class DialogueScreen: MonoBehaviour {
 
     private Canvas canvas;
     private Image portrait;
+    private TextMeshProUGUI npcName;
 
     // private Panel
-    private string npcName;
     private DialogueContext ctx;
     private DialogueText npcText;
     private DialogueOption[] instances;
 
     void Awake() {
         // We can't call Load in a static initializer, so we do it here instead.
-        if (screenPrefab == null) screenPrefab = Resources.Load("UI/Dialogue/DialogueScreen") as GameObject;
         if (optionPrefab == null) optionPrefab = Resources.Load("UI/Dialogue/DialogueOption") as GameObject;
         
         if (Exists() && _instance != this) Destroy(gameObject);
@@ -48,23 +47,28 @@ public class DialogueScreen: MonoBehaviour {
     void Start() {
         canvas = GetComponent<Canvas>();
         canvas.worldCamera = Camera.main;
-        canvas.enabled = false;
         
         portrait = transform.Find("Portrait").GetComponent<Image>();
         npcText = transform.Find("NPC Text").GetComponent<DialogueText>();
+        npcName = transform.Find("NPC Name").GetComponent<TextMeshProUGUI>();
+    }
+
+    private void Update() {
+        if (ctx != null && GameManager.instance.gameOptions.interact.GetKeyDown()) ctx.Continue();
     }
 
     public void Open(string npcName, DialogueTree tree) {
         GameManager.instance.gameState = GameManager.GameState.Dialogue;
         
-        this.npcName = npcName;
         ctx = tree.Traverse(RefreshNPCText, RefreshOptions, SetPortrait, Close);
         canvas.enabled = true;
-        
+
         npcText.SetContext(ctx);
         npcText.SetTextPadding(horizontalTextPadding, verticalTextPadding);
         npcText.SetPosition(0, bottomOffset + verticalPadding);
 
+        this.npcName.SetText(npcName);
+        
         ctx.Ready();
     }
 
@@ -86,8 +90,6 @@ public class DialogueScreen: MonoBehaviour {
         float offset = bottomOffset;
         instances = new DialogueOption[options.Length];
         for (int i = 0; i < options.Length; i++) {
-            Debug.Log(offset);
-            Debug.Log("height " + height);
             CreateOption(i, options[i], offset);
             offset += verticalPadding + height;
         }
@@ -112,11 +114,16 @@ public class DialogueScreen: MonoBehaviour {
         
         portrait.rectTransform.anchoredPosition = new Vector2(-npcText.Width / 2 - horizontalPadding, bottomOffset) + portraitOffset;
         portrait.rectTransform.sizeDelta = new Vector2(width, height) * portraitScale;
+
+        npcName.rectTransform.anchoredPosition = new Vector2(
+            -npcText.Width / 2 - horizontalPadding - portrait.rectTransform.sizeDelta.x,
+            bottomOffset - verticalPadding - verticalTextPadding);
     }
 
     void Close() {
         npcText.SetPosition(0, bottomOffset);
         DestroyOptions();
+        ctx = null;
         
         GameManager.instance.gameState = GameManager.GameState.Playing;
         canvas.enabled = false;

@@ -37,7 +37,14 @@ namespace MainMenuUI_Components
 
         [SerializeField]
 
-
+        private void OnEnable()
+        {
+            DeleteSaveDialogue.OnDeleteSlot += DeleteSave;
+        }
+        private void OnDisable()
+        {
+            DeleteSaveDialogue.OnDeleteSlot -= DeleteSave;
+        }
         // Start is called before the first frame update
         void Start()
         {
@@ -131,6 +138,20 @@ namespace MainMenuUI_Components
         public void SetSlotID(int ID)
         {
             SLOT_ID = ID;
+
+        }
+
+        public void DeleteSave(int ID)
+        {
+            if(SLOT_ID == ID)
+            {
+                saveState.Clear(); 
+                Debug.Log("This save (ID:" + SLOT_ID + ") was cleared");
+                _locationText.SetText("EMPTY SLOT");
+                _timeText.SetText("----");
+            }
+           
+            //then also reset the text fields to empty.
 
         }
 
