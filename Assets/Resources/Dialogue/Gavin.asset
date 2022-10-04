@@ -100,6 +100,8 @@ MonoBehaviour:
           - rid: 2759954591047745550
           actions:
           - rid: 2759954591047745551
+          - rid: 2759954597239586827
+          - rid: 2759954597239586828
           children: []
       - optionText: Tiara?
         portrait: {fileID: -9161735517062624718, guid: c60d8443fca37db4cb30f15676aff67a, type: 3}
@@ -112,6 +114,7 @@ MonoBehaviour:
           portrait: {fileID: 7980100362035916127, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
         conditions:
         - rid: 2759954591047745548
+        - rid: 2759954597239586822
         actions: []
         children:
         - optionText: I can find it for you
@@ -199,3 +202,20 @@ MonoBehaviour:
       type: {class: CompleteQuestAction, ns: , asm: Assembly-CSharp}
       data:
         quest: {fileID: 11400000, guid: fd2a0aed094489047bd50ca66d52300f, type: 2}
+    - rid: 2759954597239586822
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954597239586824
+    - rid: 2759954597239586824
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: fd2a0aed094489047bd50ca66d52300f, type: 2}
+    - rid: 2759954597239586827
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}
+    - rid: 2759954597239586828
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: ad6ecfc31ac21f1408058a73aefcb919, type: 2}
