@@ -90,7 +90,7 @@ public class EscapeMenu : MonoBehaviour
 
     void OnQuit()
     {
-        GameManager.instance.saveState.SaveCurrent);
+        GameManager.instance.saveState.SaveCurrent();
         Application.Quit();
         
         //save
