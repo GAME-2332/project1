@@ -9,8 +9,6 @@ public class Globals {
     [SerializeField]
     private SerializedMap<string, int> intMap = new SerializedMap<string, int>();
     [SerializeField]
-    private SerializedMap<string, float> floatMap = new SerializedMap<string, float>();
-    [SerializeField]
     private SerializedMap<string, bool> boolMap = new SerializedMap<string, bool>();
     [SerializeField]
     private SerializedMap<string, string> stringMap = new SerializedMap<string, string>();
@@ -21,14 +19,6 @@ public class Globals {
 
     public int GetInt(string key, int? fallback = null) {
         return intMap.GetOrDefault(key, fallback ?? 0);
-    }
-
-    public void SetFloat(string key, float value) {
-        floatMap.Set(key, value);
-    }
-
-    public float GetFloat(string key, float? fallback = null) {
-        return floatMap.GetOrDefault(key, fallback ?? 0f);
     }
 
     public void SetBool(string key, bool value) {

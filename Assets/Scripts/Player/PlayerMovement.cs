@@ -56,6 +56,8 @@ public class PlayerMovement : MonoBehaviour {
     [NonSerialized]
     public PlayerData playerData;
 
+    internal Vector3 horizontalVelocity;
+
     private GameOptions gameOptions;
     private CharacterController controller;
     public Vector3 cameraFocus;
@@ -96,7 +98,7 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         // Add player movement velocity
-        Vector3 horizontalVelocity = (GetInputVector() * MoveSpeed() / 50);
+        horizontalVelocity = (GetInputVector() * MoveSpeed() / 50);
         playerData.velocity.Set(horizontalVelocity.x, playerData.velocity.y, horizontalVelocity.z);
 
         // Crouching

@@ -7,7 +7,7 @@ public abstract class CheckGlobalsPredicate<T> : IStatePredicate {
 
     public abstract T GetValue(string name);
     
-    public bool Check() {
+    public virtual bool Check() {
         return checkValue.Equals(GetValue(variableName));
     }
 }
