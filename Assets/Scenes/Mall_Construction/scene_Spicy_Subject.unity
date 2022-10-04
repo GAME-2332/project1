@@ -185,6 +185,88 @@ LightingSettings:
   m_PVRFilteringAtrousPositionSigmaIndirect: 2
   m_PVRFilteringAtrousPositionSigmaAO: 1
   m_PVRTiledBaking: 0
+--- !u!1 &810341950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 810341954}
+  - component: {fileID: 810341953}
+  - component: {fileID: 810341952}
+  - component: {fileID: 810341951}
+  m_Layer: 0
+  m_Name: SpicySubject_SceneData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &810341951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810341950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &810341952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810341950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &810341953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810341950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba9056a8785420e4d995b2bbbb5fd732, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  defaultSpawnPoint: {fileID: 0}
+--- !u!4 &810341954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810341950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.837173, y: 2.6847827, z: 23.45765}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1400656639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -192,9 +274,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1912625206661700867, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: identifier
+      value: scene_Spicy_Subject_0b61c1ad-dc75-4dbd-9fae-e156bb69ef12
+      objectReference: {fileID: 0}
     - target: {fileID: 2137459867850377145, guid: d4a534f5974523640a9031b183f68fec, type: 3}
       propertyPath: m_Name
       value: Level_Spicy_Subject
+      objectReference: {fileID: 0}
+    - target: {fileID: 4975229271390108490, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: identifier
+      value: scene_Spicy_Subject_1384e06d-8caa-4cb4-ac91-41470c91e8c0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5045766077637457637, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: identifier
+      value: scene_Spicy_Subject_af631118-f4d7-4ced-95f6-43a2a273dcc5
       objectReference: {fileID: 0}
     - target: {fileID: 6799114105949489295, guid: d4a534f5974523640a9031b183f68fec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -202,7 +296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8211285657910189417, guid: d4a534f5974523640a9031b183f68fec, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8211285657910189417, guid: d4a534f5974523640a9031b183f68fec, type: 3}
       propertyPath: m_LocalPosition.x
