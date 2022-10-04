@@ -474,7 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2545709256136786215}
-  playerActivateDistance: 3.5
+  playerActivateDistance: 6
 --- !u!114 &8914244775239749045
 MonoBehaviour:
   m_ObjectHideFlags: 0
