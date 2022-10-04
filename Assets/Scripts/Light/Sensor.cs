@@ -15,8 +15,8 @@ public class Sensor : MonoBehaviour
     private void OnTriggerEnter(Collider other){
         Light.GetComponent<Light>().enabled = true;
         LightSensor.enabled = true;
-
   }
+  
     private void OnTriggerExit(Collider other){
         Light.GetComponent<Light>().enabled = false;
         LightSensor.enabled = false;
