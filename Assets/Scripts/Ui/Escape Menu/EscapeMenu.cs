@@ -38,17 +38,19 @@ public class EscapeMenu : MonoBehaviour
         }
         _resumeButton.onClick.AddListener(OnResume);
 
-        if (_saveButton == null)
-        {
-            _saveButton = _all[1];
-        }
-        _saveButton.onClick.AddListener(OnSave);
 
         if (_optionsButton == null)
         {
-            _optionsButton = _all[2];
+            _optionsButton = _all[1];
         }
         _optionsButton.onClick.AddListener(OnOptions);
+
+        if (_saveButton == null)
+        {
+            _saveButton = _all[2];
+        }
+        _saveButton.onClick.AddListener(OnSave);
+
 
         if (_quitButton == null)
         {
@@ -61,14 +63,6 @@ public class EscapeMenu : MonoBehaviour
             _xOutButton = _all[4];
         }
         _xOutButton.onClick.AddListener(OnX);
-    }
-
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            CloseCanvas();
-        }
     }
 
     void OnResume()
@@ -85,7 +79,12 @@ public class EscapeMenu : MonoBehaviour
 
     void OnOptions()
     {
-        Debug.Log("Instantiate options.");
+        //Instantiates Options
+        GameObject OptionsDialogue = Resources.Load("UI/OptionsMenuPrefab") as GameObject;
+        Instantiate(OptionsDialogue);
+        Canvas _canvas;
+        _canvas = GetComponent<Canvas>();
+        _canvas.sortingOrder = 2;
     }
 
     void OnQuit()
