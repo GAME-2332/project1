@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7118788424205907014}
   - component: {fileID: 5928998802970251028}
   - component: {fileID: 1101216081288648535}
+  - component: {fileID: 2836935285654146808}
   m_Layer: 0
   m_Name: SM_Mall_Trashcan_01:Trashcan
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2836935285654146808
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6329861263987550846}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.0364914, y: 10.916954, z: 5.6527023}
+  m_Center: {x: 9.48595, y: 4.458475, z: 0.048015594}
 --- !u!1 &8880200731150791610
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8103980313699969280}
-  - component: {fileID: 888787141565018854}
   m_Layer: 0
   m_Name: Prop_GenericProp_Trashcan_01
   m_TagString: Untagged
@@ -116,16 +129,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &888787141565018854
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8880200731150791610}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
