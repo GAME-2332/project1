@@ -73,7 +73,7 @@ public class EscapeMenu : MonoBehaviour
 
     void OnSave()
     {
-        GameManager.instance.saveState.SaveCurrent);
+        GameManager.instance.saveState.SaveCurrent();
         //"Save game and return to title screen"
         
     }
