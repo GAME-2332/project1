@@ -10,10 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62c69c261a5dc9f4b95c7e405eb20789, type: 3}
-  m_Name: Raccoon City
+  m_Name: Kayla's Tiara
   m_EditorClassIdentifier: 
-  item_name: Raccoon City Cartridge
-  item_description: get rekt
+  item_name: Kayla's Tiara
+  item_description: "If you can\u2019t make your own serotonin, store bought is fine
+    (I\u2019m a pretty, pretty princess)"
   default_sprite: {fileID: 21300000, guid: 5840d035843ab6545bf5804a4bc34921, type: 3}
   on_hover_sprite: {fileID: 21300000, guid: d767404a90951cf438ee3a5e7eb8010a, type: 3}
   path_to_3d_version_prefab: {fileID: 0}

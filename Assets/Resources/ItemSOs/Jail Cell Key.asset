@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_name: Jail Cell Key
   item_description: 'This could be the key to my heart. But it isn''t. '
-  default_sprite: {fileID: 21300000, guid: d906933914672324da8e1d3e5ef9b5e7, type: 3}
-  on_hover_sprite: {fileID: 21300000, guid: c11310629a9eb0641a1ecb9e0e2eb2fb, type: 3}
+  default_sprite: {fileID: 21300000, guid: 009fd38d194262b42b38b63c6b83b0f5, type: 3}
+  on_hover_sprite: {fileID: 21300000, guid: f5e4b21941148e344adb8c5e3a797336, type: 3}
   path_to_3d_version_prefab: {fileID: 0}

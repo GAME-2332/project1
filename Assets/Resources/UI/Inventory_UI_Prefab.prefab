@@ -877,7 +877,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1194,7 +1194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1363,7 +1363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2132,7 +2132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2387,7 +2387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2464,7 +2464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2541,7 +2541,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09803922, g: 0.09803922, b: 0.09803922, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2618,7 +2618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.09433961, g: 0.09433961, b: 0.09433961, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2758,6 +2758,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -2799,6 +2803,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!1001 &1601891910424052403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2922,6 +2927,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -2958,6 +2967,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!224 &6241856078703585847 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4658014202711550084, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3086,6 +3096,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3116,6 +3130,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!114 &6413258001283230535 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3254,6 +3269,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3284,6 +3303,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!114 &8035010184018052219 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3418,6 +3438,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3459,6 +3483,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!1001 &3933423356854331534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3582,6 +3607,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3623,6 +3652,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!1001 &5944986162864082935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3746,6 +3776,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3782,6 +3816,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!224 &1307242729641142131 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4658014202711550084, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3910,6 +3945,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -3946,6 +3985,7 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}
 --- !u!224 &3179024717972105659 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4658014202711550084, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -4074,6 +4114,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4658014202711550087, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7859228582484322056, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
     - {fileID: 4658014202711550081, guid: 3d97dcef47c1361478fbb46c804c85c8, type: 3}
@@ -4115,3 +4159,4 @@ MonoBehaviour:
   item_description: 
   item_so_info: {fileID: 0}
   _et: {fileID: 0}
+  _sprite_space: {fileID: 0}

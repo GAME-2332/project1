@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item_name: Cryptid Can
   item_description: Are all these ingredients FDA approved?
-  default_sprite: {fileID: 21300000, guid: 7b26897e2969e6a44badca86679ad86d, type: 3}
-  on_hover_sprite: {fileID: 21300000, guid: 519a98d6da969df4c945eee5bd018a4b, type: 3}
+  default_sprite: {fileID: 21300000, guid: 214e1b73ed29c1f46bd5caa1e7c9237b, type: 3}
+  on_hover_sprite: {fileID: 21300000, guid: 012bdaafe2668c2439fda793ed2752c4, type: 3}
   path_to_3d_version_prefab: {fileID: 0}
