@@ -22,6 +22,12 @@ public class SceneData : MonoBehaviour {
     }
 
     void Awake() {
+        #if UNITY_EDITOR
+            if (GameManager.instance.saveState == null) {
+                GameManager.instance.saveState = new SaveState(-1);
+                GameManager.instance.saveState.Load();
+            }
+        #endif
         // In Awake, we define which objects we want to track in the scene; these objects
         // can be either defined manually in the inspector or dynamically if they have the SaveData tag
         if (saveData == null) saveData = new Dictionary<string, SaveMe>();
@@ -38,7 +44,7 @@ public class SceneData : MonoBehaviour {
             GameObject.FindGameObjectsWithTag("SpawnPoint").First(obj => obj.name == spawnPoint).transform : defaultSpawnPoint;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (playerData != null) JsonUtility.FromJsonOverwrite(playerData, player.GetComponent<PlayerMovement>().playerData);
-        player.transform.position = spawnTransform.position;
+        if (spawnPoint != null) player.transform.position = spawnTransform.position;
         // Set ready shortly after adjusting the player collisions to avoid early collisions triggering unwanted behavior
         Invoke("SetReady", 0.25f);
     }

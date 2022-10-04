@@ -13,6 +13,7 @@ public class GameManager {
         _gameState = value;
         Cursor.lockState = _gameState == GameState.Playing ? CursorLockMode.Locked : CursorLockMode.None;
         Cursor.visible = _gameState != GameState.Playing;
+        events.gameStateChangeEvent.Invoke(_gameState);
     }}
     public GameEvents events = new GameEvents();
     public GameOptions gameOptions = new GameOptions();

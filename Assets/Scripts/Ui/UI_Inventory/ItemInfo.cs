@@ -25,6 +25,8 @@ public class ItemInfo : MonoBehaviour
     [SerializeField]
     Image _sprite_space;
 
+    private bool sprite_needs_init = false;
+
     public ItemInfo(SOItemInfo _so)
     {
         SetSO(_so);
@@ -42,6 +44,11 @@ public class ItemInfo : MonoBehaviour
         SetUpEvent();
         //Find the item dialogue so that we may populate it later.
         _inventorydialogue = GameObject.FindObjectOfType<InventoryDialogue>();
+    }
+
+    void Update() {
+        if (sprite_needs_init) _sprite_space.sprite = item_so_info.default_sprite;
+        sprite_needs_init = false;
     }
 
     void SetUpEvent()
@@ -68,8 +75,7 @@ public class ItemInfo : MonoBehaviour
         item_so_info = _so;
         item_name = _so.item_name;
         item_description = _so.item_description;
-        _sprite_space.sprite = _so.default_sprite;
-        
+        sprite_needs_init = true;
     }
 
 
