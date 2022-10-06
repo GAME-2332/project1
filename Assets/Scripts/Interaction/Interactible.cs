@@ -7,8 +7,11 @@ public abstract class Interactible : MonoBehaviour {
 
     private Outline outlineComponent;
 
-    void Start() {
+    void Awake() {
         outlineComponent = gameObject.AddComponent<Outline>();
+    }
+    
+    void Start() {
         // Quick and dirty fix in case an outline component already exists
         if (outlineComponent == null) outlineComponent = GetComponent<Outline>();
         outlineComponent.enabled = false;
