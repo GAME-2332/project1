@@ -69,7 +69,7 @@ public class KeyReader : MonoBehaviour
         }
 
         keytostring = s;
-        Debug.Log("read keycode:" + keyname + " with keycode.. " + keytostring);
+        
     }
 
     public string GetString()

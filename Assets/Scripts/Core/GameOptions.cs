@@ -81,6 +81,5 @@ public class GameOptions {
             interact.Value = keyvalue;
         }
 
-        Debug.Log("Gameoptions is setting " + keyname + " to new keybind " + keyvalue.ToString());
     }
 }
