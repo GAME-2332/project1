@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 7896151540564035484}
   - component: {fileID: 2582550991692797582}
   - component: {fileID: 4805584470864159794}
+  - component: {fileID: 237484114445151306}
   m_Layer: 0
   m_Name: pants_unfolded
   m_TagString: Untagged
@@ -115,3 +116,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &237484114445151306
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7489606021605809756}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.064506, y: 0.164059, z: 7.253068}
+  m_Center: {x: 0, y: 0.0004824996, z: 0.012943983}

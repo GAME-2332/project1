@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1113069171807198501}
   - component: {fileID: 7049529788282685379}
   - component: {fileID: 8758789399683144638}
+  - component: {fileID: 6516663324291662069}
   m_Layer: 0
   m_Name: Desk
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6516663324291662069
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5631900648820711911}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 27.433935, y: 10.050435, z: 12.6840725}
+  m_Center: {x: -33.069496, y: 4.9570622, z: 0.006086111}
 --- !u!1 &7853575142623764979
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7473248970192272201}
-  - component: {fileID: -941752852119067566}
   m_Layer: 0
   m_Name: Prop_GenericPropl_Desk_Wood_01
   m_TagString: Untagged
@@ -116,16 +129,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-941752852119067566
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7853575142623764979}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

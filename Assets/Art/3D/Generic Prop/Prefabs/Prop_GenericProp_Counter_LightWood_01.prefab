@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1728855676350738146}
   - component: {fileID: 6666718473387081366}
   - component: {fileID: 4054480150131009999}
+  - component: {fileID: 9088389990349355231}
   m_Layer: 0
   m_Name: Couter
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &9088389990349355231
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194885583655216191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 27.433935, y: 10.423094, z: 12.6840725}
+  m_Center: {x: 15.30186, y: 5.233716, z: 0.006086111}
 --- !u!1 &2614698612789869829
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3387434952721934271}
-  - component: {fileID: 5392801966083359029}
   m_Layer: 0
   m_Name: Prop_GenericProp_Counter_LightWood_01
   m_TagString: Untagged
@@ -116,16 +129,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5392801966083359029
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2614698612789869829}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
