@@ -43,7 +43,6 @@ GameObject:
   - component: {fileID: 6237172179863054188}
   - component: {fileID: 6437987789319428184}
   - component: {fileID: 7664127717541255732}
-  - component: {fileID: 6734745081820752198}
   m_Layer: 0
   m_Name: SM_GenericProp_SingleDoor:Mesh
   m_TagString: Untagged
@@ -116,16 +115,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6734745081820752198
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7973066160521434248}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20.010431, y: 29.8622, z: 1.5909567}
-  m_Center: {x: 17.03065, y: 15.001838, z: -12.474709}
