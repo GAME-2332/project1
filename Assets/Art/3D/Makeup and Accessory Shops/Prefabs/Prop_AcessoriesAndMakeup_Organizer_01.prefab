@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1260016124016771027}
   - component: {fileID: 6098913248735896754}
   - component: {fileID: 2197641062260374012}
+  - component: {fileID: 7669104644816185875}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7669104644816185875
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1853639141412556058}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.566841, y: 20.707813, z: 7.566842}
+  m_Center: {x: 4.0245795, y: 10.307869, z: 0}
 --- !u!1 &5062905528895986512
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5550930003497353706}
-  - component: {fileID: -2241178341908207248}
   m_Layer: 0
   m_Name: Prop_AcessoriesAndMakeup_Organizer_01
   m_TagString: Untagged
@@ -116,16 +129,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-2241178341908207248
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5062905528895986512}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

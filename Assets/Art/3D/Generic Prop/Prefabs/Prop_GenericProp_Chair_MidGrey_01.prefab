@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5911858252015498686}
-  - component: {fileID: -3225116435862331585}
   m_Layer: 0
   m_Name: Prop_GenericProp_Chair_MidGrey_01
   m_TagString: Untagged
@@ -33,19 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-3225116435862331585
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6431407924264316676}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8594725713177121073
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,6 +43,7 @@ GameObject:
   - component: {fileID: 2948105691276155819}
   - component: {fileID: 2545211081566736570}
   - component: {fileID: 7641207278989477372}
+  - component: {fileID: 1527690305271306508}
   m_Layer: 0
   m_Name: group5_pasted__group2_pasted__pasted__pCube4
   m_TagString: Untagged
@@ -129,3 +116,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1527690305271306508
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8594725713177121073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.700001, y: 3.243459, z: 1.8703649}
+  m_Center: {x: 0.04395652, y: -0.11292851, z: 0.01512149}

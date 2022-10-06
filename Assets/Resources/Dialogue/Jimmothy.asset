@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92c7c635ff94391ad8a6d8d7efa44d8, type: 3}
+  m_Name: Jimmothy
+  m_EditorClassIdentifier: 
+  portrait: {fileID: -6800043598939718660, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+  entryPoint:
+    optionText: 
+    portrait: {fileID: 0}
+    isTerminator: 0
+    npcText:
+    - text: ...
+      portrait: {fileID: 0}
+    conditions: []
+    actions: []
+    children:
+    - optionText: Hey little man, you okay?
+      portrait: {fileID: 6932109946466511236, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+      isTerminator: 0
+      npcText:
+      - text: '*sniffles* I was waiting in line for the carousel but then out of
+          nowhere there was a scream...'
+        portrait: {fileID: 0}
+      - text: 'Then there was just red! Everywhere!
+
+          The lights went out
+          and I - I...'
+        portrait: {fileID: -347010150186051546, guid: e40af1ec34ffb8a40a0ddd8aca07f824, type: 3}
+      - text: 'I just wanted to ride the carousel!
+
+          *bawls*'
+        portrait: {fileID: -574700860445349933, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+      conditions:
+      - rid: 2759954597239586832
+      actions: []
+      children:
+      - optionText: I can turn it back on?
+        portrait: {fileID: -574700860445349933, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+        isTerminator: 0
+        npcText:
+        - text: '*crying stops unnervingly abruptly*
+
+            Oh! Yeah! You could
+            turn the carousel on!'
+          portrait: {fileID: 0}
+        - text: 'There are power boxes around the food court, but they need a gold
+            key...
+
+            I don''t have it... *crying resumes with vigor*'
+          portrait: {fileID: 6932109946466511236, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+        conditions: []
+        actions: []
+        children:
+        - optionText: Oh ok good luck bye
+          portrait: {fileID: 0}
+          isTerminator: 1
+          npcText:
+          - text: '*more crying, shocker*'
+            portrait: {fileID: -8633647867511288491, guid: e40af1ec34ffb8a40a0ddd8aca07f824, type: 3}
+          conditions: []
+          actions: []
+          children: []
+        - optionText: I've got the key!
+          portrait: {fileID: 0}
+          isTerminator: 1
+          npcText:
+          - text: 'Woah! You have the key??
+
+              Yay, you can fix the power!'
+            portrait: {fileID: -574700860445349933, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+          - text: Just find the electrical panels and use the keys to turn them back
+              on!
+            portrait: {fileID: -347010150186051546, guid: e40af1ec34ffb8a40a0ddd8aca07f824, type: 3}
+          conditions:
+          - rid: 2759954597239586830
+          actions: []
+          children: []
+    - optionText: I fixed the power
+      portrait: {fileID: 6932109946466511236, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'You fixed the power!
+
+          You did it!'
+        portrait: {fileID: 0}
+      - text: 'I can finally ride the carousel! I can move on from this world...
+
+          And
+          you can leave the mall!'
+        portrait: {fileID: -574700860445349933, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+      - text: Take that exit, and you'll be freeeeeeee!!
+        portrait: {fileID: -574700860445349933, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+      conditions:
+      - rid: 2759954597239586832
+      actions:
+      - rid: 2759954597239586834
+      children: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 2759954597239586830
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}
+        count: 1
+    - rid: 2759954597239586832
+      type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: fixed_power
+        checkValue: 1
+    - rid: 2759954597239586834
+      type: {class: SetBoolAction, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: freed_child
+        value: 1
