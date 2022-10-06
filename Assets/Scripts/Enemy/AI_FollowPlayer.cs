@@ -68,17 +68,24 @@ public class AI_FollowPlayer : MonoBehaviour
             Patrol.shouldPatrol = false;
             MallCop.SetDestination(TargetPlayer.position);
             ChaseMusic.AudioPlay(); //Plays Chase Music
+<<<<<<< Updated upstream
             Debug.Log("NowplayingAUdioPlay");
             if (Distance <= 1.5f)
             { 
+=======
+            // Debug.Log("NowplayingAUdioPlay");
+            if (Distance <= 3.0f)
+            {
+                respawn.StateOfGame_Caught();
+>>>>>>> Stashed changes
                 // TODO: Player death
             }
 
             /*var MallCop_Renderer = this.GetComponent<Renderer>();
             MallCop_Renderer.material.SetColor("_Color", Color.red);*/
 
-            Debug.Log("Angle" + ViewAngle);
-            Debug.Log("I SEE YOU");
+            // Debug.Log("Angle" + ViewAngle);
+            // Debug.Log("I SEE YOU");
         }
 
         else

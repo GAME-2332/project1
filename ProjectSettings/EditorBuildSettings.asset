@@ -9,9 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/UtilityScenes/MainMenuScene.unity
     guid: d55dc32b692ae564c955f1a0806b2266
   - enabled: 1
+    path: Assets/Scenes/Mall_Construction/scene_FoodCourt.unity
+    guid: d71f46154e4a4164b9b3b74b68768f6c
+  - enabled: 1
     path: Assets/Scenes/TestMall.unity
     guid: c9a7894eca2efaf41a09769ff5a1e831
   - enabled: 0
     path: Assets/Scenes/UtilityScenes/DevScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Mall_Construction/scene_Jail.unity
+    guid: 2090fe97a2bfc2a40973fc65ecda9ade
   m_configObjects: {}
