@@ -140,7 +140,7 @@ MonoBehaviour:
     - rid: 2759954589781852160
       type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
       data:
-        variableName: tshirt_quest
+        variableName: need_tshirt
         checkValue: 1
     - rid: 2759954589781852162
       type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
