@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e92c7c635ff94391ad8a6d8d7efa44d8, type: 3}
+  m_Name: Kayla
+  m_EditorClassIdentifier: 
+  portrait: {fileID: 3650104689618125045, guid: d0b896b5fdb4a5c408c9d08a410a0e12, type: 3}
+  entryPoint:
+    optionText: 
+    portrait: {fileID: 0}
+    isTerminator: 0
+    npcText:
+    - text: 'omg a customer!! like, yay!
+
+        welcome to, like, Jeannie''s! literally
+        what can i help you with?'
+      portrait: {fileID: 0}
+    - text: 'are you looking for, like, a cute pair of earrings?
+
+        or maybe
+        a flashy new belt?'
+      portrait: {fileID: 9196929544151263898, guid: d0b896b5fdb4a5c408c9d08a410a0e12, type: 3}
+    conditions: []
+    actions: []
+    children:
+    - optionText: Trying to leave the mall
+      portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'oh of course babe!! i could like totally help you get out of here.
+
+          but
+          you, like, need to help me out first, kay?'
+        portrait: {fileID: 0}
+      - text: 'could you find my tiara? pretty please?
+
+          i literally need
+          it to take my, like, evening selfies...'
+        portrait: {fileID: -6507672349431849046, guid: 70d0d0aabf4610248a0c4453d0634821, type: 3}
+      conditions: []
+      actions: []
+      children: []
+    - optionText: Raccoon game cartridge?
+      portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'oh my god, you mean, like, raccoon city?
+
+          i totally have
+          that cartridge haha. '
+        portrait: {fileID: 0}
+      - text: i may have borrowed gavin's little game, but i'm not giving it back!!
+        portrait: {fileID: -646297485791356349, guid: 70d0d0aabf4610248a0c4453d0634821, type: 3}
+      - text: not until he gives me back my tiara. i think i left it in the arcade...
+        portrait: {fileID: -5620225235847268522, guid: 70d0d0aabf4610248a0c4453d0634821, type: 3}
+      conditions:
+      - rid: 2759954597239586860
+      actions:
+      - rid: 2759954597239586864
+      children: []
+    - optionText: I have your tiara
+      portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: 'omg you actually found it!!!! you are literally the best.
+
+          here''s
+          gavin''s game i guess.'
+        portrait: {fileID: 0}
+      - text: oh my god i forgot about this key that i have. you should like take
+          it i guess
+        portrait: {fileID: 3650104689618125045, guid: d0b896b5fdb4a5c408c9d08a410a0e12, type: 3}
+      - text: also it looks like you can totally smash through some planks over there
+          with, like, a hammer. literally.
+        portrait: {fileID: 3650104689618125045, guid: d0b896b5fdb4a5c408c9d08a410a0e12, type: 3}
+      conditions:
+      - rid: 2759954597239586860
+      - rid: 2759954597239586866
+      actions:
+      - rid: 2759954597239586864
+      - rid: -2
+      - rid: -2
+      children: []
+    - optionText: Bye
+      portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
+      isTerminator: 1
+      npcText:
+      - text: literally, like, see you later!!
+        portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
+      conditions:
+      - rid: 2759954597239586860
+      - rid: 2759954597239586866
+      actions: []
+      children: []
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 2759954597239586860
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954597239586862
+    - rid: 2759954597239586862
+      type: {class: QuestCompletePredicate, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: 0ae8e20fbc1a5004e9c040d3a525442d, type: 2}
+    - rid: 2759954597239586864
+      type: {class: SetBoolAction, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: need_tiara
+        value: 1
+    - rid: 2759954597239586866
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: ad6ecfc31ac21f1408058a73aefcb919, type: 2}
+        count: 1

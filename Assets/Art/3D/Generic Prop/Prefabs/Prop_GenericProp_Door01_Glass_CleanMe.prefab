@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5933133493383850733}
   - component: {fileID: 6282431438582198598}
   - component: {fileID: 2882803591918094821}
+  - component: {fileID: 3706385479646342975}
   m_Layer: 0
   m_Name: SM_GenericProp_DoubleDoor01:Mesh
   m_TagString: Untagged
@@ -83,6 +84,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &3706385479646342975
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4919149502597733767}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.721924, y: 28.84283, z: 16.777008}
+  m_Center: {x: -23.369434, y: 14.531488, z: -8.2754135}
 --- !u!1 &5752968245480305574
 GameObject:
   m_ObjectHideFlags: 0
@@ -92,7 +106,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4944238322899020060}
-  - component: {fileID: -3792350256240524170}
   m_Layer: 0
   m_Name: Prop_GenericProp_Door01_Glass_CleanMe
   m_TagString: Untagged
@@ -116,16 +129,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &-3792350256240524170
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5752968245480305574}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}

@@ -302,6 +302,9 @@ GameObject:
   - component: {fileID: 9163766776450394340}
   - component: {fileID: 7172849610503987325}
   - component: {fileID: 2686887234378684624}
+  - component: {fileID: 7223510928692470011}
+  - component: {fileID: 2588890395144549102}
+  - component: {fileID: 5026838685516032806}
   m_Layer: 0
   m_Name: pasted__pCylinder4
   m_TagString: Untagged
@@ -374,6 +377,57 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7223510928692470011
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481083694902655154}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5721985358974210490, guid: cfd1c63887f2a9148922c364b2d7af0b, type: 3}
+--- !u!114 &2588890395144549102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481083694902655154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5864a21b6dde2ec45a66373a55a78763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: Prop_Accessories_QuestItem_Tiara_01_9961648f-f76b-4dd8-aa12-dfbcad64d748
+  transform: {fileID: 9163766776450394340}
+  rb: {fileID: 0}
+  savePosition: 1
+  saveRotation: 1
+  saveScale: 0
+  saveRigidbodyForces: 0
+  _pos: {x: 0, y: 0, z: 0}
+  _rot: {x: 0, y: 0, z: 0}
+  _scale: {x: 0, y: 0, z: 0}
+  _rbForce: {x: 0, y: 0, z: 0}
+--- !u!114 &5026838685516032806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4481083694902655154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a6ef06f42f95c40a642ac8886516d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: ad6ecfc31ac21f1408058a73aefcb919, type: 2}
+  pickupSound: {fileID: 0}
 --- !u!1 &4527800314399661927
 GameObject:
   m_ObjectHideFlags: 0
