@@ -896,7 +896,6 @@ Transform:
   m_Children:
   - {fileID: 9048396631248780179}
   - {fileID: 1827322061676451698}
-  - {fileID: 3662731706713875280}
   - {fileID: 1684010769239751462}
   m_Father: {fileID: 8211285657910189417}
   m_RootOrder: 7
@@ -8347,7 +8346,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1196747718795080620, guid: 4c2cd2ae7ac4fa140a45a0e29881f127, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1196747718795080620, guid: 4c2cd2ae7ac4fa140a45a0e29881f127, type: 3}
       propertyPath: m_LocalScale.x

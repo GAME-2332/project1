@@ -14,10 +14,15 @@ namespace MainMenuUI_Components
 
     public class DeleteButton : MonoBehaviour
     {
-        public delegate void OpenDeleteDialogue();
+        public delegate void OpenDeleteDialogue(int SlotToDelete);
         public static event OpenDeleteDialogue OnDeleteClickedEvent;
 
         Image _icon;
+        [SerializeField]
+        Sprite _IconOnHover;
+        [SerializeField]
+        Sprite _IconDefault;
+
         [SerializeField]
         Button _deleteButton;
         [SerializeField]
@@ -31,13 +36,19 @@ namespace MainMenuUI_Components
                 _deleteButton = GetComponentInChildren<Button>();
             }
             _deleteButton.onClick.AddListener(OnDeleteWasClicked);
-            if(_icon == null)
-            {
-                _icon = GetComponent<Image>();
-            }
+           
+            _icon = transform.GetChild(0).GetComponent<Image>();
             if (cursorTextureClickable == null)
             {
                 cursorTextureClickable = Resources.Load("UI/cursor_clickable") as Texture2D;
+            }
+            if(_IconOnHover == null)
+            {
+                _IconOnHover = Resources.Load<Sprite>("UI/MainMenu/Trashicon_withghost");
+            }
+            if (_IconDefault == null)
+            {
+                _IconDefault = Resources.Load<Sprite>("UI/MainMenu/Trashicon_withoutghost");
             }
             _et = this.gameObject.AddComponent<EventTrigger>();
 
@@ -57,21 +68,25 @@ namespace MainMenuUI_Components
 
             entry2.callback.AddListener((data) => { OnPointerExitDelegate((PointerEventData)data); });
 
+           
         }
-
+        int ToDeleteID;
         public void OnDeleteWasClicked()
         {
-            OnDeleteClickedEvent();
+            
+            ToDeleteID = GetComponentInParent<SaveBox>().SLOT_ID;
+            OnDeleteClickedEvent(ToDeleteID);
         }
         public void OnPointerEnterDelegate(PointerEventData data)
         {
-
-            _icon.color = Color.red;
+            
+            _icon.sprite = _IconOnHover;
         }
 
         public void OnPointerExitDelegate(PointerEventData data)
         {
             _icon.color = Color.white;
+            _icon.sprite = _IconDefault;
         }
     }
 }

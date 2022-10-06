@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class Interactible : MonoBehaviour {
@@ -9,8 +7,10 @@ public abstract class Interactible : MonoBehaviour {
 
     private Outline outlineComponent;
 
-    void Awake() {
+    void Start() {
         outlineComponent = gameObject.AddComponent<Outline>();
+        // Quick and dirty fix in case an outline component already exists
+        if (outlineComponent == null) outlineComponent = GetComponent<Outline>();
         outlineComponent.enabled = false;
 
         outlineComponent.OutlineMode = outlineMode;
@@ -18,7 +18,7 @@ public abstract class Interactible : MonoBehaviour {
         outlineComponent.OutlineWidth = outlineWidth;
     }
 
-    public void SetOutline(bool enabled) {
+    public virtual void SetOutline(bool enabled) {
         outlineComponent.enabled = enabled;
     }
     
