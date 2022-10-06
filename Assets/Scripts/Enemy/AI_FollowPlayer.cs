@@ -7,6 +7,8 @@ public class AI_FollowPlayer : MonoBehaviour
 {
     public AI_CopPatrol Patrol;
 
+    public UI_GameOver_Respawn respawn;
+
     public UnityEngine.AI.NavMeshAgent MallCop;
     public Transform TargetPlayer;
 
@@ -65,7 +67,8 @@ public class AI_FollowPlayer : MonoBehaviour
             MallCop.SetDestination(TargetPlayer.position);
 
             if (Distance <= 1.5f)
-            { 
+            {
+                respawn.StateOfGame_Caught();
                 // TODO: Player death
             }
 
