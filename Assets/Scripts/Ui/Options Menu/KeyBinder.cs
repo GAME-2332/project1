@@ -45,6 +45,8 @@ namespace MainMenuUI_Components {
         [SerializeField]
         string _currentText;
 
+        [SerializeField]
+        KeyReader _keyreader;
         private void OnEnable()
         {
             KeyBinder_Graphics.STARTACTIVATELISTEN += ActivateListening;
@@ -85,12 +87,19 @@ namespace MainMenuUI_Components {
             {
                 _inputRegion = transform.GetChild(1);
             }
+            if(_keyreader == null)
+            {
+                _keyreader = GetComponent<KeyReader>();
+            }
             main_key_id = transform.GetChild(0).GetComponentInChildren<TMPro.TMP_Text>().text;
     
 
             _text = _inputRegion.GetComponentInChildren<TMPro.TMP_Text>();
 
-            _currentText = _text.text;
+            _currentText = _keyreader.GetString();
+
+            _text.text = _currentText;
+
             DEFAULT_COLOR = _inputRegion.GetComponentInChildren<Image>().color;
         }
         // Update is called once per frame
@@ -128,6 +137,10 @@ namespace MainMenuUI_Components {
                     _inputRegion.GetComponentInChildren<Image>().color = DEFAULT_COLOR;
                     
                 }
+            }
+            else
+            {
+                _text.text = _keyreader.GetString();
             }
         }
 
