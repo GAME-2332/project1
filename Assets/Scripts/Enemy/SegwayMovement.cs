@@ -41,8 +41,8 @@ public class SegwayMovement : MonoBehaviour
 
         transform.rotation = Quaternion.Slerp(transform.rotation, target, .5f);
         
-        Debug.Log("Z angle: " + tiltOnZ);
-        Debug.Log("Speed: " + speed);
+        //Debug.Log("Z angle: " + tiltOnZ);
+        //Debug.Log("Speed: " + speed);
     }
 
 }
