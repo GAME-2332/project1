@@ -44,6 +44,9 @@ GameObject:
   - component: {fileID: 5561951481483161053}
   - component: {fileID: 1131824989494320456}
   - component: {fileID: 6463391055655962183}
+  - component: {fileID: 94463010845621241}
+  - component: {fileID: 1737853690136950935}
+  - component: {fileID: 2815319575758190784}
   m_Layer: 0
   m_Name: BarDoor
   m_TagString: Untagged
@@ -129,3 +132,92 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 19.006859, y: 27.521389, z: 2.641628}
   m_Center: {x: -18.624931, y: 12.761467, z: 0}
+--- !u!114 &94463010845621241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449361466005761571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8dba8df18926644b011e730979f02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Speed: 2
+  endPosition: {x: 0, y: 0, z: 3.86}
+  isOpen: 0
+--- !u!114 &1737853690136950935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449361466005761571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b8adcbc24aa457797be1ae5e3e7e145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditions: []
+  actions:
+  - rid: 2759954658515746829
+  - rid: 2759954658515746834
+  elseActions:
+  - rid: 2759954658515746832
+  disableIfSuccessful: 0
+  references:
+    version: 2
+    RefIds:
+    - rid: 2759954658515746829
+      type: {class: CustomAction, ns: , asm: Assembly-CSharp}
+      data:
+        action:
+          m_PersistentCalls:
+            m_Calls:
+            - m_Target: {fileID: 94463010845621241}
+              m_TargetAssemblyTypeName: DoorOpening, Assembly-CSharp
+              m_MethodName: OpenDoor
+              m_Mode: 1
+              m_Arguments:
+                m_ObjectArgument: {fileID: 0}
+                m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+                m_IntArgument: 0
+                m_FloatArgument: 0
+                m_StringArgument: 
+                m_BoolArgument: 0
+              m_CallState: 2
+    - rid: 2759954658515746832
+      type: {class: ShowTextAction, ns: , asm: Assembly-CSharp}
+      data:
+        text: You need a key for this!
+        duration: 1
+    - rid: 2759954658515746834
+      type: {class: PlaySoundAction, ns: , asm: Assembly-CSharp}
+      data:
+        playAtPlayer: 0
+        position: {fileID: 4938357600191446622}
+        clip: {fileID: 8300000, guid: dd88653f4a887994682d74f798696906, type: 3}
+--- !u!114 &2815319575758190784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4449361466005761571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5864a21b6dde2ec45a66373a55a78763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  identifier: TestMall_abdfcee9-0586-4ef5-97f7-58948ffb67fc
+  transform: {fileID: 4938357600191446622}
+  rb: {fileID: 0}
+  savePosition: 1
+  saveRotation: 0
+  saveScale: 0
+  saveRigidbodyForces: 0
+  _pos: {x: 0, y: 0, z: 0}
+  _rot: {x: 0, y: 0, z: 0}
+  _scale: {x: 0, y: 0, z: 0}
+  _rbForce: {x: 0, y: 0, z: 0}
