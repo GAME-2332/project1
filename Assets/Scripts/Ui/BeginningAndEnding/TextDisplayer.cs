@@ -15,7 +15,7 @@ namespace BeginningAndEndingSceneUI
         SONarration _narrationList;
 
         [SerializeField]
-        string scenename;
+        SceneReference NextScene;
         
 
         TMPro.TMP_Text _text;
@@ -74,7 +74,7 @@ namespace BeginningAndEndingSceneUI
                             else
                             {
                                 //LOAD NEXT SCENE HERE
-                                SceneManager.LoadScene(scenename);
+                                SceneManager.LoadScene(NextScene);
                                 _text.text = "";
                             }
                            
