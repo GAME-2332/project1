@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace BeginningAndEndingSceneUI
@@ -12,6 +13,10 @@ namespace BeginningAndEndingSceneUI
 
         [SerializeField]
         SONarration _narrationList;
+
+        [SerializeField]
+        string scenename;
+        
 
         TMPro.TMP_Text _text;
 
@@ -68,6 +73,8 @@ namespace BeginningAndEndingSceneUI
                             }
                             else
                             {
+                                //LOAD NEXT SCENE HERE
+                                SceneManager.LoadScene(scenename);
                                 _text.text = "";
                             }
                            
