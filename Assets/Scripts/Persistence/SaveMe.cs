@@ -81,7 +81,7 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
 
     // Only assign a UID in the editor build
     #if UNITY_EDITOR
-    void Awake() {
+    void Start() {
         if (transform == null) transform = GetComponent<Transform>();
         if (rb == null) rb = GetComponent<Rigidbody>();
     }

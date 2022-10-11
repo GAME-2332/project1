@@ -18,6 +18,7 @@ public class OptionsMenu : MonoBehaviour
 
     void QuitOptionsMenu()
     {
+        GameManager.instance.gameOptions.Save();
         Object.Destroy(this.gameObject);
     }
 }

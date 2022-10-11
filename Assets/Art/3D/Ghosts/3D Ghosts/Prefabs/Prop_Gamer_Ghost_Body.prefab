@@ -43,6 +43,9 @@ GameObject:
   - component: {fileID: 3585991781968922531}
   - component: {fileID: 1806840492623167209}
   - component: {fileID: 2897668319659907709}
+  - component: {fileID: 828418497840640584}
+  - component: {fileID: 6067928383510167504}
+  - component: {fileID: 3320455799970395398}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -115,3 +118,46 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &828418497840640584
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724690822270833816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2432090755550338912, guid: cb380d35fcb6de844bf0b8f8d3f89d6e, type: 3}
+--- !u!114 &6067928383510167504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724690822270833816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f936d4cc95042d286caa093195026ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcName: Gavin
+  dialogueTree: {fileID: 11400000, guid: d3c3c7614d64db54494871c93b7fc1b3, type: 2}
+--- !u!114 &3320455799970395398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5724690822270833816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab56386dd33504d4da6d7b092edf6560, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amplitude: 0.177
+  frequency: 1.8
+  exponent: 1

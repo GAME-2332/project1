@@ -6,6 +6,10 @@ using UnityEngine.AI;
 public class AI_FollowPlayer : MonoBehaviour
 {
     public AI_CopPatrol Patrol;
+    [SerializeField]
+    public EnemyMoosic ChaseMusic;
+
+    public UI_GameOver_Respawn respawn;
 
     public UnityEngine.AI.NavMeshAgent MallCop;
     public Transform TargetPlayer;
@@ -40,6 +44,8 @@ public class AI_FollowPlayer : MonoBehaviour
     {
         MallCop = GetComponent<NavMeshAgent>();
 
+        ChaseMusic = GetComponent<EnemyMoosic>();
+
         MallCop.autoBraking = true;
 
         CheckViewAngle = 75.0f;
@@ -63,9 +69,11 @@ public class AI_FollowPlayer : MonoBehaviour
         {
             Patrol.shouldPatrol = false;
             MallCop.SetDestination(TargetPlayer.position);
-
+            ChaseMusic.AudioPlay(); //Plays Chase Music
+            Debug.Log("NowplayingAUdioPlay");
             if (Distance <= 1.5f)
-            { 
+            {
+                respawn.StateOfGame_Caught();
                 // TODO: Player death
             }
 
@@ -78,6 +86,7 @@ public class AI_FollowPlayer : MonoBehaviour
 
         else
         {
+            ChaseMusic.AudioStop();  //Stops Playing Chase Music
             if (!Patrol.shouldPatrol)
             {
                 Patrol.GotToNextPoint();

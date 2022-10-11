@@ -34,6 +34,7 @@ public class Key_Bind_Manager : MonoBehaviour
 
     void CheckIfExists(string _newKeyBind, string _main_key_id, KeyCode _newkeycode)
     {
+      
         bool validNewKey = true;
         foreach(KeyBinder k in _keybinds)
         {
@@ -44,6 +45,12 @@ public class Key_Bind_Manager : MonoBehaviour
                 //set that key to its old value.
             }
         }
+        if (_newkeycode == KeyCode.I)
+        {
+            Debug.Log("You cannot set keycode to I for that is inventory!");
+            validNewKey = false;
+        }
+
         OnKeyCheckFinished(validNewKey);
 
         //if it is a new and valid key, update that key.
@@ -58,6 +65,7 @@ public class Key_Bind_Manager : MonoBehaviour
     {
         Debug.Log("updating key" + _main_key_id + " to new keybind " + _newkeycode.ToString());
         
+        GameManager.instance.gameOptions.SetKey(_main_key_id, _newkeycode);
     }
 
 }

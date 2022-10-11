@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 1633085135310607425}
   - component: {fileID: 608979448786170628}
   - component: {fileID: 2649203270610075655}
-  - component: {fileID: 608705026647565583}
   - component: {fileID: 8475300197825390371}
+  - component: {fileID: 3255995338250271051}
   m_Layer: 0
   m_Name: pCylinder2
   m_TagString: Untagged
@@ -116,20 +116,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &608705026647565583
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5347849597718574971}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6099800089077584851, guid: 59266da1cf89ac846aec62b74ebae8fb, type: 3}
 --- !u!114 &8475300197825390371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +181,19 @@ MonoBehaviour:
         playAtPlayer: 0
         position: {fileID: 1633085135310607425}
         clip: {fileID: 8300000, guid: 611e5f7a1a8757049a9a5965552fab78, type: 3}
+--- !u!65 &3255995338250271051
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5347849597718574971}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.03951, y: 10.209896, z: 2.6426084}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5916221204996821162
 GameObject:
   m_ObjectHideFlags: 0
