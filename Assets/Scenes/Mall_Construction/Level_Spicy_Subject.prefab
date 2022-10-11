@@ -1024,8 +1024,6 @@ Transform:
   - {fileID: 787308828685048214}
   - {fileID: 6536904100390176745}
   - {fileID: 4776820578632569019}
-  - {fileID: 5210887413073860820}
-  - {fileID: 4996051370272455371}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2251,6 +2249,7 @@ GameObject:
   - component: {fileID: 1428133974174626113}
   - component: {fileID: 252766242182478745}
   - component: {fileID: 2653556907116530483}
+  - component: {fileID: 8713049810366950338}
   m_Layer: 0
   m_Name: SceneSwitch_Door_Entry
   m_TagString: Untagged
@@ -2338,7 +2337,21 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 2090fe97a2bfc2a40973fc65ecda9ade, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/scene_Jail.unity
-  spawnPoint: SpicySubject_Entrance_From_Jail
+  spawnPoint: Jail_From_SpicySubject_SpawnPoint
+--- !u!64 &8713049810366950338
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3566386613322381220}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6206263469607340162, guid: 4c6e4ff111eac3642b3cc4f28fd38d27, type: 3}
 --- !u!1 &3860716793465055735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2646,7 +2659,7 @@ Transform:
   m_Children:
   - {fileID: 7420160298980513457}
   - {fileID: 6945037497799925887}
-  - {fileID: 5873895673865193999}
+  - {fileID: 4996051370272455371}
   - {fileID: 982782220500217350}
   m_Father: {fileID: 8211285657910189417}
   m_RootOrder: 11
@@ -3407,37 +3420,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
---- !u!1 &4733989207100234846
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5873895673865193999}
-  m_Layer: 0
-  m_Name: SpicySubject_Entrance_From_Hallway_SpawnPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5873895673865193999
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4733989207100234846}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -27.76, y: 7.04, z: 80.26}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4776820578632569019}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4739117612950078827
 GameObject:
   m_ObjectHideFlags: 0
@@ -3711,8 +3693,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4996051370272455371}
   m_Layer: 0
-  m_Name: SpicySubject_SpawnPoint
-  m_TagString: Untagged
+  m_Name: SpicySubject_Entrance_From_Hallway_SpawnPoint
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3729,8 +3711,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8211285657910189417}
-  m_RootOrder: 13
+  m_Father: {fileID: 4776820578632569019}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4924400081608670042
 GameObject:
@@ -4096,37 +4078,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5292514342936032553
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5210887413073860820}
-  m_Layer: 0
-  m_Name: SpicySubject_SpawnPoint_Entrance_From_Hallway
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5210887413073860820
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292514342936032553}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -28.34, y: 6.27, z: 79.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8211285657910189417}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5308651243869164375
 GameObject:
   m_ObjectHideFlags: 0
