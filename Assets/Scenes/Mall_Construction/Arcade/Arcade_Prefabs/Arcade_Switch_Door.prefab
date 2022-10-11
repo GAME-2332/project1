@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1063912108986869719}
   - component: {fileID: 4719678071694519037}
   - component: {fileID: 4490345644844176991}
+  - component: {fileID: 4469711610997782224}
+  - component: {fileID: 4650180441378887735}
   m_Layer: 0
   m_Name: SM_GenericProp_Door02:Mesh
   m_TagString: Untagged
@@ -83,6 +85,36 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4469711610997782224
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257508644953292967}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6392274502816510543, guid: df34849790856404dba915d9af69d043, type: 3}
+--- !u!114 &4650180441378887735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3257508644953292967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e0c1a0316ee3146bf5e69048f7f874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 1f140f16427111a44bffc9e160ba1820, type: 3}
+    scenePath: Assets/Scenes/Mall_Construction/Scene_Hallway.unity
+  spawnPoint: Arcade_Entrance_From_Hallway
 --- !u!1 &8285406875565334571
 GameObject:
   m_ObjectHideFlags: 0

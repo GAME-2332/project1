@@ -29,7 +29,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1947774518706352853}
-  - {fileID: 8352627283245370155}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -44,7 +43,8 @@ GameObject:
   - component: {fileID: 1947774518706352853}
   - component: {fileID: 5833246068141954849}
   - component: {fileID: 8777882550234922817}
-  - component: {fileID: 6205074595504458577}
+  - component: {fileID: 2197847489486907107}
+  - component: {fileID: 9192480007538838438}
   m_Layer: 0
   m_Name: SM_GenericProp_Door03:Mesh
   m_TagString: Untagged
@@ -117,8 +117,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6205074595504458577
-BoxCollider:
+--- !u!64 &2197847489486907107
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -127,6 +127,23 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 9.661766, y: 28.86545, z: 13.964096}
-  m_Center: {x: 13.912098, y: 14.500257, z: -5.3815928}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6206263469607340162, guid: 4c6e4ff111eac3642b3cc4f28fd38d27, type: 3}
+--- !u!114 &9192480007538838438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002570490471831304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e0c1a0316ee3146bf5e69048f7f874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 1f140f16427111a44bffc9e160ba1820, type: 3}
+    scenePath: Assets/Scenes/Mall_Construction/Scene_Hallway.unity
+  spawnPoint: 
