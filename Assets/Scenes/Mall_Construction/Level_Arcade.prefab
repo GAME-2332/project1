@@ -11421,6 +11421,7 @@ Transform:
   - {fileID: 270029864727561948}
   - {fileID: 5304793631343144206}
   - {fileID: 8991732127094325158}
+  - {fileID: 7473224400745122121}
   m_Father: {fileID: 8207049678172756459}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17959,7 +17960,7 @@ GameObject:
   - component: {fileID: 5304793631343144206}
   m_Layer: 0
   m_Name: Arcade_SpawnPoint
-  m_TagString: Untagged
+  m_TagString: SpawnPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78156,6 +78157,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6780813299399160461, guid: 52a5d563f1ca2bf4e94463872c8b2d6e, type: 3}
   m_PrefabInstance: {fileID: 4911109735549135438}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4963552741030514666
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8304397861705424372}
+    m_Modifications:
+    - target: {fileID: 2545709257122875040, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_Height
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2545709257122875071, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+      propertyPath: m_Name
+      value: Player_SceneSwitch_SpicySubject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+--- !u!4 &7473224400745122121 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2545709257122875043, guid: 12586d5ee8a9aaea390a7dbaa998625f, type: 3}
+  m_PrefabInstance: {fileID: 4963552741030514666}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4966278928758654351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -95420,27 +95487,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8768645962283809425, guid: bd4f9434677e6534b81f830d2b8fcded, type: 3}
   m_PrefabInstance: {fileID: 8795296633983319117}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &645288082905832550 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8285406875565334571, guid: bd4f9434677e6534b81f830d2b8fcded, type: 3}
-  m_PrefabInstance: {fileID: 8795296633983319117}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5553103509514838806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 645288082905832550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e0c1a0316ee3146bf5e69048f7f874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene:
-    sceneAsset: {fileID: 102900000, guid: 1f140f16427111a44bffc9e160ba1820, type: 3}
-    scenePath: Assets/Scenes/Mall_Construction/Scene_Hallway.unity
-  spawnPoint: Arcade_Entrance_From_Hallway
 --- !u!1001 &8825225988026289109
 PrefabInstance:
   m_ObjectHideFlags: 0
