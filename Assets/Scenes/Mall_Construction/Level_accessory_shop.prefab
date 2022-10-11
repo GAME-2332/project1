@@ -27103,7 +27103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9192480007538838438, guid: 4c2cd2ae7ac4fa140a45a0e29881f127, type: 3}
       propertyPath: spawnPoint
-      value: AccessoryShop_Spawnpointpoint
+      value: AccessoryShop_Spawnpoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c2cd2ae7ac4fa140a45a0e29881f127, type: 3}
