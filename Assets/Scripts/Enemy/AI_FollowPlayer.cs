@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class AI_FollowPlayer : MonoBehaviour
 {
+    public UI_GameOver_Respawn respawn;
+
     public AI_CopPatrol Patrol;
 
     public UnityEngine.AI.NavMeshAgent MallCop;
@@ -64,8 +66,9 @@ public class AI_FollowPlayer : MonoBehaviour
             Patrol.shouldPatrol = false;
             MallCop.SetDestination(TargetPlayer.position);
 
-            if (Distance <= 1.5f)
-            { 
+            if (Distance <= 3f)
+            {
+                respawn.StateOfGame_Caught();
                 // TODO: Player death
             }
 
