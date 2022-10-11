@@ -40,17 +40,22 @@ public class SceneData : MonoBehaviour {
     /// Loads any saved player data and sets the player's position to the correct spawn point, if provided.
     /// </summary>
     public void SpawnPlayer(string playerData = null, string spawnPoint = null) {
-        Transform spawnTransform = spawnPoint != null ?
-            GameObject.FindGameObjectsWithTag("SpawnPoint").First(obj => obj.name == spawnPoint).transform : defaultSpawnPoint;
+        Transform spawnTransform = spawnPoint != null ? GameObject.Find(spawnPoint).transform : defaultSpawnPoint;
         GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (playerData != null) JsonUtility.FromJsonOverwrite(playerData, player.GetComponent<PlayerMovement>().playerData);
-        if (spawnPoint != null) player.transform.position = spawnTransform.position;
+        PlayerMovement playerScript = player.GetComponent<PlayerMovement>();
+        Debug.Log("player " + player + "   spawntransform " + spawnTransform);
+        if (playerData != null) JsonUtility.FromJsonOverwrite(playerData, playerScript.playerData);
+        if (spawnTransform != null) {
+            playerScript.shouldFixPosition = true;
+            playerScript.fixPosition = spawnTransform.position;
+        }
+
         // Set ready shortly after adjusting the player collisions to avoid early collisions triggering unwanted behavior
         Invoke("SetReady", 0.25f);
     }
 
     private void SetReady() {
-        this.ready = true;
+        ready = true;
     }
 
     /// <summary>
