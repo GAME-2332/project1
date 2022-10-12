@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced0e10d5f3317743957b83bec979abe, type: 3}
   m_Name: EndingTextList
   m_EditorClassIdentifier: 
-  lines: []
+  lines:
+  - 'Thanks to the weird group of ghost mall goers, you''re able to escape the mall
+    and that annoying mall cop! '
+  - Next time maybe research the location before hand, Yeah?

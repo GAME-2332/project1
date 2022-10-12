@@ -1,6 +1,4 @@
-
 using UnityEngine;
-using UnityEngine.Rendering.Universal.Internal;
 
 /// <summary>
 /// A class containing game options and keybindings serialized via PlayerPrefs.
