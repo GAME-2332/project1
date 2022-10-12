@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class AI_FollowPlayer : MonoBehaviour
 {
+    public UI_GameOver_Respawn ui_respawn;
+
     public AI_CopPatrol Patrol;
     [SerializeField]
     public EnemyMoosic ChaseMusic;
@@ -73,7 +75,7 @@ public class AI_FollowPlayer : MonoBehaviour
             Debug.Log("NowplayingAUdioPlay");
             if (Distance <= 1.5f)
             {
-                respawn.StateOfGame_Caught();
+                ui_respawn.StateOfGame_Caught();
                 // TODO: Player death
             }
 
