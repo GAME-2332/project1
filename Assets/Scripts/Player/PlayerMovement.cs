@@ -56,6 +56,9 @@ public class PlayerMovement : MonoBehaviour {
     [NonSerialized]
     public PlayerData playerData;
 
+    [NonSerialized] public bool shouldFixPosition = false; 
+    [NonSerialized] public Vector3 fixPosition = Vector3.zero;
+
     internal Vector3 horizontalVelocity;
 
     private GameOptions gameOptions;
@@ -80,6 +83,14 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     void FixedUpdate() {
+        // transform.position = fixPosition;
+        if (shouldFixPosition) {
+            controller.enabled = false;
+            transform.position = fixPosition;
+            shouldFixPosition = false;
+            controller.enabled = true;
+        }
+        
         // Don't do anything if the game isn't playing
         if (GameManager.instance.gameState != GameManager.GameState.Playing) return;
 
