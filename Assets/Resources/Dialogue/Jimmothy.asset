@@ -39,8 +39,7 @@ MonoBehaviour:
 
           *bawls*'
         portrait: {fileID: -574700860445349933, guid: a4fcce67db9d87b48940a35483274409, type: 3}
-      conditions:
-      - rid: 2759954597239586832
+      conditions: []
       actions: []
       children:
       - optionText: I can turn it back on?
@@ -52,11 +51,11 @@ MonoBehaviour:
             Oh! Yeah! You could
             turn the carousel on!'
           portrait: {fileID: 0}
-        - text: 'There are power boxes around the food court, but they need a gold
-            key...
-
-            I don''t have it... *crying resumes with vigor*'
+        - text: There are three power boxes around the food court, but they each
+            need a gold key...
           portrait: {fileID: 6932109946466511236, guid: a4fcce67db9d87b48940a35483274409, type: 3}
+        - text: I don't have them... *crying resumes with vigor*
+          portrait: {fileID: -6800043598939718660, guid: a4fcce67db9d87b48940a35483274409, type: 3}
         conditions: []
         actions: []
         children:
@@ -113,11 +112,6 @@ MonoBehaviour:
       data:
         item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}
         count: 1
-    - rid: 2759954597239586832
-      type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
-      data:
-        variableName: fixed_power
-        checkValue: 1
     - rid: 2759954597239586834
       type: {class: SetBoolAction, ns: , asm: Assembly-CSharp}
       data:
