@@ -46,8 +46,6 @@ public class AI_FollowPlayer : MonoBehaviour
     {
         MallCop = GetComponent<NavMeshAgent>();
 
-        ChaseMusic = GetComponent<EnemyMoosic>();
-
         MallCop.autoBraking = true;
 
         CheckViewAngle = 75.0f;
