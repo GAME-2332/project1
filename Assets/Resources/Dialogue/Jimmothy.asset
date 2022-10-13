@@ -102,7 +102,6 @@ MonoBehaviour:
       - rid: 2759954803292110879
       actions:
       - rid: 2759954597239586834
-      - rid: 2759954803292110899
       children: []
   references:
     version: 2
@@ -123,5 +122,3 @@ MonoBehaviour:
         variableName: power_boxes_fixed
         checkValue: 3
         mode: 3
-    - rid: 2759954803292110899
-      type: {class: Carousel/CarouselSpinAction, ns: , asm: Assembly-CSharp}

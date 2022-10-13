@@ -1,32 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-public class Carousel : MonoBehaviour, IRuntimeSerialized { 
+public class Carousel : MonoBehaviour { 
     // I don't even know anymore
+    public Transform pivot;
     public int speed;
-    public bool spinning;
+    [SerializeReference] [PickImpl(typeof(IStatePredicate))]
+    public IStatePredicate condition;
 
-    public static void FindAndSpin(bool spinning) {
-            var carousel = GameObject.FindObjectOfType<Carousel>();
-        if (carousel != null) {
-            carousel.Spin(spinning);
-        }
-    }
-
-    public void Spin(bool spinning) {
-        this.spinning = spinning;
-    }
-    
     void Update() {
-        if (spinning) {
-            transform.Rotate(0, 0, speed * Time.deltaTime);
-        }
-    }
-
-    public class CarouselSpinAction : IStateAction {
-        public void Execute() {
-            FindAndSpin(true);
+        if (condition.Check()) {
+            transform.RotateAround(pivot.position, transform.right, speed * Time.deltaTime);
         }
     }
 }
