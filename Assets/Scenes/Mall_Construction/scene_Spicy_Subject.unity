@@ -622,6 +622,62 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 434146829, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1885394209}
+    - target: {fileID: 434146833, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1885394209}
+    - target: {fileID: 642869320, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1788137620}
+    - target: {fileID: 642869324, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1788137620}
+    - target: {fileID: 1151393013, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1624525082}
+    - target: {fileID: 1151393017, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1624525082}
+    - target: {fileID: 1473123435, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 876911637}
+    - target: {fileID: 1473123439, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 876911637}
+    - target: {fileID: 1739319641, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1704979050}
+    - target: {fileID: 1739319645, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 1704979050}
+    - target: {fileID: 1824360564, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 738737279}
+    - target: {fileID: 1824360568, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 738737279}
+    - target: {fileID: 387401866556244952, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: scene.scenePath
+      value: Assets/Scenes/Mall_Construction/Scene_Hallway.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 387401866556244952, guid: d4a534f5974523640a9031b183f68fec, type: 3}
+      propertyPath: scene.sceneAsset
+      value: 
+      objectReference: {fileID: 102900000, guid: 1f140f16427111a44bffc9e160ba1820, type: 3}
     - target: {fileID: 1912625206661700867, guid: d4a534f5974523640a9031b183f68fec, type: 3}
       propertyPath: identifier
       value: scene_Spicy_Subject_0b61c1ad-dc75-4dbd-9fae-e156bb69ef12
