@@ -1,6 +1,4 @@
 using System.IO;
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -98,6 +96,7 @@ public class SaveState {
         currentScene = SceneData.Get(SceneManager.GetActiveScene());
         if (currentScene == null) return; // Edge case in case we caught a scene load before SaveState#Load was called
         currentScene.Read(Path());
+        Debug.Log("player data " + playerData + "    spawnpoint " + spawnPoint);
         currentScene.SpawnPlayer(playerData, spawnPoint);
         playerData = spawnPoint = null;
     }

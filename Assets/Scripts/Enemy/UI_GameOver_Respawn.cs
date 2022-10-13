@@ -13,8 +13,8 @@ public class UI_GameOver_Respawn : MonoBehaviour
     [Tooltip("An ID for a spawn point in the scene being switched to. Must match an ID under a SpawnPoint component in the scene.")]
     public string spawnPoint;
 
-    [SerializeField] private Transform player;
-    [SerializeField] private Transform respawn;
+    //[SerializeField] private Transform player;
+    //[SerializeField] private Transform respawn;
 
     public void StateOfGame_Caught()
     {
@@ -29,9 +29,10 @@ public class UI_GameOver_Respawn : MonoBehaviour
         restart = true;
         if (restart == true)
         {
-            canvas.enabled = false;
+            Debug.Log("StateOfGame_Respawn");
+            /*canvas.enabled = false;
             Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;*/
 
             respawnTo();
             
@@ -41,12 +42,13 @@ public class UI_GameOver_Respawn : MonoBehaviour
 
     public void respawnTo()
     {
+        Debug.Log("respawnTo works");
         // instead of "respawn" DO: last saved position
         // If the current scene setup is done
         if (SceneData.Get(gameObject.scene).Ready())
         {
             // Switch to the specified scene, alerting SceneData of the spawn point to use
-            GameManager.instance.saveState.LoadScene(scenePath: scene.ScenePath, spawnPoint: spawnPoint);
+            GameManager.instance.saveState.LoadScene(scenePath: scene.ScenePath, spawnPoint: spawnPoint); // spawnpoint: Jail_SpawnPoint
         }
     }
 }

@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 802766243859176431}
   - component: {fileID: 1034394996881178692}
   - component: {fileID: 8175300273288575207}
-  - component: {fileID: 5418936312546052745}
+  - component: {fileID: 3508270726634562374}
+  - component: {fileID: 7346765187391824510}
   m_Layer: 0
   m_Name: SM_GenericProp_DoubleDoor01:Mesh
   m_TagString: Untagged
@@ -116,8 +117,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5418936312546052745
-BoxCollider:
+--- !u!114 &3508270726634562374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103483080556407941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1e0c1a0316ee3146bf5e69048f7f874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene:
+    sceneAsset: {fileID: 102900000, guid: 1f140f16427111a44bffc9e160ba1820, type: 3}
+    scenePath: Assets/Scenes/Mall_Construction/Scene_Hallway.unity
+  spawnPoint: SpicySubject_SpawnPoint
+--- !u!64 &7346765187391824510
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -126,6 +143,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10.656094, y: 28.84283, z: 16.777008}
-  m_Center: {x: -23.40235, y: 14.531488, z: -8.2754135}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3389107973878210586, guid: d24a0876c35f52f49bf29cdd62fd8447, type: 3}
