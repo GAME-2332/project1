@@ -4240,7 +4240,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-12082
+  m_Name: pb_Mesh-30554
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -5764,6 +5764,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 371542005}
+    - target: {fileID: 466437216938178044, guid: 718af8868b9faa84e885e9e35565b109, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 691985753149931322, guid: 718af8868b9faa84e885e9e35565b109, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -8096,7 +8100,8 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 2757
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 466437216938178044, guid: 718af8868b9faa84e885e9e35565b109, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 718af8868b9faa84e885e9e35565b109, type: 3}
 --- !u!4 &1515486143 stripped
 Transform:
