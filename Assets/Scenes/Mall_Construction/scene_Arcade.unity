@@ -37161,6 +37161,10 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 3584
       objectReference: {fileID: 0}
+    - target: {fileID: 4217596626343568506, guid: cba98519d5206c5488c7e0a085709c3c, type: 3}
+      propertyPath: spawnPoint
+      value: Hallway_From_Arcade
+      objectReference: {fileID: 0}
     - target: {fileID: 4232875387363314379, guid: cba98519d5206c5488c7e0a085709c3c, type: 3}
       propertyPath: m_Mesh
       value: 
