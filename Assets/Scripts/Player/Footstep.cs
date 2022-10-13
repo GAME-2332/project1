@@ -11,7 +11,7 @@ public class Footstep : MonoBehaviour {
     }
 
     void Update(){
-        if (player.playerData.isOnGround && player.horizontalVelocity.magnitude >= .5f) {
+        if (player.playerData.isOnGround && player.horizontalVelocity.magnitude >= .1f) {
             switch (player.playerData.playerState) {
                 case PlayerMovement.PlayerState.Sprinting:
                     footstepsSound.enabled = false;
