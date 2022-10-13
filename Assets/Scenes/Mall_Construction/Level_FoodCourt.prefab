@@ -13302,7 +13302,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: 1f140f16427111a44bffc9e160ba1820, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/Scene_Hallway.unity
-  spawnPoint: FoodCourt_Entrance_From_Hallway
+  spawnPoint: FoodCourt_SpawnPoint
 --- !u!65 &407759881
 BoxCollider:
   m_ObjectHideFlags: 0

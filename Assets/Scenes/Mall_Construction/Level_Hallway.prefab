@@ -14292,7 +14292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087126141747415580}
   m_LocalRotation: {x: -0, y: -0.5025548, z: -0, w: 0.86454546}
-  m_LocalPosition: {x: -70.81, y: -14.516699, z: -23.23}
+  m_LocalPosition: {x: -70.81, y: -9.73, z: -23.23}
   m_LocalScale: {x: 2.8133028, y: 3.626364, z: 2.770405}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -123026,7 +123026,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: d71f46154e4a4164b9b3b74b68768f6c, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/scene_FoodCourt.unity
-  spawnPoint: FoodCourt_SpawnPoint
+  spawnPoint: FoodCourt_Entrance_From_Hallway
 --- !u!1001 &8669363811592464973
 PrefabInstance:
   m_ObjectHideFlags: 0
