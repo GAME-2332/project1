@@ -12,6 +12,8 @@ public class PlayerCamera : MonoBehaviour
     void Start() {
         camera = GetComponent<Camera>();
         GameManager.instance.events.optionsReloadEvent.AddListener(UpdateFov);
+        
+        UpdateFov();
     }
 
     private void UpdateFov() {

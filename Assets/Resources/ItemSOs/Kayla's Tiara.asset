@@ -15,6 +15,6 @@ MonoBehaviour:
   item_name: Kayla's Tiara
   item_description: "If you can\u2019t make your own serotonin, store bought is fine
     (I\u2019m a pretty, pretty princess)"
-  default_sprite: {fileID: 21300000, guid: 5840d035843ab6545bf5804a4bc34921, type: 3}
-  on_hover_sprite: {fileID: 21300000, guid: d767404a90951cf438ee3a5e7eb8010a, type: 3}
+  default_sprite: {fileID: 21300000, guid: dd1e1948dc81cc145a6a4ea3481a99c4, type: 3}
+  on_hover_sprite: {fileID: 21300000, guid: 18a382c913f3aaf4faeed4642472381d, type: 3}
   path_to_3d_version_prefab: {fileID: 0}

@@ -65,9 +65,8 @@ public class EscapeMenu : MonoBehaviour
         _xOutButton.onClick.AddListener(OnX);
     }
 
-    void OnResume()
-    {
-       
+    void OnResume() {
+        GameManager.instance.gameState = GameManager.GameState.Playing;
         CloseCanvas();
     }
 

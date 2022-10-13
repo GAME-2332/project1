@@ -6,6 +6,7 @@ public class DoorOpening : MonoBehaviour, IRuntimeSerialized
 {
     public float Speed;
     public Vector3 endPosition;
+    private Vector3 modEndPosition;
     private Vector3 startPosition;
     [SerializeField]
     [HideInInspector]
@@ -13,13 +14,13 @@ public class DoorOpening : MonoBehaviour, IRuntimeSerialized
 
     void Start(){
         startPosition = transform.position;
-        endPosition += startPosition;
+        modEndPosition = endPosition + startPosition;
     }
 
     void Update(){
         if(isOpen){
-            transform.position = Vector3.Lerp(transform.position, endPosition, Time.deltaTime * Speed);
-            if (Vector3.Distance(transform.position, endPosition) <= 1f) this.enabled = false;
+            transform.position = Vector3.Lerp(transform.position, modEndPosition, Time.deltaTime * Speed);
+            if (Vector3.Distance(transform.position, modEndPosition) <= 1f) this.enabled = false;
         }
     }
 

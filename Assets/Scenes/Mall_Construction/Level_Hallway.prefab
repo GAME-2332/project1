@@ -938,17 +938,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 8012
   m_IsSelectable: 1
-  m_SelectedFaces: 02000000
-  m_SelectedEdges:
-  - a: 8
-    b: 9
-  - a: 10
-    b: 8
-  - a: 9
-    b: 11
-  - a: 11
-    b: 10
-  m_SelectedVertices: 08000000090000000a0000000b000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &3629178966911341073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12479,17 +12471,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 23861
   m_IsSelectable: 1
-  m_SelectedFaces: 09000000
-  m_SelectedEdges:
-  - a: 36
-    b: 37
-  - a: 38
-    b: 36
-  - a: 37
-    b: 39
-  - a: 39
-    b: 38
-  m_SelectedVertices: 24000000250000002600000027000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &6750687144148502119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14308,7 +14292,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1087126141747415580}
   m_LocalRotation: {x: -0, y: -0.5025548, z: -0, w: 0.86454546}
-  m_LocalPosition: {x: -70.81, y: -14.516699, z: -23.23}
+  m_LocalPosition: {x: -70.81, y: -9.73, z: -23.23}
   m_LocalScale: {x: 2.8133028, y: 3.626364, z: 2.770405}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22372,17 +22356,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 22245
   m_IsSelectable: 1
-  m_SelectedFaces: 10000000
-  m_SelectedEdges:
-  - a: 65
-    b: 64
-  - a: 64
-    b: 66
-  - a: 66
-    b: 67
-  - a: 67
-    b: 65
-  m_SelectedVertices: 42000000410000004000000043000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &306815159961025544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30637,17 +30613,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 22329
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  - a: 0
-    b: 0
-  m_SelectedVertices: 00000000000000000000000000000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &5683357339315882037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40203,17 +40171,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 19805
   m_IsSelectable: 1
-  m_SelectedFaces: 03000000
-  m_SelectedEdges:
-  - a: 12
-    b: 13
-  - a: 14
-    b: 12
-  - a: 13
-    b: 15
-  - a: 15
-    b: 14
-  m_SelectedVertices: 0c0000000d0000000e0000000f000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &8711333106628040907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79908,17 +79868,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 0}
   m_VersionIndex: 19765
   m_IsSelectable: 1
-  m_SelectedFaces: 09000000
-  m_SelectedEdges:
-  - a: 36
-    b: 37
-  - a: 38
-    b: 36
-  - a: 37
-    b: 39
-  - a: 39
-    b: 38
-  m_SelectedVertices: 24000000250000002600000027000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!114 &5817429659083939028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118056,6 +118008,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1513714960561357787, guid: 4de20669bb929496c986d5171c258c79, type: 3}
   m_PrefabInstance: {fileID: 272845277081219559}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1241942077
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641734592616854076}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.29552, y: 28.842829, z: 16.777012}
+  m_Center: {x: -23.43029, y: 14.531487, z: 34.077747}
 --- !u!114 &6487406648493453741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118072,19 +118037,6 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 666bb6d11a06c624fb7694002dd46bcb, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/scene_Accessory_shop.unity
   spawnPoint: AccessoryShop_Spawnpoint
---- !u!65 &1241942077
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1641734592616854076}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.29552, y: 28.842829, z: 16.777012}
-  m_Center: {x: -23.43029, y: 14.531487, z: 34.077747}
 --- !u!4 &8502861627049078737 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8487434600440585782, guid: 4de20669bb929496c986d5171c258c79, type: 3}
@@ -118728,6 +118680,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8285406875565334571, guid: 83025acc5de774067b80cbb9bb66d02a, type: 3}
   m_PrefabInstance: {fileID: 1000397330938735805}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1241942076
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9158507128942267542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5813531617471739360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118744,19 +118709,6 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 8ef3ca1937ae7cf45b62cbf0b5880a7f, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/scene_Spicy_Subject.unity
   spawnPoint: SpicySubject_SpawnPoint
---- !u!65 &1241942076
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9158507128942267542}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &1079095465705294787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118823,6 +118775,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1755598484506730727, guid: 29b279be9b3214e41b1546615968e982, type: 3}
   m_PrefabInstance: {fileID: 1079095465705294787}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1241942075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631591825831996196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.29552, y: 28.842834, z: 16.77701}
+  m_Center: {x: -23.430305, y: 14.531486, z: 34.07776}
 --- !u!114 &1160945804450916599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118839,19 +118804,6 @@ MonoBehaviour:
     sceneAsset: {fileID: 102900000, guid: 19bdcca8678d8854bbc12bc0634680b7, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/scene_BeautyShop.unity
   spawnPoint: BeautyShop_Spawnpoint
---- !u!65 &1241942075
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631591825831996196}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.29552, y: 28.842834, z: 16.77701}
-  m_Center: {x: -23.430305, y: 14.531486, z: 34.07776}
 --- !u!4 &4079201928486703856 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3919691956943362355, guid: 29b279be9b3214e41b1546615968e982, type: 3}
@@ -121336,15 +121288,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5368729248910017333, guid: 5f9ca676d7d084c2c96ba8889b321097, type: 3}
       propertyPath: m_SelectedEdges.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5368729248910017333, guid: 5f9ca676d7d084c2c96ba8889b321097, type: 3}
       propertyPath: m_SelectedFaces.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5368729248910017333, guid: 5f9ca676d7d084c2c96ba8889b321097, type: 3}
       propertyPath: m_SelectedVertices.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7422823984333719339, guid: 5f9ca676d7d084c2c96ba8889b321097, type: 3}
       propertyPath: m_RootOrder
@@ -122709,17 +122661,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hallway_Arcade_SwitchDoor
       objectReference: {fileID: 0}
-    - target: {fileID: 5161259791373305593, guid: 294edfca2d2dd421ebd84792a78ea30f, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
     - target: {fileID: 5914301730711103775, guid: 294edfca2d2dd421ebd84792a78ea30f, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5914301730711103775, guid: 294edfca2d2dd421ebd84792a78ea30f, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.29114535
       objectReference: {fileID: 0}
     - target: {fileID: 5914301730711103775, guid: 294edfca2d2dd421ebd84792a78ea30f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -122768,40 +122712,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5914301730711103775, guid: 294edfca2d2dd421ebd84792a78ea30f, type: 3}
   m_PrefabInstance: {fileID: 8328732111039487785}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3762163569613199824 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5161259791373305593, guid: 294edfca2d2dd421ebd84792a78ea30f, type: 3}
-  m_PrefabInstance: {fileID: 8328732111039487785}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1414759179336489212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3762163569613199824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1e0c1a0316ee3146bf5e69048f7f874, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scene:
-    sceneAsset: {fileID: 102900000, guid: 927f4dfff9537634fbd7c72ec344f3cf, type: 3}
-    scenePath: Assets/Scenes/Mall_Construction/scene_Arcade.unity
-  spawnPoint: Arcade_SpawnPoint
---- !u!65 &1241942078
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3762163569613199824}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.295523, y: 28.84283, z: 16.777014}
-  m_Center: {x: -23.430353, y: 14.531487, z: 34.077797}
 --- !u!1001 &8349307414436470996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123088,6 +122998,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 667722697252258248, guid: ac1bfa289a5564d159a320240cf50afe, type: 3}
   m_PrefabInstance: {fileID: 8584390416761339055}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1241942079
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9107927557193104743}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.295521, y: 28.84283, z: 16.77701}
+  m_Center: {x: -23.430338, y: 14.531487, z: 34.07776}
 --- !u!114 &4958467213115829985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123103,20 +123026,7 @@ MonoBehaviour:
   scene:
     sceneAsset: {fileID: 102900000, guid: d71f46154e4a4164b9b3b74b68768f6c, type: 3}
     scenePath: Assets/Scenes/Mall_Construction/scene_FoodCourt.unity
-  spawnPoint: FoodCourt_SpawnPoint
---- !u!65 &1241942079
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9107927557193104743}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.295521, y: 28.84283, z: 16.77701}
-  m_Center: {x: -23.430338, y: 14.531487, z: 34.07776}
+  spawnPoint: FoodCourt_Entrance_From_Hallway
 --- !u!1001 &8669363811592464973
 PrefabInstance:
   m_ObjectHideFlags: 0

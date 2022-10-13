@@ -18,13 +18,11 @@ public class InventorySpawner : MonoBehaviour
     {
         if (GameManager.instance.gameOptions.inventory.GetKeyDown())
         {
-            if(Inventory.GetExists() == true)
-            {
+            if(GameManager.instance.gameState == GameManager.GameState.Inventory && Inventory.GetExists() == true) {
                 Inventory go = FindObjectOfType<Inventory>();
                 go.OnClickExit();
             }
-            else
-            {
+            else if (GameManager.instance.gameState == GameManager.GameState.Playing) {
                 GameManager.instance.gameState = GameManager.GameState.Inventory;
                 GameObject go = Instantiate(InventoryPrefab, transform.parent);
                 go.transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);

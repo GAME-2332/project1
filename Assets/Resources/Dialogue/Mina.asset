@@ -57,10 +57,12 @@ MonoBehaviour:
           It''s so cool! I''m gonna
           look so cool!'
         portrait: {fileID: 0}
-      - text: 'Alright, I''ll give you the info you need: go to the carousel.
+      - text: 'Alright, I''ll give you the info you need: go to the carousel.'
+        portrait: {fileID: 1774860195634347370, guid: 7127cad59ebcdf54bbd0fca56d67752b, type: 3}
+      - text: 'There''s a special someone there who can help you leave.
 
-          There''s
-          a special someone there who can help you leave.'
+          Also
+          here''s this key I guess'
         portrait: {fileID: 1774860195634347370, guid: 7127cad59ebcdf54bbd0fca56d67752b, type: 3}
       conditions:
       - rid: 2759954658515746819
@@ -68,6 +70,7 @@ MonoBehaviour:
       actions:
       - rid: 2759954658515746824
       - rid: 2759954658515746826
+      - rid: 2759954803292110878
       children:
       - optionText: '*stare*'
         portrait: {fileID: -3747059622874827844, guid: 7127cad59ebcdf54bbd0fca56d67752b, type: 3}
@@ -128,3 +131,7 @@ MonoBehaviour:
       data:
         item: {fileID: 11400000, guid: a3a7e3dceb76a5448b7c3ab81cac7053, type: 2}
         count: 1
+    - rid: 2759954803292110878
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}

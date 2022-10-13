@@ -101,6 +101,7 @@ MonoBehaviour:
           - rid: 2759954591047745551
           - rid: 2759954597239586827
           - rid: 2759954597239586846
+          - rid: 2759954803292110876
           children: []
       - optionText: Tiara?
         portrait: {fileID: -9161735517062624718, guid: c60d8443fca37db4cb30f15676aff67a, type: 3}
@@ -170,9 +171,35 @@ MonoBehaviour:
         - rid: 2759954591047745548
         actions: []
         children: []
+      - optionText: Found your game!
+        portrait: {fileID: -6465084810989493322, guid: 53b9f0ddf181f7943bebaf27186b95c9, type: 3}
+        isTerminator: 1
+        npcText:
+        - text: 'Yo! Finally!
+
+            Man, I can''t wait to play this with Danny!'
+          portrait: {fileID: 0}
+        - text: Kayla's tiara is in the back office on a safe. If you need that for
+            some reason I dunno.
+          portrait: {fileID: 5943661040955333889, guid: 43485f564ab9e944e9ae5e87b5cb0dc7, type: 3}
+        - text: 'Oh, and take this key I found lying around...
+
+            Might
+            be useful, right?'
+          portrait: {fileID: 5649194815052406171, guid: 0a08d0aa1fa37f34fb75955ad9ab6620, type: 3}
+        conditions:
+        - rid: 2759954591047745548
+        actions:
+        - rid: -2
+        - rid: -2
+        - rid: -2
+        - rid: -2
+        children: []
   references:
     version: 2
     RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
     - rid: 2759954591047745540
       type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
       data:
@@ -225,3 +252,8 @@ MonoBehaviour:
         playAtPlayer: 1
         position: {fileID: 0}
         clip: {fileID: 8300000, guid: 611e5f7a1a8757049a9a5965552fab78, type: 3}
+    - rid: 2759954803292110876
+      type: {class: TakeItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 3c4553077ab89124d8acd4c2e0711221, type: 2}
+        count: 0

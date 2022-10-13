@@ -117,7 +117,7 @@ public class DialogueScreen: MonoBehaviour {
 
         npcName.rectTransform.anchoredPosition = new Vector2(
             -npcText.Width / 2 - horizontalPadding - portrait.rectTransform.sizeDelta.x,
-            bottomOffset - verticalPadding - verticalTextPadding);
+            bottomOffset - verticalPadding - verticalTextPadding + 60);
     }
 
     void Close() {

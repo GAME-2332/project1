@@ -61,6 +61,10 @@ public class SaveMe : MonoBehaviour, ISerializationCallbackReceiver {
         needsRefresh = true;
     }
 
+    public void SaveDestroy() {
+        Destroy(gameObject);
+    }
+
     void FixedUpdate() {
         // If we're in the editor, ignore the refresh flag: we can't use this check during serialization
         // so we have to do it here instead
