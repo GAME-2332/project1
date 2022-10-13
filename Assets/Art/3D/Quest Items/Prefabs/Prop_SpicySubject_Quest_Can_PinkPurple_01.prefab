@@ -44,8 +44,8 @@ GameObject:
   - component: {fileID: 3928403049798199035}
   - component: {fileID: 6102681911389253453}
   - component: {fileID: 6551250361781610449}
-  - component: {fileID: 4097043288040878005}
   - component: {fileID: 1339226414122376129}
+  - component: {fileID: 4097043288040878005}
   m_Layer: 0
   m_Name: SM_SpicySubject_QuestItem_Criptydcan01:pCylinder1
   m_TagString: Untagged
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5864a21b6dde2ec45a66373a55a78763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifier: Level_Spicy_Subject_620d97b4-f644-4313-a183-5a91aa7101c8
+  identifier: Prop_SpicySubject_Quest_Can_PinkPurple_01_3b41be5f-0212-40a0-ac81-109a4f252f61
   transform: {fileID: 6929364703305847217}
   rb: {fileID: 0}
   savePosition: 0
@@ -141,20 +141,6 @@ MonoBehaviour:
   _rot: {x: 0, y: 0, z: 0}
   _scale: {x: 0, y: 0, z: 0}
   _rbForce: {x: 0, y: 0, z: 0}
---- !u!64 &4097043288040878005
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7784959622376024716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4889833161563422803, guid: e7ff416619a472f47873cb061f3e8299, type: 3}
 --- !u!114 &1339226414122376129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,3 +155,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: b8d4e6d8b2503d14582f5fef14dc4218, type: 2}
   pickupSound: {fileID: 0}
+--- !u!64 &4097043288040878005
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7784959622376024716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4889833161563422803, guid: e7ff416619a472f47873cb061f3e8299, type: 3}
