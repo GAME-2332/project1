@@ -15,6 +15,8 @@ public class Reticle : MonoBehaviour
         image = GetComponent<Image>();
         GameManager.instance.events.optionsReloadEvent.AddListener(UpdateSprite);
         GameManager.instance.events.gameStateChangeEvent.AddListener(OnGameStateChanged);
+        
+        UpdateSprite();
     }
 
     private void UpdateSprite() {

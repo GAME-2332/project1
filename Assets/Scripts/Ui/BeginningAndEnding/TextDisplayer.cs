@@ -74,7 +74,7 @@ namespace BeginningAndEndingSceneUI
                             else
                             {
                                 //LOAD NEXT SCENE HERE
-                                SceneManager.LoadScene(NextScene);
+                                GameManager.instance.saveState.LoadScene(NextScene.ScenePath);
                                 _text.text = "";
                             }
                            
