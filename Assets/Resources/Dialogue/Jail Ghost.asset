@@ -35,8 +35,9 @@ MonoBehaviour:
         portrait: {fileID: 0}
       conditions:
       - rid: 2759954597239586818
+      - rid: 2759954803292110854
       actions:
-      - rid: 2759954597239586817
+      - rid: 2759954803292110858
       - rid: 2759954597239586820
       children: []
     - optionText: Bye
@@ -51,10 +52,6 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 2759954597239586817
-      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
-      data:
-        item: {fileID: 11400000, guid: 83e19ad53e3f9214d96f20b2255e39f0, type: 2}
     - rid: 2759954597239586818
       type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
       data:
@@ -65,3 +62,17 @@ MonoBehaviour:
       data:
         variableName: got_jail_cell_key
         value: 1
+    - rid: 2759954803292110854
+      type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        predicate:
+          rid: 2759954803292110856
+    - rid: 2759954803292110856
+      type: {class: HasItemPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 83e19ad53e3f9214d96f20b2255e39f0, type: 2}
+        count: 1
+    - rid: 2759954803292110858
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 83e19ad53e3f9214d96f20b2255e39f0, type: 2}
