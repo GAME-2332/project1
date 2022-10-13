@@ -12528,6 +12528,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 951625304}
+    - target: {fileID: 4326052285463042574, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
+      propertyPath: spawnPoint
+      value: Accessoryshop_Spawn_Point
+      objectReference: {fileID: 0}
     - target: {fileID: 4352074934947738260, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -13616,8 +13620,27 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: f8f6aa71258fd2c44aafe5191ba08784, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4789676656168858447, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
+    - {fileID: 4809885361960722798, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
+--- !u!1 &1021137567 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7315626852467698674, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
+  m_PrefabInstance: {fileID: 1021137566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1021137568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021137567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79f21c76a612d7243acc7335fee534a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1021137570 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1352419487983078819, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
