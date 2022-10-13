@@ -28,6 +28,7 @@ public class EscapeMenuListener : MonoBehaviour
         }
         if(menuPointer == null)
         {
+            if (GameManager.instance.gameState == GameManager.GameState.Paused) isOpen = false;
             isOpen = false;
         }
     }
