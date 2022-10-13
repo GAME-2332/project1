@@ -190,16 +190,14 @@ MonoBehaviour:
         conditions:
         - rid: 2759954591047745548
         actions:
-        - rid: -2
-        - rid: -2
-        - rid: -2
-        - rid: -2
+        - rid: 2759954815933218824
+        - rid: 2759954815933218829
+        - rid: 2759954815933218830
+        - rid: 2759954815933218831
         children: []
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 2759954591047745540
       type: {class: LogicalNotPredicate, ns: , asm: Assembly-CSharp}
       data:
@@ -257,3 +255,22 @@ MonoBehaviour:
       data:
         item: {fileID: 11400000, guid: 3c4553077ab89124d8acd4c2e0711221, type: 2}
         count: 0
+    - rid: 2759954815933218824
+      type: {class: CompleteQuestAction, ns: , asm: Assembly-CSharp}
+      data:
+        quest: {fileID: 11400000, guid: fd2a0aed094489047bd50ca66d52300f, type: 2}
+    - rid: 2759954815933218829
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}
+    - rid: 2759954815933218830
+      type: {class: TakeItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 3c4553077ab89124d8acd4c2e0711221, type: 2}
+        count: 1
+    - rid: 2759954815933218831
+      type: {class: PlaySoundAction, ns: , asm: Assembly-CSharp}
+      data:
+        playAtPlayer: 1
+        position: {fileID: 0}
+        clip: {fileID: 8300000, guid: 611e5f7a1a8757049a9a5965552fab78, type: 3}
