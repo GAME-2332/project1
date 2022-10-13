@@ -81,15 +81,18 @@ MonoBehaviour:
       - text: also it looks like you can totally smash through some planks over there
           with, like, a hammer. literally.
         portrait: {fileID: 3650104689618125045, guid: d0b896b5fdb4a5c408c9d08a410a0e12, type: 3}
-      - text: or just press E on it i mean what ahhahah
+      - text: 'or just press E on it
+
+          i mean what ahhahah what'
         portrait: {fileID: -646297485791356349, guid: 70d0d0aabf4610248a0c4453d0634821, type: 3}
       conditions:
       - rid: 2759954597239586860
       - rid: 2759954597239586866
+      - rid: 2759954803292110872
       actions:
-      - rid: 2759954597239586864
-      - rid: 2759954803292110867
+      - rid: 2759954803292110869
       - rid: 2759954803292110868
+      - rid: 2759954803292110871
       children: []
     - optionText: Bye
       portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
@@ -124,11 +127,21 @@ MonoBehaviour:
       data:
         item: {fileID: 11400000, guid: ad6ecfc31ac21f1408058a73aefcb919, type: 2}
         count: 1
-    - rid: 2759954803292110867
-      type: {class: CompleteQuestAction, ns: , asm: Assembly-CSharp}
-      data:
-        quest: {fileID: 0}
     - rid: 2759954803292110868
       type: {class: CompleteQuestAction, ns: , asm: Assembly-CSharp}
       data:
-        quest: {fileID: 0}
+        quest: {fileID: 11400000, guid: 0ae8e20fbc1a5004e9c040d3a525442d, type: 2}
+    - rid: 2759954803292110869
+      type: {class: TakeItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: ad6ecfc31ac21f1408058a73aefcb919, type: 2}
+        count: 1
+    - rid: 2759954803292110871
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 3c4553077ab89124d8acd4c2e0711221, type: 2}
+    - rid: 2759954803292110872
+      type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
+      data:
+        variableName: need_tiara
+        checkValue: 1
