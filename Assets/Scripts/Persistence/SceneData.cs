@@ -13,12 +13,37 @@ public class SceneData : MonoBehaviour {
     public Dictionary<string, SaveMe> saveData;
 
     private bool ready = false;
+    private List<int> timers = new();
+    private List<IStateAction> actions = new();
+    private List<IStateAction> removed = new();
 
     /// <summary>
     /// Gets the SceneData instance from a given Scene. One is expected to exist in any loaded scene.
     /// </summary>
     public static SceneData Get(Scene scene) {
         return scene.GetRootGameObjects().First(obj => obj.GetComponent<SceneData>() != null).GetComponent<SceneData>();
+    }
+
+    public void Schedule(IStateAction action, int delayTicks) {
+        if (delayTicks <= 0) action.Execute();
+        else {
+            timers.Add(delayTicks);
+            actions.Add(action);
+        }
+    }
+
+    void FixedUpdate() {
+        for (int i = 0; i < timers.Count; i++) {
+            if (--timers[i] <= 0) {
+                actions[i].Execute();
+                removed.Add(actions[i]);
+            }
+        }
+        foreach (IStateAction action in removed) {
+            int index = actions.IndexOf(action);
+            timers.Remove(index);
+            actions.Remove(action);
+        }
     }
 
     void Awake() {
