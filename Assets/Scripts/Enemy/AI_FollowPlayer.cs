@@ -71,7 +71,7 @@ public class AI_FollowPlayer : MonoBehaviour
             MallCop.SetDestination(TargetPlayer.position);
             ChaseMusic.AudioPlay(); //Plays Chase Music
             Debug.Log("NowplayingAUdioPlay");
-            if (Distance <= 1.5f)
+            if (Distance <= 3.0f)
             {
                 ui_respawn.StateOfGame_Caught();
                 // TODO: Player death
