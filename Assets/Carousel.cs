@@ -12,7 +12,7 @@ public class Carousel : MonoBehaviour {
 
     void Update() {
         if (condition.Check()) {
-            transform.RotateAround(pivot.position, transform.right, speed * Time.deltaTime);
+            transform.RotateAround(pivot.position, transform.up, speed * Time.deltaTime);
         }
     }
 }
