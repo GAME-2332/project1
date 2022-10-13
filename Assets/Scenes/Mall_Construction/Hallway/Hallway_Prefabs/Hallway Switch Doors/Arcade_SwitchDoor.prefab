@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5914301730711103775}
   - component: {fileID: 8895100850455396747}
   - component: {fileID: 3035739167561554864}
-  - component: {fileID: 2958235710922939401}
+  - component: {fileID: 1783885407014310636}
   - component: {fileID: 1414759179336489212}
   m_Layer: 0
   m_Name: Arcade_SwitchDoor
@@ -85,8 +85,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2958235710922939401
-MeshCollider:
+--- !u!65 &1783885407014310636
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -95,10 +95,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6392274502816510543, guid: df34849790856404dba915d9af69d043, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 11.295523, y: 28.842829, z: 16.77701}
+  m_Center: {x: -23.430326, y: 14.531487, z: 34.07776}
 --- !u!114 &1414759179336489212
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class EscapeMenuListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.Escape) && isOpen == false) {
+        if(Input.GetKeyDown(KeyCode.Escape) && isOpen == false) {
             isOpen = true;
             menuPointer = Instantiate(EscMenuPrefab);
         }
