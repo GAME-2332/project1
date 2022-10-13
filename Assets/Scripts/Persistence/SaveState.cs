@@ -51,16 +51,16 @@ public class SaveState {
             return true;
         };
 
-        // Load basic info, globals and player data
-        playerData = File.Exists(Path() + "/player.dat") ? File.ReadAllText(Path() + "/player.dat") : null;
-        if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
-        else LoadScene(sceneIndex: startScene);
-
         globals = new Globals();
         if (File.Exists(Path() + "/globals.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/globals.dat"), globals);
         if (File.Exists(Path() + "/inventory.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/inventory.dat"), inventory);
         if (File.Exists(Path() + "/quests.dat")) JsonUtility.FromJsonOverwrite(File.ReadAllText(Path() + "/quests.dat"), quests);
         GameManager.instance.gameState = GameManager.GameState.Playing;
+
+        // Load basic info, globals and player data
+        playerData = File.Exists(Path() + "/player.dat") ? File.ReadAllText(Path() + "/player.dat") : null;
+        if (File.Exists(Path() + "/scene.dat")) LoadScene(sceneIndex: int.Parse(File.ReadAllText(Path() + "/scene.dat")));
+        else LoadScene(sceneIndex: startScene);
     }
 
     /// <summary>
