@@ -11512,6 +11512,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1748718190}
+    - target: {fileID: 1323052322956458278, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
+      propertyPath: spawnPoint
+      value: Accessoryshop_Spawn_Point
+      objectReference: {fileID: 0}
     - target: {fileID: 1324493484629291171, guid: cd19c1a2b628f834e8a1c05598f7729d, type: 3}
       propertyPath: m_Mesh
       value: 
