@@ -26,7 +26,6 @@ public class GameOptions {
     public void Save() {
         PlayerPrefs.Save();
         GameManager.instance.events.optionsReloadEvent.Invoke();
-        //crouch.Value = 
     }
 
     public enum ReticleStyle {
@@ -35,5 +34,50 @@ public class GameOptions {
 
     public enum WindowMode {
         Windowed, Borderless, Fullscreen
+    }
+    public void SetKey(string keyname, KeyCode keyvalue)
+    {
+        if(keyname == "FORWARD")
+        {
+            Debug.Log("updating Forward");
+            forward.Value = keyvalue;
+            
+        }
+        if (keyname == "LEFT")
+        {
+            Debug.Log("updating Left");
+            left.Value = keyvalue;
+        }
+        if (keyname == "RIGHT")
+        {
+            Debug.Log("updating Right");
+            right.Value = keyvalue;
+        }
+        if (keyname == "BACK")
+        {
+            Debug.Log("updating Back");
+            back.Value = keyvalue;
+        }
+        if (keyname == "JUMP")
+        {
+            Debug.Log("updating Jump");
+            jump.Value = keyvalue;
+        }
+        if(keyname == "SPRINT")
+        {
+            Debug.Log("updating Sprint");
+            sprint.Value = keyvalue;
+        }
+        if (keyname == "CROUCH")
+        {
+            Debug.Log("updating Crouch");
+            crouch.Value = keyvalue;
+        }
+        if (keyname == "INTERACT")
+        {
+            Debug.Log("updating Interact");
+            interact.Value = keyvalue;
+        }
+
     }
 }

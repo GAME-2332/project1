@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7505251987373122247}
   - component: {fileID: 7505251987373122268}
   - component: {fileID: 7505251987373122269}
+  - component: {fileID: 2141553302}
   m_Layer: 5
   m_Name: Options_Button_Group "CROUCH"
   m_TagString: Untagged
@@ -182,6 +183,7 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
 --- !u!114 &7505251987373122269
@@ -200,6 +202,21 @@ MonoBehaviour:
   cursorTextureClickable: {fileID: 0}
   my_key_id: 
   _button: {fileID: 0}
+--- !u!114 &2141553302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251987373122245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: CROUCH
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251987380746372
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,7 +570,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7505251987449601062
 MonoBehaviour:
@@ -672,7 +689,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: S
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1029,6 +1048,7 @@ GameObject:
   - component: {fileID: 7505251987652194850}
   - component: {fileID: 7505251987652194876}
   - component: {fileID: 7505251987652194877}
+  - component: {fileID: 5213135291783059451}
   m_Layer: 5
   m_Name: Mouse Sensitivity
   m_TagString: Untagged
@@ -1096,6 +1116,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5213135291783059451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251987652194851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ebcd8ce201bd024498c0f6300d6574f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 0}
+  _display: {fileID: 0}
+  value: 0
 --- !u!1 &7505251987669427355
 GameObject:
   m_ObjectHideFlags: 0
@@ -1526,7 +1561,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: D
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1823,6 +1860,7 @@ GameObject:
   - component: {fileID: 7505251987860665168}
   - component: {fileID: 7505251987860665257}
   - component: {fileID: 7505251987860665262}
+  - component: {fileID: 218463381}
   m_Layer: 5
   m_Name: Options_Button_Group "INTERACT"
   m_TagString: Untagged
@@ -1989,6 +2027,7 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
 --- !u!114 &7505251987860665262
@@ -2007,6 +2046,21 @@ MonoBehaviour:
   cursorTextureClickable: {fileID: 0}
   my_key_id: 
   _button: {fileID: 0}
+--- !u!114 &218463381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251987860665174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: INTERACT
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251987919852377
 GameObject:
   m_ObjectHideFlags: 0
@@ -2018,6 +2072,7 @@ GameObject:
   - component: {fileID: 7505251987919852376}
   - component: {fileID: 7505251987919852378}
   - component: {fileID: 7505251987919852379}
+  - component: {fileID: 7883660681054967830}
   m_Layer: 5
   m_Name: Windowed Mode
   m_TagString: Untagged
@@ -2085,6 +2140,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7883660681054967830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251987919852377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc4535ca904e6b4ead19d79c6577e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dropdown: {fileID: 0}
 --- !u!1 &7505251987944820219
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2559,7 @@ GameObject:
   - component: {fileID: 7505251988014972959}
   - component: {fileID: 7505251988014972953}
   - component: {fileID: 7505251988014972958}
+  - component: {fileID: 705876320}
   m_Layer: 5
   m_Name: button_input
   m_TagString: Untagged
@@ -2557,6 +2626,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &705876320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251988014972956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0857ac7d236ed4ea8c8847b19de2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 0}
 --- !u!1 &7505251988015853922
 GameObject:
   m_ObjectHideFlags: 0
@@ -2760,7 +2842,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: W
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3238,6 +3322,7 @@ GameObject:
   - component: {fileID: 7505251988201508086}
   - component: {fileID: 7505251988201508047}
   - component: {fileID: 7505251988201508044}
+  - component: {fileID: 13710059}
   m_Layer: 5
   m_Name: Options_Button_Group "SPRINT"
   m_TagString: Untagged
@@ -3404,6 +3489,7 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
 --- !u!114 &7505251988201508044
@@ -3422,6 +3508,21 @@ MonoBehaviour:
   cursorTextureClickable: {fileID: 0}
   my_key_id: 
   _button: {fileID: 0}
+--- !u!114 &13710059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251988201508084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: SPRINT
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251988257698390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3525,7 +3626,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 50%
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3552,7 +3653,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3993,6 +4094,7 @@ GameObject:
   - component: {fileID: 7505251988350700576}
   - component: {fileID: 7505251988350700578}
   - component: {fileID: 7505251988350700579}
+  - component: {fileID: 1017757800}
   m_Layer: 5
   m_Name: button_input
   m_TagString: Untagged
@@ -4059,6 +4161,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1017757800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251988350700577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0857ac7d236ed4ea8c8847b19de2e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _text: {fileID: 0}
 --- !u!1 &7505251988370073367
 GameObject:
   m_ObjectHideFlags: 0
@@ -4258,7 +4373,6 @@ GameObject:
   - component: {fileID: 7505251988390157713}
   - component: {fileID: 7505251988390157718}
   - component: {fileID: 7505251988390157712}
-  - component: {fileID: 7505251988390157715}
   m_Layer: 5
   m_Name: Left Side
   m_TagString: Untagged
@@ -4355,18 +4469,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &7505251988390157715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7505251988390157716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a1f6a1a1298db44ebe884a3613c2f93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &7505251988423870460
 GameObject:
   m_ObjectHideFlags: 0
@@ -4433,7 +4535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5508,7 +5610,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LeftControl
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5535,7 +5637,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.05
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6001,6 +6103,7 @@ GameObject:
   - component: {fileID: 7505251988625567190}
   - component: {fileID: 7505251988625567184}
   - component: {fileID: 7505251988625567185}
+  - component: {fileID: 4116025807415587005}
   m_Layer: 5
   m_Name: Reticle Style
   m_TagString: Untagged
@@ -6068,6 +6171,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &4116025807415587005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251988625567191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aedb7c00129ba7f4d8258f599d8c139e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7505251988637257091
 GameObject:
   m_ObjectHideFlags: 0
@@ -6106,7 +6221,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -17, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &7505251988637257119
 MonoBehaviour:
@@ -6350,6 +6465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06913152f30634045b96045c51f07d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _quitbutton: {fileID: 0}
 --- !u!1 &7505251988704173970
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,6 +6944,7 @@ GameObject:
   - component: {fileID: 7505251988764336903}
   - component: {fileID: 7505251988764336924}
   - component: {fileID: 7505251988764336925}
+  - component: {fileID: 890958202}
   m_Layer: 5
   m_Name: Options_Button_Group "BACK"
   m_TagString: Untagged
@@ -7010,8 +7127,24 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
+--- !u!114 &890958202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251988764336901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: BACK
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251988780982295
 GameObject:
   m_ObjectHideFlags: 0
@@ -7298,6 +7431,7 @@ GameObject:
   - component: {fileID: 7505251988792324009}
   - component: {fileID: 7505251988792324011}
   - component: {fileID: 7505251988792324008}
+  - component: {fileID: 106985849}
   m_Layer: 5
   m_Name: Options_Button_Group "FORWARD"
   m_TagString: Untagged
@@ -7480,8 +7614,24 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
+--- !u!114 &106985849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251988792323920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: FORWARD
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251988826468768
 GameObject:
   m_ObjectHideFlags: 0
@@ -7548,7 +7698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: E
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7683,7 +7833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: LeftShift
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8337,6 +8487,7 @@ GameObject:
   - component: {fileID: 7505251989050874246}
   - component: {fileID: 7505251989050874271}
   - component: {fileID: 7505251989050874268}
+  - component: {fileID: 709594536}
   m_Layer: 5
   m_Name: Options_Button_Group "JUMP"
   m_TagString: Untagged
@@ -8503,6 +8654,7 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
 --- !u!114 &7505251989050874268
@@ -8521,6 +8673,21 @@ MonoBehaviour:
   cursorTextureClickable: {fileID: 0}
   my_key_id: 
   _button: {fileID: 0}
+--- !u!114 &709594536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251989050874244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: JUMP
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251989053169784
 GameObject:
   m_ObjectHideFlags: 0
@@ -8587,7 +8754,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 60
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8614,7 +8781,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 17.9
+  m_fontSize: 36
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9257,6 +9424,7 @@ GameObject:
   - component: {fileID: 7505251989161637369}
   - component: {fileID: 7505251989161637366}
   - component: {fileID: 7505251989161637367}
+  - component: {fileID: 1562847119}
   m_Layer: 5
   m_Name: Options_Button_Group "LEFT"
   m_TagString: Untagged
@@ -9439,8 +9607,24 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
+--- !u!114 &1562847119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251989161637375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: LEFT
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251989163332159
 GameObject:
   m_ObjectHideFlags: 0
@@ -9671,6 +9855,7 @@ GameObject:
   - component: {fileID: 7505251989244678580}
   - component: {fileID: 7505251989244678582}
   - component: {fileID: 7505251989244678583}
+  - component: {fileID: 2810904342871999493}
   m_Layer: 5
   m_Name: View Bobbing
   m_TagString: Untagged
@@ -9738,6 +9923,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2810904342871999493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251989244678581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6d1bdef04cb9c47b83b7d715e23f9e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7505251989247841751
 GameObject:
   m_ObjectHideFlags: 0
@@ -9749,6 +9946,7 @@ GameObject:
   - component: {fileID: 7505251989247841750}
   - component: {fileID: 7505251989247841744}
   - component: {fileID: 7505251989247841745}
+  - component: {fileID: 2107719513802408671}
   m_Layer: 5
   m_Name: Field Of View
   m_TagString: Untagged
@@ -9816,6 +10014,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2107719513802408671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251989247841751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a3fa6f232d00b5498129307d80d4001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _slider: {fileID: 0}
+  _display: {fileID: 0}
+  value: 0
 --- !u!1 &7505251989249313194
 GameObject:
   m_ObjectHideFlags: 0
@@ -10172,7 +10385,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: A
+  m_text: '
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10257,6 +10472,7 @@ GameObject:
   - component: {fileID: 7505251989310796772}
   - component: {fileID: 7505251989310796797}
   - component: {fileID: 7505251989310796770}
+  - component: {fileID: 1791058335}
   m_Layer: 5
   m_Name: Options_Button_Group "RIGHT"
   m_TagString: Untagged
@@ -10439,8 +10655,24 @@ MonoBehaviour:
   SELECTEDINPUT_COLOR: {r: 0, g: 0, b: 0, a: 0}
   _text: {fileID: 0}
   _currentText: 
+  _keyreader: {fileID: 0}
   main_key_id: 
   _mygraphics: {fileID: 0}
+--- !u!114 &1791058335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7505251989310796778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a67af3cc46c7b4bb99ff504da99803, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyname: RIGHT
+  keycode: 0
+  keytostring: 
 --- !u!1 &7505251989358522951
 GameObject:
   m_ObjectHideFlags: 0
