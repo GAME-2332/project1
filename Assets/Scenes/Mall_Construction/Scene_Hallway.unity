@@ -21484,6 +21484,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 149614936}
+    - target: {fileID: 1160945804450916599, guid: 90bdbc18f54cd4b82b8310b695952de2, type: 3}
+      propertyPath: spawnPoint
+      value: BeautyShop_Entrance_To_FoodCourt
+      objectReference: {fileID: 0}
     - target: {fileID: 1161100212436809108, guid: 90bdbc18f54cd4b82b8310b695952de2, type: 3}
       propertyPath: m_Mesh
       value: 
