@@ -93,6 +93,7 @@ MonoBehaviour:
       - rid: 2759954803292110869
       - rid: 2759954803292110868
       - rid: 2759954803292110871
+      - rid: 2759954803292110874
       children: []
     - optionText: Bye
       portrait: {fileID: 21300000, guid: bb9b9dd42c0e406489d0fbb657e11557, type: 3}
@@ -145,3 +146,7 @@ MonoBehaviour:
       data:
         variableName: need_tiara
         checkValue: 1
+    - rid: 2759954803292110874
+      type: {class: GiveItemAction, ns: , asm: Assembly-CSharp}
+      data:
+        item: {fileID: 11400000, guid: 546cbd3ce05b0a14b88cb0dbd0257495, type: 2}
