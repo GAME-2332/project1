@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,18 +6,23 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class EnemyMoosic : MonoBehaviour
 {
-    private AudioSource AudioChase;
+    [NonSerialized]
+    public AudioSource AudioChase;
     void Start(){
         AudioChase =  GetComponent<AudioSource>();
         AudioChase.enabled = false;
     }
 
     public void AudioPlay(){
-        AudioChase.GetComponent<AudioSource>().enabled = true;
-        
+        if (AudioChase.GetComponent<AudioSource>().isPlaying == false){
+            AudioChase.enabled = true;
+            FindObjectOfType<PlayerCamera>().backgroundMusic.Pause();
+        }
     }
     public void AudioStop(){
-        AudioChase.GetComponent<AudioSource>().enabled = false;
-        
+        if (AudioChase.GetComponent<AudioSource>().enabled == true){
+            FindObjectOfType<PlayerCamera>().backgroundMusic.Play();
+            AudioChase.GetComponent<AudioSource>().enabled = false;
+        }
     }
 }
