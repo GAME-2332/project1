@@ -21,6 +21,7 @@ public class UI_GameOver_Respawn : MonoBehaviour
         canvas.enabled = true;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        GameManager.instance.gameState = GameManager.GameState.Paused;
         restart = true;
     }
 
@@ -33,7 +34,7 @@ public class UI_GameOver_Respawn : MonoBehaviour
             /*canvas.enabled = false;
             Cursor.visible = false;
             Cursor.lockState = CursorLockMode.Locked;*/
-
+            GameManager.instance.gameState = GameManager.GameState.Playing;
             respawnTo();
             
             Physics.SyncTransforms();
