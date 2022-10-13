@@ -116,7 +116,7 @@ MonoBehaviour:
       type: {class: CheckBoolPredicate, ns: , asm: Assembly-CSharp}
       data:
         variableName: fixed_power
-        checkValue: 1
+        checkValue: 0
     - rid: 2759954597239586834
       type: {class: SetBoolAction, ns: , asm: Assembly-CSharp}
       data:
