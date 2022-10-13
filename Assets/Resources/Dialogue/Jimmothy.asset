@@ -102,6 +102,7 @@ MonoBehaviour:
       - rid: 2759954803292110879
       actions:
       - rid: 2759954597239586834
+      - rid: 2759954815933218833
       children: []
   references:
     version: 2
@@ -122,3 +123,16 @@ MonoBehaviour:
         variableName: power_boxes_fixed
         checkValue: 3
         mode: 3
+    - rid: 2759954815933218833
+      type: {class: DelayedAction, ns: , asm: Assembly-CSharp}
+      data:
+        action:
+          rid: 2759954815933218835
+        delayMillis: 250
+    - rid: 2759954815933218835
+      type: {class: SceneSwitchAction, ns: , asm: Assembly-CSharp}
+      data:
+        scene:
+          sceneAsset: {fileID: 102900000, guid: 02789583b608f684581959b10c6c08d4, type: 3}
+          scenePath: Assets/Scenes/UtilityScenes/EndingScene.unity
+        spawnPoint: 
